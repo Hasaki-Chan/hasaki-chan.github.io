@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title> 《樱之诗》中的四弹簧画笔模型 | 小羽咲的笔记</title>
+    
+    
+    
+    <link rel="stylesheet" href="/sass/main.min.4e90cee935c47394b47f9cb7ffe8e3ffab18b88d82fea203918cc3f92eec5eb2.css">
+</head>
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="/">
+                    
+                    小羽咲的笔记
+                    </a>
+            </div>
+            <div class="flex">
+                
+                <a href="/articles/">文章</a>
+                
+                <button id="dark-mode-button"></button>
+            </div>
+            </div>
+    </div>
+</nav>
+        <main>
+            
+
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>《樱之诗》中的四弹簧画笔模型</h1>
+                    <div class="post-meta">
+                        <div>
+                            By hasaki on <time>October 06, 2020</time>
+                        </div>
+                        <div class="tags">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+    <p>在Galgame《樱之诗》中，男主角草薙直哉为了模仿草薙健一郎的画作，设计了一种辅助装置，如下图所示：</p>
+<p><img src="https://pic3.zhimg.com/v2-fc4b04252dd547ca1e6b87f56058fc2e_b.jpg" alt="">矩形ABCD为画布，在画布的每个角上用一根弹簧与画笔M相连。随着M在画布上运动，它会受到四根弹簧带来的拉力，这样就可以矫正笔触，达到较为完美的绘画效果。我们下面就来求画笔在画板上运动时所受到的外力。</p>
+<p>设AB长为2a，BC长为2b，以矩形中心为原点，两条边的方向为坐标轴，建立平面直角坐标系，并设M坐标为 <img src="https://www.zhihu.com/equation?tex=%28x%2Cy%29" alt="(x,y)"> ，如图所示。并设弹簧劲度系数为k，弹簧上的张力为T。</p>
+<p>以弹簧MB为例。平衡位置时弹簧长度为 <img src="https://www.zhihu.com/equation?tex=%5Csqrt%7Ba%5E2%2Bb%5E2%7D" alt="\sqrt{a^2+b^2}"> ，当画笔运动到<img src="https://www.zhihu.com/equation?tex=%28x%2Cy%29" alt="(x,y)">时，弹簧长度为 <img src="https://www.zhihu.com/equation?tex=%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D" alt="\sqrt{(a-x)^2+(b-y)^2}"> ，弹簧伸长量为 <img src="https://www.zhihu.com/equation?tex=%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D-%5Csqrt%7Ba%5E2%2Bb%5E2%7D" alt="\sqrt{(a-x)^2+(b-y)^2}-\sqrt{a^2+b^2}"> ，于是弹簧MB提供的拉力为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=F_%7BMB%7D%3Dk%28%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D-%5Csqrt%7Ba%5E2%2Bb%5E2%7D%29%2BT" alt="F_{MB}=k(\sqrt{(a-x)^2+(b-y)^2}-\sqrt{a^2+b^2})+T"></p>
+<p>于是弹簧MB提供的拉力在水平和竖直两个方向上的分量为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%7D+F_%7BMBx%7D%26%3D%5Cfrac%7Ba-x%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7DF_%7BMB%7D%5C%5C+%26%3D%5Cfrac%7Ba-x%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cleft%5Bk%5Cleft%28%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D-%5Csqrt%7Ba%5E2%2Bb%5E2%7D%5Cright%29%2BT%5Cright%5D%5C%5C+%26%3Dk%28a-x%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba-x%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D+%5Cend%7Balign%7D" alt="\begin{align} F_{MBx}&=\frac{a-x}{\sqrt{(a-x)^2+(b-y)^2}}F_{MB}\\ &=\frac{a-x}{\sqrt{(a-x)^2+(b-y)^2}}\left[k\left(\sqrt{(a-x)^2+(b-y)^2}-\sqrt{a^2+b^2}\right)+T\right]\\ &=k(a-x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b-y)^2}}\right)+T\frac{a-x}{\sqrt{(a-x)^2+(b-y)^2}} \end{align}"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%7D+F_%7BMBy%7D%26%3D%5Cfrac%7Bb-y%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7DF_%7BMB%7D%5C%5C+%26%3D%5Cfrac%7Bb-y%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cleft%5Bk%5Cleft%28%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D-%5Csqrt%7Ba%5E2%2Bb%5E2%7D%5Cright%29%2BT%5Cright%5D%5C%5C+%26%3Dk%28b-y%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb-y%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D+%5Cend%7Balign%7D" alt="\begin{align} F_{MBy}&=\frac{b-y}{\sqrt{(a-x)^2+(b-y)^2}}F_{MB}\\ &=\frac{b-y}{\sqrt{(a-x)^2+(b-y)^2}}\left[k\left(\sqrt{(a-x)^2+(b-y)^2}-\sqrt{a^2+b^2}\right)+T\right]\\ &=k(b-y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b-y)^2}}\right)+T\frac{b-y}{\sqrt{(a-x)^2+(b-y)^2}} \end{align}"></p>
+<p>这其中的负号代表受力与坐标轴正方向相反。同理可得，弹簧MA提供的拉力在水平和竖直两个方向上的分量为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=F_%7BMAx%7D%3Dk%28a%2Bx%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba%2Bx%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D" alt="F_{MAx}=k(a+x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b-y)^2}}\right)+T\frac{a+x}{\sqrt{(a+x)^2+(b-y)^2}}"></p>
+<p><img src="https://www.zhihu.com/equation?tex=F_%7BMAy%7D%3Dk%28b-y%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb-y%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D" alt="F_{MAy}=k(b-y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b-y)^2}}\right)+T\frac{b-y}{\sqrt{(a+x)^2+(b-y)^2}}"></p>
+<p>弹簧MC提供的拉力在水平和竖直两个方向上的分量为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=F_%7BMCx%7D%3Dk%28a-x%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba-x%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D" alt="F_{MCx}=k(a-x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b+y)^2}}\right)+T\frac{a-x}{\sqrt{(a-x)^2+(b+y)^2}}"></p>
+<p><img src="https://www.zhihu.com/equation?tex=F_%7BMCy%7D%3Dk%28b%2By%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb%2By%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D" alt="F_{MCy}=k(b+y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b+y)^2}}\right)+T\frac{b+y}{\sqrt{(a-x)^2+(b+y)^2}}"></p>
+<p>弹簧MD提供的拉力在水平和竖直两个方向上的分量为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=F_%7BMDx%7D%3Dk%28a%2Bx%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba%2Bx%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D" alt="F_{MDx}=k(a+x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b+y)^2}}\right)+T\frac{a+x}{\sqrt{(a+x)^2+(b+y)^2}}"></p>
+<p><img src="https://www.zhihu.com/equation?tex=F_%7BMDy%7D%3Dk%28b%2By%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb%2By%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D" alt="F_{MDy}=k(b+y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b+y)^2}}\right)+T\frac{b+y}{\sqrt{(a+x)^2+(b+y)^2}}"></p>
+<p>把四根弹簧上的力加起来就可以得到画笔受到的合外力：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%7D+F_x%3D%26F_%7BMAx%7D%2BF_%7BMBx%7D%2BF_%7BMCx%7D%2BF_%7BMDx%7D%5C%5C+%3D%26k%28a-x%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba-x%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5C%5C+%26%2Bk%28a-x%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba-x%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D%5C%5C+%26%2Bk%28a%2Bx%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba%2Bx%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D%5C%5C+%26%2Bk%28a%2Bx%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Ba%2Bx%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D%5C%5C+%5Cend%7Balign%7D" alt="\begin{align} F_x=&F_{MAx}+F_{MBx}+F_{MCx}+F_{MDx}\\ =&k(a-x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b-y)^2}}\right)+T\frac{a-x}{\sqrt{(a-x)^2+(b-y)^2}}\\ &+k(a-x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b+y)^2}}\right)+T\frac{a-x}{\sqrt{(a-x)^2+(b+y)^2}}\\ &+k(a+x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b-y)^2}}\right)+T\frac{a+x}{\sqrt{(a+x)^2+(b-y)^2}}\\ &+k(a+x)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b+y)^2}}\right)+T\frac{a+x}{\sqrt{(a+x)^2+(b+y)^2}}\\ \end{align}"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Balign%7D+F_y%3D%26F_%7BMAy%7D%2BF_%7BMBy%7D%2BF_%7BMCy%7D%2BF_%7BMDy%7D%5C%5C+%3D%26k%28b-y%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb-y%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b-y%29%5E2%7D%7D%5C%5C+%26%2Bk%28b%2By%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb%2By%7D%7B%5Csqrt%7B%28a-x%29%5E2%2B%28b%2By%29%5E2%7D%7D%5C%5C+%26%2Bk%28b-y%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb-y%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b-y%29%5E2%7D%7D%5C%5C+%26%2Bk%28b%2By%29%5Cleft%281-%5Cfrac%7B%5Csqrt%7Ba%5E2%2Bb%5E2%7D%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D%5Cright%29%2BT%5Cfrac%7Bb%2By%7D%7B%5Csqrt%7B%28a%2Bx%29%5E2%2B%28b%2By%29%5E2%7D%7D%5C%5C+%5Cend%7Balign%7D" alt="\begin{align} F_y=&F_{MAy}+F_{MBy}+F_{MCy}+F_{MDy}\\ =&k(b-y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b-y)^2}}\right)+T\frac{b-y}{\sqrt{(a-x)^2+(b-y)^2}}\\ &+k(b+y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a-x)^2+(b+y)^2}}\right)+T\frac{b+y}{\sqrt{(a-x)^2+(b+y)^2}}\\ &+k(b-y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b-y)^2}}\right)+T\frac{b-y}{\sqrt{(a+x)^2+(b-y)^2}}\\ &+k(b+y)\left(1-\frac{\sqrt{a^2+b^2}}{\sqrt{(a+x)^2+(b+y)^2}}\right)+T\frac{b+y}{\sqrt{(a+x)^2+(b+y)^2}}\\ \end{align}"></p>
+<p>这样我们就求解出了画笔所受的外力。</p>
+
+    </div>
+</div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="/post/%E5%AE%AB%E6%B3%BD%E8%B4%A4%E6%B2%BB%E9%93%B6%E6%B2%B3%E9%93%81%E9%81%93%E4%B9%8B%E5%A4%9C%E5%8E%9F%E6%96%87/" title="Previous post (older)">
+            <span>Previous</span>
+            宫泽贤治《银河铁道之夜》原文
+            </a>
+        
+        
+        
+        <a rel="next" href="/post/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E5%8F%B21-%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E6%A6%82%E8%AE%BA/" title="Next post (newer)">
+            <span>Next</span>
+            哲学笔记：西方哲学史(1) 西方哲学概论
+            </a> 
+        
+    </nav>
+    
+</div>
+</main>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+            <a href="/index.xml">RSS</a>
+            
+        </nav>
+    </section>
+    
+    <script async src="/js/features.min.c5d8f3350f5a652f526b982306299353824299adb7a3bd261ecffacc47087f66.js"></script>
+</footer>
+    </body>
+</html>
