@@ -1,157 +1,490 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>空气力学笔记：1.某些常用术语 | 小羽咲的笔记</title>
+<meta name="keywords" content="" />
+<meta name="description" content="美好的每一天空气动力学（Aerodynamics）研究的主要内容是气体的动力学性质，及其与运动物体的相互作用。
+不定期更新。
+目录：
+Hasaki酱：小羽咲的物理笔记：目录
+ 温度 ： ，其中 为玻尔兹曼常数， 为分子平均动能。 ：物体表面某点处的压力分布 ：物体表面某点处的剪力分布   ：物体在气体中所受的合力。 ：物体在气体中所受的合力矩。   ：升力，合力在平行重力方向上的分量。 ：阻力，合力在垂直重力方向上的分量。 ：法向力，合力在垂直于物体轴线方向的分量。 ：切向力，合力在平行于物体轴线方向的分量。  易知上述各量间有如下关系：
+由压力分布与剪力分布求取法向力、切向力与外力矩的公式为：
+式中第一项代表上表面的贡献，第二项代表下表面的贡献。
+ 动态压力： ，其中标有角标无穷的指距离物体无穷远处的量（即是自由场中的量）。 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   其中 是某特征面积， 是某特征长度。对于二维情况（即某一维度的尺寸结构是均匀的），把特征面积和特征长度都换成特征长度 即得：
+ 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   定义如下两个量：
+ 压力系数：  表面摩擦系数：   则对于二维情况，前述由压力分布与剪力分布求取法向力、切向力与外力矩的公式可以改写为：
+![c_{m_{LE}}=\frac1{c^2}[\int_0^c(C_{p,l}-C_{p,u})xdx&#43;\int_0^c(c_{f,u}\frac{dy_u}{dx}&#43;c_{f,l}\frac{dy_l}{dx})xdx]]\&#43;\int_0^c(c_{f,u}&#43;C_{p,u}\frac{dy_u}{dx})y_udx&#43;\int_0^c(-C_{p,u}\frac{dy_u}{dx}&#43;c_{f,l})y_ldx](https://www.zhihu.com/equation?tex=c_%7Bm_%7BLE%7D%7D%3D%5Cfrac1%7Bc%5E2%7D%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29xdx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29xdx%5D%5D%5C%5C%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2BC_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%29y_udx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%29y_ldx)
+其中角标u代表上表面，角标l代表下表面。
+ 物体的压力中心：   ">
+<meta name="author" content="hasaki">
+<link rel="canonical" href="https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B01.%E6%9F%90%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.65aebb33e4f0ce3d1a39e4a35c11b91eb08b582489fca0f78f9227d90ac72a52.css" integrity="sha256-Za67M&#43;Twzj0aOeSjXBG5HrCLWCSJ/KD3j5In2QrHKlI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://hasaki-chan.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hasaki-chan.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hasaki-chan.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://hasaki-chan.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://hasaki-chan.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<meta property="og:title" content="空气力学笔记：1.某些常用术语" />
+<meta property="og:description" content="美好的每一天空气动力学（Aerodynamics）研究的主要内容是气体的动力学性质，及其与运动物体的相互作用。
+不定期更新。
+目录：
+Hasaki酱：小羽咲的物理笔记：目录
+ 温度 ： ，其中 为玻尔兹曼常数， 为分子平均动能。 ：物体表面某点处的压力分布 ：物体表面某点处的剪力分布   ：物体在气体中所受的合力。 ：物体在气体中所受的合力矩。   ：升力，合力在平行重力方向上的分量。 ：阻力，合力在垂直重力方向上的分量。 ：法向力，合力在垂直于物体轴线方向的分量。 ：切向力，合力在平行于物体轴线方向的分量。  易知上述各量间有如下关系：
+由压力分布与剪力分布求取法向力、切向力与外力矩的公式为：
+式中第一项代表上表面的贡献，第二项代表下表面的贡献。
+ 动态压力： ，其中标有角标无穷的指距离物体无穷远处的量（即是自由场中的量）。 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   其中 是某特征面积， 是某特征长度。对于二维情况（即某一维度的尺寸结构是均匀的），把特征面积和特征长度都换成特征长度 即得：
+ 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   定义如下两个量：
+ 压力系数：  表面摩擦系数：   则对于二维情况，前述由压力分布与剪力分布求取法向力、切向力与外力矩的公式可以改写为：
+![c_{m_{LE}}=\frac1{c^2}[\int_0^c(C_{p,l}-C_{p,u})xdx&#43;\int_0^c(c_{f,u}\frac{dy_u}{dx}&#43;c_{f,l}\frac{dy_l}{dx})xdx]]\&#43;\int_0^c(c_{f,u}&#43;C_{p,u}\frac{dy_u}{dx})y_udx&#43;\int_0^c(-C_{p,u}\frac{dy_u}{dx}&#43;c_{f,l})y_ldx](https://www.zhihu.com/equation?tex=c_%7Bm_%7BLE%7D%7D%3D%5Cfrac1%7Bc%5E2%7D%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29xdx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29xdx%5D%5D%5C%5C%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2BC_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%29y_udx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%29y_ldx)
+其中角标u代表上表面，角标l代表下表面。
+ 物体的压力中心：   " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B01.%E6%9F%90%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/" /><meta property="og:image" content="https://hasaki-chan.github.io/papermod-cover.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-07-01T02:48:43&#43;00:00" />
+<meta property="article:modified_time" content="2020-07-01T02:48:43&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hasaki-chan.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="空气力学笔记：1.某些常用术语"/>
+<meta name="twitter:description" content="美好的每一天空气动力学（Aerodynamics）研究的主要内容是气体的动力学性质，及其与运动物体的相互作用。
+不定期更新。
+目录：
+Hasaki酱：小羽咲的物理笔记：目录
+ 温度 ： ，其中 为玻尔兹曼常数， 为分子平均动能。 ：物体表面某点处的压力分布 ：物体表面某点处的剪力分布   ：物体在气体中所受的合力。 ：物体在气体中所受的合力矩。   ：升力，合力在平行重力方向上的分量。 ：阻力，合力在垂直重力方向上的分量。 ：法向力，合力在垂直于物体轴线方向的分量。 ：切向力，合力在平行于物体轴线方向的分量。  易知上述各量间有如下关系：
+由压力分布与剪力分布求取法向力、切向力与外力矩的公式为：
+式中第一项代表上表面的贡献，第二项代表下表面的贡献。
+ 动态压力： ，其中标有角标无穷的指距离物体无穷远处的量（即是自由场中的量）。 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   其中 是某特征面积， 是某特征长度。对于二维情况（即某一维度的尺寸结构是均匀的），把特征面积和特征长度都换成特征长度 即得：
+ 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   定义如下两个量：
+ 压力系数：  表面摩擦系数：   则对于二维情况，前述由压力分布与剪力分布求取法向力、切向力与外力矩的公式可以改写为：
+![c_{m_{LE}}=\frac1{c^2}[\int_0^c(C_{p,l}-C_{p,u})xdx&#43;\int_0^c(c_{f,u}\frac{dy_u}{dx}&#43;c_{f,l}\frac{dy_l}{dx})xdx]]\&#43;\int_0^c(c_{f,u}&#43;C_{p,u}\frac{dy_u}{dx})y_udx&#43;\int_0^c(-C_{p,u}\frac{dy_u}{dx}&#43;c_{f,l})y_ldx](https://www.zhihu.com/equation?tex=c_%7Bm_%7BLE%7D%7D%3D%5Cfrac1%7Bc%5E2%7D%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29xdx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29xdx%5D%5D%5C%5C%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2BC_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%29y_udx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%29y_ldx)
+其中角标u代表上表面，角标l代表下表面。
+ 物体的压力中心：   "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://hasaki-chan.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "空气力学笔记：1.某些常用术语",
+      "item": "https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B01.%E6%9F%90%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "空气力学笔记：1.某些常用术语",
+  "name": "空气力学笔记：1.某些常用术语",
+  "description": "美好的每一天空气动力学（Aerodynamics）研究的主要内容是气体的动力学性质，及其与运动物体的相互作用。\n不定期更新。\n目录：\nHasaki酱：小羽咲的物理笔记：目录\n 温度 ： ，其中 为玻尔兹曼常数， 为分子平均动能。 ：物体表面某点处的压力分布 ：物体表面某点处的剪力分布   ：物体在气体中所受的合力。 ：物体在气体中所受的合力矩。   ：升力，合力在平行重力方向上的分量。 ：阻力，合力在垂直重力方向上的分量。 ：法向力，合力在垂直于物体轴线方向的分量。 ：切向力，合力在平行于物体轴线方向的分量。  易知上述各量间有如下关系：\n由压力分布与剪力分布求取法向力、切向力与外力矩的公式为：\n式中第一项代表上表面的贡献，第二项代表下表面的贡献。\n 动态压力： ，其中标有角标无穷的指距离物体无穷远处的量（即是自由场中的量）。 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   其中 是某特征面积， 是某特征长度。对于二维情况（即某一维度的尺寸结构是均匀的），把特征面积和特征长度都换成特征长度 即得：\n 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   定义如下两个量：\n 压力系数：  表面摩擦系数：   则对于二维情况，前述由压力分布与剪力分布求取法向力、切向力与外力矩的公式可以改写为：\n![c_{m_{LE}}=\\frac1{c^2}[\\int_0^c(C_{p,l}-C_{p,u})xdx+\\int_0^c(c_{f,u}\\frac{dy_u}{dx}+c_{f,l}\\frac{dy_l}{dx})xdx]]\\+\\int_0^c(c_{f,u}+C_{p,u}\\frac{dy_u}{dx})y_udx+\\int_0^c(-C_{p,u}\\frac{dy_u}{dx}+c_{f,l})y_ldx](https://www.zhihu.com/equation?tex=c_%7Bm_%7BLE%7D%7D%3D%5Cfrac1%7Bc%5E2%7D%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29xdx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29xdx%5D%5D%5C%5C%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2BC_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%29y_udx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%29y_ldx)\n其中角标u代表上表面，角标l代表下表面。\n 物体的压力中心：   ",
+  "keywords": [
     
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="dark">
-    <title> 空气力学笔记：1.某些常用术语 | 小羽咲的笔记</title>
-    
-    
-    
-    <link rel="stylesheet" href="/sass/main.min.4e90cee935c47394b47f9cb7ffe8e3ffab18b88d82fea203918cc3f92eec5eb2.css">
+  ],
+  "articleBody": "美好的每一天空气动力学（Aerodynamics）研究的主要内容是气体的动力学性质，及其与运动物体的相互作用。\n不定期更新。\n目录：\nHasaki酱：小羽咲的物理笔记：目录\n 温度 ： ，其中 为玻尔兹曼常数， 为分子平均动能。 ：物体表面某点处的压力分布 ：物体表面某点处的剪力分布   ：物体在气体中所受的合力。 ：物体在气体中所受的合力矩。   ：升力，合力在平行重力方向上的分量。 ：阻力，合力在垂直重力方向上的分量。 ：法向力，合力在垂直于物体轴线方向的分量。 ：切向力，合力在平行于物体轴线方向的分量。  易知上述各量间有如下关系：\n由压力分布与剪力分布求取法向力、切向力与外力矩的公式为：\n式中第一项代表上表面的贡献，第二项代表下表面的贡献。\n 动态压力： ，其中标有角标无穷的指距离物体无穷远处的量（即是自由场中的量）。 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   其中 是某特征面积， 是某特征长度。对于二维情况（即某一维度的尺寸结构是均匀的），把特征面积和特征长度都换成特征长度 即得：\n 升力系数：  阻力系数：  切向力系数：  法向力系数：  力矩系数：   定义如下两个量：\n 压力系数：  表面摩擦系数：   则对于二维情况，前述由压力分布与剪力分布求取法向力、切向力与外力矩的公式可以改写为：\n![c_{m_{LE}}=\\frac1{c^2}[\\int_0^c(C_{p,l}-C_{p,u})xdx+\\int_0^c(c_{f,u}\\frac{dy_u}{dx}+c_{f,l}\\frac{dy_l}{dx})xdx]]\\+\\int_0^c(c_{f,u}+C_{p,u}\\frac{dy_u}{dx})y_udx+\\int_0^c(-C_{p,u}\\frac{dy_u}{dx}+c_{f,l})y_ldx](https://www.zhihu.com/equation?tex=c_%7Bm_%7BLE%7D%7D%3D%5Cfrac1%7Bc%5E2%7D%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29xdx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29xdx%5D%5D%5C%5C%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2BC_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%29y_udx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%29y_ldx)\n其中角标u代表上表面，角标l代表下表面。\n 物体的压力中心：   ",
+  "wordCount" : "43",
+  "inLanguage": "zh",
+  "datePublished": "2020-07-01T02:48:43Z",
+  "dateModified": "2020-07-01T02:48:43Z",
+  "author":{
+    "@type": "Person",
+    "name": "hasaki"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B01.%E6%9F%90%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小羽咲的笔记",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hasaki-chan.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-    <body class="dark">
-        <nav class="navbar">
-    <div class="container">
-        <div class="flex">
-            <div>
-                <a class="brand" href="/">
-                    
-                    小羽咲的笔记
-                    </a>
-            </div>
-            <div class="flex">
-                
-                <a href="/articles/">文章</a>
-                
-                <button id="dark-mode-button"></button>
-            </div>
-            </div>
-    </div>
-</nav>
-        <main>
-            
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<div class="container">
-    <article>
-        <header class="article-header">
-            <div class="thumb">
-                <div>
-                    <h1>空气力学笔记：1.某些常用术语</h1>
-                    <div class="post-meta">
-                        <div>
-                            By hasaki on <time>July 01, 2020</time>
-                        </div>
-                        <div class="tags">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </article>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-    <div class="article-post">
-    <p>美好的每一天空气动力学（Aerodynamics）研究的主要内容是气体的动力学性质，及其与运动物体的相互作用。</p>
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://hasaki-chan.github.io" accesskey="h" title="小羽咲的笔记 (Alt + H)">小羽咲的笔记</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://hasaki-chan.github.io/archives" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://hasaki-chan.github.io">Home</a>&nbsp;»&nbsp;<a href="https://hasaki-chan.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      空气力学笔记：1.某些常用术语
+    </h1>
+    <div class="post-meta">July 1, 2020&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;hasaki
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">目录</div>
+        </summary>
+        <div class="inner">
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>美好的每一天空气动力学（Aerodynamics）研究的主要内容是气体的动力学性质，及其与运动物体的相互作用。</p>
 <p>不定期更新。</p>
 <p>目录：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/152320953">Hasaki酱：小羽咲的物理笔记：目录</a></p>
 <ul>
-<li>温度 <img src="https://www.zhihu.com/equation?tex=T" alt="T"> ： <img src="https://www.zhihu.com/equation?tex=KE%3D%5Cfrac%7B3%7D%7B2%7Dk_B+T" alt="KE=\frac{3}{2}k_B T"> ，其中 <img src="https://www.zhihu.com/equation?tex=k_B" alt="k_B"> 为玻尔兹曼常数， <img src="https://www.zhihu.com/equation?tex=KE" alt="KE"> 为分子平均动能。</li>
-<li><img src="https://www.zhihu.com/equation?tex=p" alt="p"> ：物体表面某点处的压力分布</li>
-<li><img src="https://www.zhihu.com/equation?tex=%5Ctau" alt="\tau"> ：物体表面某点处的剪力分布</li>
+<li>温度 <img loading="lazy" src="https://www.zhihu.com/equation?tex=T" alt="T"  />
+ ： <img loading="lazy" src="https://www.zhihu.com/equation?tex=KE%3D%5Cfrac%7B3%7D%7B2%7Dk_B&#43;T" alt="KE=\frac{3}{2}k_B T"  />
+ ，其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=k_B" alt="k_B"  />
+ 为玻尔兹曼常数， <img loading="lazy" src="https://www.zhihu.com/equation?tex=KE" alt="KE"  />
+ 为分子平均动能。</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=p" alt="p"  />
+ ：物体表面某点处的压力分布</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctau" alt="\tau"  />
+ ：物体表面某点处的剪力分布</li>
 </ul>
-<p><img src="https://pic3.zhimg.com/v2-2e88ca0435d0e3b86ecea4111b8dd942_b.jpg" alt=""></p>
+<p><img loading="lazy" src="https://pic3.zhimg.com/v2-2e88ca0435d0e3b86ecea4111b8dd942_b.jpg" alt=""  />
+</p>
 <ul>
-<li><img src="https://www.zhihu.com/equation?tex=R" alt="R"> ：物体在气体中所受的合力。</li>
-<li><img src="https://www.zhihu.com/equation?tex=M" alt="M"> ：物体在气体中所受的合力矩。</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=R" alt="R"  />
+ ：物体在气体中所受的合力。</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=M" alt="M"  />
+ ：物体在气体中所受的合力矩。</li>
 </ul>
-<p><img src="https://pic1.zhimg.com/v2-08fd673b055906ee3c500607c7e5a5a4_b.jpg" alt=""></p>
+<p><img loading="lazy" src="https://pic1.zhimg.com/v2-08fd673b055906ee3c500607c7e5a5a4_b.jpg" alt=""  />
+</p>
 <ul>
-<li><img src="https://www.zhihu.com/equation?tex=L" alt="L"> ：升力，合力在平行重力方向上的分量。</li>
-<li><img src="https://www.zhihu.com/equation?tex=D" alt="D"> ：阻力，合力在垂直重力方向上的分量。</li>
-<li><img src="https://www.zhihu.com/equation?tex=N" alt="N"> ：法向力，合力在垂直于物体轴线方向的分量。</li>
-<li><img src="https://www.zhihu.com/equation?tex=A" alt="A"> ：切向力，合力在平行于物体轴线方向的分量。</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=L" alt="L"  />
+ ：升力，合力在平行重力方向上的分量。</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=D" alt="D"  />
+ ：阻力，合力在垂直重力方向上的分量。</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=N" alt="N"  />
+ ：法向力，合力在垂直于物体轴线方向的分量。</li>
+<li><img loading="lazy" src="https://www.zhihu.com/equation?tex=A" alt="A"  />
+ ：切向力，合力在平行于物体轴线方向的分量。</li>
 </ul>
-<p><img src="https://pic1.zhimg.com/v2-b5768e65354b51d4400eb1e14dc05ac4_b.jpg" alt="">易知上述各量间有如下关系：</p>
-<p><img src="https://www.zhihu.com/equation?tex=L%3DN%5Ccos%5Calpha-A%5Csin%5Calpha" alt="L=N\cos\alpha-A\sin\alpha"></p>
-<p><img src="https://www.zhihu.com/equation?tex=D%3DN%5Csin%5Calpha%2BA%5Ccos%5Calpha" alt="D=N\sin\alpha+A\cos\alpha"></p>
-<p><img src="https://pic2.zhimg.com/v2-ca2b5917483d39ada04981d3295d6b25_b.jpg" alt="">由压力分布与剪力分布求取法向力、切向力与外力矩的公式为：</p>
-<p><img src="https://www.zhihu.com/equation?tex=N%3D-%5Cint_%7BLE%7D%5E%7BTE%7D%28p_u%5Ccos%5Ctheta%2B%5Ctau_u%5Csin%5Ctheta%29ds_u%2B%5Cint_%7BLE%7D%5E%7BTE%7D%28p_l%5Ccos%5Ctheta-%5Ctau_l%5Csin%5Ctheta%29ds_l" alt="N=-\int_{LE}^{TE}(p_u\cos\theta+\tau_u\sin\theta)ds_u+\int_{LE}^{TE}(p_l\cos\theta-\tau_l\sin\theta)ds_l"></p>
-<p><img src="https://www.zhihu.com/equation?tex=A%3D%5Cint_%7BLE%7D%5E%7BTE%7D%28-p_u%5Csin%5Ctheta%2B%5Ctau_u%5Ccos%5Ctheta%29ds_u%2B%5Cint_%7BLE%7D%5E%7BTE%7D%28p_l%5Csin%5Ctheta%2B%5Ctau_l%5Ccos%5Ctheta%29ds_l" alt="A=\int_{LE}^{TE}(-p_u\sin\theta+\tau_u\cos\theta)ds_u+\int_{LE}^{TE}(p_l\sin\theta+\tau_l\cos\theta)ds_l"></p>
-<p><img src="https://www.zhihu.com/equation?tex=M%3D-%5Cint_%7BLE%7D%5E%7BTE%7D%5B%28p_u%5Ccos%5Ctheta%2B%5Ctau_u%5Csin%5Ctheta%29x-%28p_u%5Csin%5Ctheta-%5Ctau_u%5Ccos%5Ctheta%29y%5Dds_u%5C%5C%2B%5Cint_%7BLE%7D%5E%7BTE%7D%5B%28-p_l%5Ccos%5Ctheta%2B%5Ctau_l%5Csin%5Ctheta%29x%2B%28p_l%5Csin%5Ctheta%2B%5Ctau_l%5Ccos%5Ctheta%29y%5Dds_l" alt="M=-\int_{LE}^{TE}[(p_u\cos\theta+\tau_u\sin\theta)x-(p_u\sin\theta-\tau_u\cos\theta)y]ds_u\\+\int_{LE}^{TE}[(-p_l\cos\theta+\tau_l\sin\theta)x+(p_l\sin\theta+\tau_l\cos\theta)y]ds_l"></p>
+<p><img loading="lazy" src="https://pic1.zhimg.com/v2-b5768e65354b51d4400eb1e14dc05ac4_b.jpg" alt=""  />
+易知上述各量间有如下关系：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%3DN%5Ccos%5Calpha-A%5Csin%5Calpha" alt="L=N\cos\alpha-A\sin\alpha"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=D%3DN%5Csin%5Calpha%2BA%5Ccos%5Calpha" alt="D=N\sin\alpha&#43;A\cos\alpha"  />
+</p>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-ca2b5917483d39ada04981d3295d6b25_b.jpg" alt=""  />
+由压力分布与剪力分布求取法向力、切向力与外力矩的公式为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=N%3D-%5Cint_%7BLE%7D%5E%7BTE%7D%28p_u%5Ccos%5Ctheta%2B%5Ctau_u%5Csin%5Ctheta%29ds_u%2B%5Cint_%7BLE%7D%5E%7BTE%7D%28p_l%5Ccos%5Ctheta-%5Ctau_l%5Csin%5Ctheta%29ds_l" alt="N=-\int_{LE}^{TE}(p_u\cos\theta&#43;\tau_u\sin\theta)ds_u&#43;\int_{LE}^{TE}(p_l\cos\theta-\tau_l\sin\theta)ds_l"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=A%3D%5Cint_%7BLE%7D%5E%7BTE%7D%28-p_u%5Csin%5Ctheta%2B%5Ctau_u%5Ccos%5Ctheta%29ds_u%2B%5Cint_%7BLE%7D%5E%7BTE%7D%28p_l%5Csin%5Ctheta%2B%5Ctau_l%5Ccos%5Ctheta%29ds_l" alt="A=\int_{LE}^{TE}(-p_u\sin\theta&#43;\tau_u\cos\theta)ds_u&#43;\int_{LE}^{TE}(p_l\sin\theta&#43;\tau_l\cos\theta)ds_l"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=M%3D-%5Cint_%7BLE%7D%5E%7BTE%7D%5B%28p_u%5Ccos%5Ctheta%2B%5Ctau_u%5Csin%5Ctheta%29x-%28p_u%5Csin%5Ctheta-%5Ctau_u%5Ccos%5Ctheta%29y%5Dds_u%5C%5C%2B%5Cint_%7BLE%7D%5E%7BTE%7D%5B%28-p_l%5Ccos%5Ctheta%2B%5Ctau_l%5Csin%5Ctheta%29x%2B%28p_l%5Csin%5Ctheta%2B%5Ctau_l%5Ccos%5Ctheta%29y%5Dds_l" alt="M=-\int_{LE}^{TE}[(p_u\cos\theta&#43;\tau_u\sin\theta)x-(p_u\sin\theta-\tau_u\cos\theta)y]ds_u\&#43;\int_{LE}^{TE}[(-p_l\cos\theta&#43;\tau_l\sin\theta)x&#43;(p_l\sin\theta&#43;\tau_l\cos\theta)y]ds_l"  />
+</p>
 <p>式中第一项代表上表面的贡献，第二项代表下表面的贡献。</p>
 <ul>
-<li>动态压力： <img src="https://www.zhihu.com/equation?tex=q_%5Cinfty%3D%5Cfrac%7B1%7D%7B2%7D%5Crho_%5Cinfty+V_%5Cinfty%5E2" alt="q_\infty=\frac{1}{2}\rho_\infty V_\infty^2"> ，其中标有角标无穷的指距离物体无穷远处的量（即是自由场中的量）。</li>
-<li>升力系数： <img src="https://www.zhihu.com/equation?tex=C_L%3D%5Cfrac%7BL%7D%7Bq_%5Cinfty+S%7D" alt="C_L=\frac{L}{q_\infty S}"></li>
-<li>阻力系数： <img src="https://www.zhihu.com/equation?tex=C_D%3D%5Cfrac%7BD%7D%7Bq_%5Cinfty+S%7D" alt="C_D=\frac{D}{q_\infty S}"></li>
-<li>切向力系数： <img src="https://www.zhihu.com/equation?tex=C_N%3D%5Cfrac%7BN%7D%7Bq_%5Cinfty+S%7D" alt="C_N=\frac{N}{q_\infty S}"></li>
-<li>法向力系数： <img src="https://www.zhihu.com/equation?tex=C_A%3D%5Cfrac%7BA%7D%7Bq_%5Cinfty+S%7D" alt="C_A=\frac{A}{q_\infty S}"></li>
-<li>力矩系数： <img src="https://www.zhihu.com/equation?tex=C_M%3D%5Cfrac%7BM%7D%7Bq_%5Cinfty+Sl%7D" alt="C_M=\frac{M}{q_\infty Sl}"></li>
+<li>动态压力： <img loading="lazy" src="https://www.zhihu.com/equation?tex=q_%5Cinfty%3D%5Cfrac%7B1%7D%7B2%7D%5Crho_%5Cinfty&#43;V_%5Cinfty%5E2" alt="q_\infty=\frac{1}{2}\rho_\infty V_\infty^2"  />
+ ，其中标有角标无穷的指距离物体无穷远处的量（即是自由场中的量）。</li>
+<li>升力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=C_L%3D%5Cfrac%7BL%7D%7Bq_%5Cinfty&#43;S%7D" alt="C_L=\frac{L}{q_\infty S}"  />
+</li>
+<li>阻力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=C_D%3D%5Cfrac%7BD%7D%7Bq_%5Cinfty&#43;S%7D" alt="C_D=\frac{D}{q_\infty S}"  />
+</li>
+<li>切向力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=C_N%3D%5Cfrac%7BN%7D%7Bq_%5Cinfty&#43;S%7D" alt="C_N=\frac{N}{q_\infty S}"  />
+</li>
+<li>法向力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=C_A%3D%5Cfrac%7BA%7D%7Bq_%5Cinfty&#43;S%7D" alt="C_A=\frac{A}{q_\infty S}"  />
+</li>
+<li>力矩系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=C_M%3D%5Cfrac%7BM%7D%7Bq_%5Cinfty&#43;Sl%7D" alt="C_M=\frac{M}{q_\infty Sl}"  />
+</li>
 </ul>
-<p>其中 <img src="https://www.zhihu.com/equation?tex=S" alt="S"> 是某特征面积， <img src="https://www.zhihu.com/equation?tex=l" alt="l"> 是某特征长度。对于二维情况（即某一维度的尺寸结构是均匀的），把特征面积和特征长度都换成特征长度 <img src="https://www.zhihu.com/equation?tex=c" alt="c"> 即得：</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=S" alt="S"  />
+ 是某特征面积， <img loading="lazy" src="https://www.zhihu.com/equation?tex=l" alt="l"  />
+ 是某特征长度。对于二维情况（即某一维度的尺寸结构是均匀的），把特征面积和特征长度都换成特征长度 <img loading="lazy" src="https://www.zhihu.com/equation?tex=c" alt="c"  />
+ 即得：</p>
 <ul>
-<li>升力系数： <img src="https://www.zhihu.com/equation?tex=c_L%3D%5Cfrac%7BL%7D%7Bq_%5Cinfty+c%7D" alt="c_L=\frac{L}{q_\infty c}"></li>
-<li>阻力系数： <img src="https://www.zhihu.com/equation?tex=c_D%3D%5Cfrac%7BD%7D%7Bq_%5Cinfty+c%7D" alt="c_D=\frac{D}{q_\infty c}"></li>
-<li>切向力系数： <img src="https://www.zhihu.com/equation?tex=c_N%3D%5Cfrac%7BN%7D%7Bq_%5Cinfty+c%7D" alt="c_N=\frac{N}{q_\infty c}"></li>
-<li>法向力系数： <img src="https://www.zhihu.com/equation?tex=c_A%3D%5Cfrac%7BA%7D%7Bq_%5Cinfty+c%7D" alt="c_A=\frac{A}{q_\infty c}"></li>
-<li>力矩系数： <img src="https://www.zhihu.com/equation?tex=c_M%3D%5Cfrac%7BM%7D%7Bq_%5Cinfty+c%5E2%7D" alt="c_M=\frac{M}{q_\infty c^2}"></li>
+<li>升力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=c_L%3D%5Cfrac%7BL%7D%7Bq_%5Cinfty&#43;c%7D" alt="c_L=\frac{L}{q_\infty c}"  />
+</li>
+<li>阻力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=c_D%3D%5Cfrac%7BD%7D%7Bq_%5Cinfty&#43;c%7D" alt="c_D=\frac{D}{q_\infty c}"  />
+</li>
+<li>切向力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=c_N%3D%5Cfrac%7BN%7D%7Bq_%5Cinfty&#43;c%7D" alt="c_N=\frac{N}{q_\infty c}"  />
+</li>
+<li>法向力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=c_A%3D%5Cfrac%7BA%7D%7Bq_%5Cinfty&#43;c%7D" alt="c_A=\frac{A}{q_\infty c}"  />
+</li>
+<li>力矩系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=c_M%3D%5Cfrac%7BM%7D%7Bq_%5Cinfty&#43;c%5E2%7D" alt="c_M=\frac{M}{q_\infty c^2}"  />
+</li>
 </ul>
 <p>定义如下两个量：</p>
 <ul>
-<li>压力系数： <img src="https://www.zhihu.com/equation?tex=C_p%3D%5Cfrac%7Bp-p_%5Cinfty%7D%7Bq_%5Cinfty%7D" alt="C_p=\frac{p-p_\infty}{q_\infty}"></li>
-<li>表面摩擦系数： <img src="https://www.zhihu.com/equation?tex=c_f%3D%5Cfrac%7B%5Ctau%7D%7Bq_%5Cinfty%7D" alt="c_f=\frac{\tau}{q_\infty}"></li>
+<li>压力系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=C_p%3D%5Cfrac%7Bp-p_%5Cinfty%7D%7Bq_%5Cinfty%7D" alt="C_p=\frac{p-p_\infty}{q_\infty}"  />
+</li>
+<li>表面摩擦系数： <img loading="lazy" src="https://www.zhihu.com/equation?tex=c_f%3D%5Cfrac%7B%5Ctau%7D%7Bq_%5Cinfty%7D" alt="c_f=\frac{\tau}{q_\infty}"  />
+</li>
 </ul>
 <p>则对于二维情况，前述由压力分布与剪力分布求取法向力、切向力与外力矩的公式可以改写为：</p>
-<p><img src="https://www.zhihu.com/equation?tex=c_n%3D%5Cfrac1c%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29dx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29dx%5D" alt="c_n=\frac1c[\int_0^c(C_{p,l}-C_{p,u})dx+\int_0^c(c_{f,u}\frac{dy_u}{dx}+c_{f,l}\frac{dy_l}{dx})dx]"></p>
-<p><img src="https://www.zhihu.com/equation?tex=c_a%3D%5Cfrac1c%5B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2Bc_%7Bf%2Cl%7D%29dx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2BC_%7Bp%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29dx%5D" alt="c_a=\frac1c[\int_0^c(c_{f,u}+c_{f,l})dx+\int_0^c(-C_{p,u}\frac{dy_u}{dx}+C_{p,l}\frac{dy_l}{dx})dx]"></p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=c_n%3D%5Cfrac1c%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29dx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29dx%5D" alt="c_n=\frac1c[\int_0^c(C_{p,l}-C_{p,u})dx&#43;\int_0^c(c_{f,u}\frac{dy_u}{dx}&#43;c_{f,l}\frac{dy_l}{dx})dx]"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=c_a%3D%5Cfrac1c%5B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2Bc_%7Bf%2Cl%7D%29dx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2BC_%7Bp%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29dx%5D" alt="c_a=\frac1c[\int_0^c(c_{f,u}&#43;c_{f,l})dx&#43;\int_0^c(-C_{p,u}\frac{dy_u}{dx}&#43;C_{p,l}\frac{dy_l}{dx})dx]"  />
+</p>
 <p>![c_{m_{LE}}=\frac1{c^2}[\int_0^c(C_{p,l}-C_{p,u})xdx+\int_0^c(c_{f,u}\frac{dy_u}{dx}+c_{f,l}\frac{dy_l}{dx})xdx]]\+\int_0^c(c_{f,u}+C_{p,u}\frac{dy_u}{dx})y_udx+\int_0^c(-C_{p,u}\frac{dy_u}{dx}+c_{f,l})y_ldx](<a href="https://www.zhihu.com/equation?tex=c_%7Bm_%7BLE%7D%7D%3D%5Cfrac1%7Bc%5E2%7D%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29xdx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29xdx%5D%5D%5C%5C%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2BC_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%29y_udx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%29y_ldx">https://www.zhihu.com/equation?tex=c_%7Bm_%7BLE%7D%7D%3D%5Cfrac1%7Bc%5E2%7D%5B%5Cint_0%5Ec%28C_%7Bp%2Cl%7D-C_%7Bp%2Cu%7D%29xdx%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%5Cfrac%7Bdy_l%7D%7Bdx%7D%29xdx%5D%5D%5C%5C%2B%5Cint_0%5Ec%28c_%7Bf%2Cu%7D%2BC_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%29y_udx%2B%5Cint_0%5Ec%28-C_%7Bp%2Cu%7D%5Cfrac%7Bdy_u%7D%7Bdx%7D%2Bc_%7Bf%2Cl%7D%29y_ldx</a>)</p>
 <p>其中角标u代表上表面，角标l代表下表面。</p>
-<p><img src="https://pic2.zhimg.com/v2-de6c86bf2806e267d58e77707d2b2fc5_b.jpg" alt=""></p>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-de6c86bf2806e267d58e77707d2b2fc5_b.jpg" alt=""  />
+</p>
 <ul>
-<li>物体的压力中心： <img src="https://www.zhihu.com/equation?tex=x_%7Bcp%7D%3D-%5Cfrac%7BM_%7BLE%7D%27%7D%7BN%27%7D" alt="x_{cp}=-\frac{M_{LE}'}{N'}"></li>
+<li>物体的压力中心： <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_%7Bcp%7D%3D-%5Cfrac%7BM_%7BLE%7D%27%7D%7BN%27%7D" alt="x_{cp}=-\frac{M_{LE}&#39;}{N&#39;}"  />
+</li>
 </ul>
-<p><img src="https://pic2.zhimg.com/v2-a810282ed513ec5c0dcc3bd82229faa5_b.jpg" alt=""></p>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-a810282ed513ec5c0dcc3bd82229faa5_b.jpg" alt=""  />
+</p>
 
-    </div>
 </div>
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="prev" href="https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B02.-%E9%87%8F%E7%BA%B2%E5%88%86%E6%9E%90%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>空气力学笔记：2. 量纲分析与相似理论</span>
+  </a>
+  <a class="next" href="https://hasaki-chan.github.io/post/%E7%B4%A0%E6%99%B4%E6%97%A5cg%E7%B2%BE%E9%80%89/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>《素晴日》CG精选</span>
+  </a>
+</nav>
 
-<div class="container">
-    
-    <nav class="flex container suggested">
-        
-        <a rel="prev" href="/post/%E7%B4%A0%E6%99%B4%E6%97%A5cg%E7%B2%BE%E9%80%89/" title="Previous post (older)">
-            <span>Previous</span>
-            《素晴日》CG精选
-            </a>
-        
-        
-        
-        <a rel="next" href="/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B02.-%E9%87%8F%E7%BA%B2%E5%88%86%E6%9E%90%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/" title="Next post (newer)">
-            <span>Next</span>
-            空气力学笔记：2. 量纲分析与相似理论
-            </a> 
-        
-    </nav>
-    
-</div>
-</main>
-
-
-        </main>
-        <footer class="footer flex">
-    <section class="container">
-        <nav class="footer-links">
-            
-            <a href="/index.xml">RSS</a>
-            
-        </nav>
-    </section>
-    
-    <script async src="/js/features.min.c5d8f3350f5a652f526b982306299353824299adb7a3bd261ecffacc47087f66.js"></script>
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://hasaki-chan.github.io">小羽咲的笔记</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
 </footer>
-    </body>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
 </html>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://hasaki-chan.github.io/sitemap.xml

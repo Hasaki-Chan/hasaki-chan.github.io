@@ -4,7 +4,11 @@
     <title>Categories on 小羽咲的笔记</title>
     <link>https://hasaki-chan.github.io/categories/</link>
     <description>Recent content in Categories on 小羽咲的笔记</description>
+    <image>
+      <url>https://hasaki-chan.github.io/papermod-cover.png</url>
+      <link>https://hasaki-chan.github.io/papermod-cover.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language><atom:link href="https://hasaki-chan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language><atom:link href="https://hasaki-chan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

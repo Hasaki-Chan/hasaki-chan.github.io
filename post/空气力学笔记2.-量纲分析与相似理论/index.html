@@ -1,135 +1,471 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>空气力学笔记：2. 量纲分析与相似理论 | 小羽咲的笔记</title>
+<meta name="keywords" content="" />
+<meta name="description" content="如何保证按比例缩放后，系统的动力学性质不发生改变？答案是：保证无量纲量不变。
+目录：
+Hasaki酱：小羽咲的物理笔记：目录某物体在空气中的受力 由什么决定呢？一般说来，有如下的量：
+ 自由场中的速度  自由场中的密度  流体的黏度系数  物体的形状 （即是其诸特征尺寸） 流体的声速 （与压缩系数相关）  把合力 写成上述各量的函数：
+对于物理方程的一个基本要求就是方程两边量纲一致。我们知道，对于某两物理量相乘，其量纲要进行相加。因此可以把物理量的量纲看作是线性空间中的的矢量。对于K维空间中的N个矢量，总可以找到N-K个独立的线性组合，使其得到零矢量。于是任何一个可以得到零矢量的线性组合，总可以写成这N-K个独立的线性组合的线性组合。把这一结果应用到量纲分析中，就得到下述Buckingham定理：
+设有N个物理量 ，有K个独立的量纲，则对于一个公式
+总可以写成如下形式：
+其中 是诸无量纲量。
+合力R满足的方程可以写成：
+应用Buckingham定理可以将公式用无量纲量写成：
+其中 ， 为雷诺数， 。这是三个无量纲量。
+补充一点书上没有的内容。无量纲量的作用，无论如何强调都不过分。比如对于物体在空气中受力的公式，由上述关于无量纲量的讨论可以得到：
+我们发现，如果我们找全了所有对受力有影响的物理量，那么受力的公式一定可以写成 乘以一个诸无量纲量的函数 ，不可能有别的形式。
+在空气动力学研究中，经常要进行风洞试验。然而在做风洞试验的时候，总不能将模型做得跟实物一样大小，总是要进行比例的缩放。那么如何保证按比例缩放后，模型的空气力学性质与实物的一样呢？这并不是一个显然的问题。举个例子，设有一个船只可以在海上航行。假如将其尺寸等比例放大若干倍，而不减轻其材料的重量的话，则它可能就被其自重压垮了，更不用说在海上航行了。我们下面讨论这一问题。
+现在考虑两个不同的空气动力学系统。我们称它们是动力学相似的（dynamically similar），如果它们满足如下条件：
+ 它们的几何结构是相似的。 对于两个系统，其对应点上的物理量分布与自由场的比值是相等的。比如对于两个系统上相应的某点，其比值 对于两个系统都是一样的。 受力是一样的。  我们有如下定理：
+如果两个系统的诸无量纲量相等，则它们是动力学相似的。
+举个例子，对于下图的系统，如果我们假设粘滞系数和声速都是与温度的平方根成正比，那么不难发现，如果将图中圆柱的直径变为原来的四倍，而将流速变为原来的二倍，密度变为原来的1/4，温度变为原来的四倍，则新得到的系统与原来的系统仍然是动力学相似的。这就可以应用于风洞试验中。
+风洞试验示意图如下所示。
+还有一些应用的例子，暂时略去不表。">
+<meta name="author" content="hasaki">
+<link rel="canonical" href="https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B02.-%E9%87%8F%E7%BA%B2%E5%88%86%E6%9E%90%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.65aebb33e4f0ce3d1a39e4a35c11b91eb08b582489fca0f78f9227d90ac72a52.css" integrity="sha256-Za67M&#43;Twzj0aOeSjXBG5HrCLWCSJ/KD3j5In2QrHKlI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://hasaki-chan.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hasaki-chan.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hasaki-chan.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://hasaki-chan.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://hasaki-chan.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<meta property="og:title" content="空气力学笔记：2. 量纲分析与相似理论" />
+<meta property="og:description" content="如何保证按比例缩放后，系统的动力学性质不发生改变？答案是：保证无量纲量不变。
+目录：
+Hasaki酱：小羽咲的物理笔记：目录某物体在空气中的受力 由什么决定呢？一般说来，有如下的量：
+ 自由场中的速度  自由场中的密度  流体的黏度系数  物体的形状 （即是其诸特征尺寸） 流体的声速 （与压缩系数相关）  把合力 写成上述各量的函数：
+对于物理方程的一个基本要求就是方程两边量纲一致。我们知道，对于某两物理量相乘，其量纲要进行相加。因此可以把物理量的量纲看作是线性空间中的的矢量。对于K维空间中的N个矢量，总可以找到N-K个独立的线性组合，使其得到零矢量。于是任何一个可以得到零矢量的线性组合，总可以写成这N-K个独立的线性组合的线性组合。把这一结果应用到量纲分析中，就得到下述Buckingham定理：
+设有N个物理量 ，有K个独立的量纲，则对于一个公式
+总可以写成如下形式：
+其中 是诸无量纲量。
+合力R满足的方程可以写成：
+应用Buckingham定理可以将公式用无量纲量写成：
+其中 ， 为雷诺数， 。这是三个无量纲量。
+补充一点书上没有的内容。无量纲量的作用，无论如何强调都不过分。比如对于物体在空气中受力的公式，由上述关于无量纲量的讨论可以得到：
+我们发现，如果我们找全了所有对受力有影响的物理量，那么受力的公式一定可以写成 乘以一个诸无量纲量的函数 ，不可能有别的形式。
+在空气动力学研究中，经常要进行风洞试验。然而在做风洞试验的时候，总不能将模型做得跟实物一样大小，总是要进行比例的缩放。那么如何保证按比例缩放后，模型的空气力学性质与实物的一样呢？这并不是一个显然的问题。举个例子，设有一个船只可以在海上航行。假如将其尺寸等比例放大若干倍，而不减轻其材料的重量的话，则它可能就被其自重压垮了，更不用说在海上航行了。我们下面讨论这一问题。
+现在考虑两个不同的空气动力学系统。我们称它们是动力学相似的（dynamically similar），如果它们满足如下条件：
+ 它们的几何结构是相似的。 对于两个系统，其对应点上的物理量分布与自由场的比值是相等的。比如对于两个系统上相应的某点，其比值 对于两个系统都是一样的。 受力是一样的。  我们有如下定理：
+如果两个系统的诸无量纲量相等，则它们是动力学相似的。
+举个例子，对于下图的系统，如果我们假设粘滞系数和声速都是与温度的平方根成正比，那么不难发现，如果将图中圆柱的直径变为原来的四倍，而将流速变为原来的二倍，密度变为原来的1/4，温度变为原来的四倍，则新得到的系统与原来的系统仍然是动力学相似的。这就可以应用于风洞试验中。
+风洞试验示意图如下所示。
+还有一些应用的例子，暂时略去不表。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B02.-%E9%87%8F%E7%BA%B2%E5%88%86%E6%9E%90%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/" /><meta property="og:image" content="https://hasaki-chan.github.io/papermod-cover.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-07-05T04:01:08&#43;00:00" />
+<meta property="article:modified_time" content="2020-07-05T04:01:08&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hasaki-chan.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="空气力学笔记：2. 量纲分析与相似理论"/>
+<meta name="twitter:description" content="如何保证按比例缩放后，系统的动力学性质不发生改变？答案是：保证无量纲量不变。
+目录：
+Hasaki酱：小羽咲的物理笔记：目录某物体在空气中的受力 由什么决定呢？一般说来，有如下的量：
+ 自由场中的速度  自由场中的密度  流体的黏度系数  物体的形状 （即是其诸特征尺寸） 流体的声速 （与压缩系数相关）  把合力 写成上述各量的函数：
+对于物理方程的一个基本要求就是方程两边量纲一致。我们知道，对于某两物理量相乘，其量纲要进行相加。因此可以把物理量的量纲看作是线性空间中的的矢量。对于K维空间中的N个矢量，总可以找到N-K个独立的线性组合，使其得到零矢量。于是任何一个可以得到零矢量的线性组合，总可以写成这N-K个独立的线性组合的线性组合。把这一结果应用到量纲分析中，就得到下述Buckingham定理：
+设有N个物理量 ，有K个独立的量纲，则对于一个公式
+总可以写成如下形式：
+其中 是诸无量纲量。
+合力R满足的方程可以写成：
+应用Buckingham定理可以将公式用无量纲量写成：
+其中 ， 为雷诺数， 。这是三个无量纲量。
+补充一点书上没有的内容。无量纲量的作用，无论如何强调都不过分。比如对于物体在空气中受力的公式，由上述关于无量纲量的讨论可以得到：
+我们发现，如果我们找全了所有对受力有影响的物理量，那么受力的公式一定可以写成 乘以一个诸无量纲量的函数 ，不可能有别的形式。
+在空气动力学研究中，经常要进行风洞试验。然而在做风洞试验的时候，总不能将模型做得跟实物一样大小，总是要进行比例的缩放。那么如何保证按比例缩放后，模型的空气力学性质与实物的一样呢？这并不是一个显然的问题。举个例子，设有一个船只可以在海上航行。假如将其尺寸等比例放大若干倍，而不减轻其材料的重量的话，则它可能就被其自重压垮了，更不用说在海上航行了。我们下面讨论这一问题。
+现在考虑两个不同的空气动力学系统。我们称它们是动力学相似的（dynamically similar），如果它们满足如下条件：
+ 它们的几何结构是相似的。 对于两个系统，其对应点上的物理量分布与自由场的比值是相等的。比如对于两个系统上相应的某点，其比值 对于两个系统都是一样的。 受力是一样的。  我们有如下定理：
+如果两个系统的诸无量纲量相等，则它们是动力学相似的。
+举个例子，对于下图的系统，如果我们假设粘滞系数和声速都是与温度的平方根成正比，那么不难发现，如果将图中圆柱的直径变为原来的四倍，而将流速变为原来的二倍，密度变为原来的1/4，温度变为原来的四倍，则新得到的系统与原来的系统仍然是动力学相似的。这就可以应用于风洞试验中。
+风洞试验示意图如下所示。
+还有一些应用的例子，暂时略去不表。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://hasaki-chan.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "空气力学笔记：2. 量纲分析与相似理论",
+      "item": "https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B02.-%E9%87%8F%E7%BA%B2%E5%88%86%E6%9E%90%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "空气力学笔记：2. 量纲分析与相似理论",
+  "name": "空气力学笔记：2. 量纲分析与相似理论",
+  "description": "如何保证按比例缩放后，系统的动力学性质不发生改变？答案是：保证无量纲量不变。\n目录：\nHasaki酱：小羽咲的物理笔记：目录某物体在空气中的受力 由什么决定呢？一般说来，有如下的量：\n 自由场中的速度  自由场中的密度  流体的黏度系数  物体的形状 （即是其诸特征尺寸） 流体的声速 （与压缩系数相关）  把合力 写成上述各量的函数：\n对于物理方程的一个基本要求就是方程两边量纲一致。我们知道，对于某两物理量相乘，其量纲要进行相加。因此可以把物理量的量纲看作是线性空间中的的矢量。对于K维空间中的N个矢量，总可以找到N-K个独立的线性组合，使其得到零矢量。于是任何一个可以得到零矢量的线性组合，总可以写成这N-K个独立的线性组合的线性组合。把这一结果应用到量纲分析中，就得到下述Buckingham定理：\n设有N个物理量 ，有K个独立的量纲，则对于一个公式\n总可以写成如下形式：\n其中 是诸无量纲量。\n合力R满足的方程可以写成：\n应用Buckingham定理可以将公式用无量纲量写成：\n其中 ， 为雷诺数， 。这是三个无量纲量。\n补充一点书上没有的内容。无量纲量的作用，无论如何强调都不过分。比如对于物体在空气中受力的公式，由上述关于无量纲量的讨论可以得到：\n我们发现，如果我们找全了所有对受力有影响的物理量，那么受力的公式一定可以写成 乘以一个诸无量纲量的函数 ，不可能有别的形式。\n在空气动力学研究中，经常要进行风洞试验。然而在做风洞试验的时候，总不能将模型做得跟实物一样大小，总是要进行比例的缩放。那么如何保证按比例缩放后，模型的空气力学性质与实物的一样呢？这并不是一个显然的问题。举个例子，设有一个船只可以在海上航行。假如将其尺寸等比例放大若干倍，而不减轻其材料的重量的话，则它可能就被其自重压垮了，更不用说在海上航行了。我们下面讨论这一问题。\n现在考虑两个不同的空气动力学系统。我们称它们是动力学相似的（dynamically similar），如果它们满足如下条件：\n 它们的几何结构是相似的。 对于两个系统，其对应点上的物理量分布与自由场的比值是相等的。比如对于两个系统上相应的某点，其比值 对于两个系统都是一样的。 受力是一样的。  我们有如下定理：\n如果两个系统的诸无量纲量相等，则它们是动力学相似的。\n举个例子，对于下图的系统，如果我们假设粘滞系数和声速都是与温度的平方根成正比，那么不难发现，如果将图中圆柱的直径变为原来的四倍，而将流速变为原来的二倍，密度变为原来的1/4，温度变为原来的四倍，则新得到的系统与原来的系统仍然是动力学相似的。这就可以应用于风洞试验中。\n风洞试验示意图如下所示。\n还有一些应用的例子，暂时略去不表。",
+  "keywords": [
     
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="dark">
-    <title> 空气力学笔记：2. 量纲分析与相似理论 | 小羽咲的笔记</title>
-    
-    
-    
-    <link rel="stylesheet" href="/sass/main.min.4e90cee935c47394b47f9cb7ffe8e3ffab18b88d82fea203918cc3f92eec5eb2.css">
+  ],
+  "articleBody": "如何保证按比例缩放后，系统的动力学性质不发生改变？答案是：保证无量纲量不变。\n目录：\nHasaki酱：小羽咲的物理笔记：目录某物体在空气中的受力 由什么决定呢？一般说来，有如下的量：\n 自由场中的速度  自由场中的密度  流体的黏度系数  物体的形状 （即是其诸特征尺寸） 流体的声速 （与压缩系数相关）  把合力 写成上述各量的函数：\n对于物理方程的一个基本要求就是方程两边量纲一致。我们知道，对于某两物理量相乘，其量纲要进行相加。因此可以把物理量的量纲看作是线性空间中的的矢量。对于K维空间中的N个矢量，总可以找到N-K个独立的线性组合，使其得到零矢量。于是任何一个可以得到零矢量的线性组合，总可以写成这N-K个独立的线性组合的线性组合。把这一结果应用到量纲分析中，就得到下述Buckingham定理：\n设有N个物理量 ，有K个独立的量纲，则对于一个公式\n总可以写成如下形式：\n其中 是诸无量纲量。\n合力R满足的方程可以写成：\n应用Buckingham定理可以将公式用无量纲量写成：\n其中 ， 为雷诺数， 。这是三个无量纲量。\n补充一点书上没有的内容。无量纲量的作用，无论如何强调都不过分。比如对于物体在空气中受力的公式，由上述关于无量纲量的讨论可以得到：\n我们发现，如果我们找全了所有对受力有影响的物理量，那么受力的公式一定可以写成 乘以一个诸无量纲量的函数 ，不可能有别的形式。\n在空气动力学研究中，经常要进行风洞试验。然而在做风洞试验的时候，总不能将模型做得跟实物一样大小，总是要进行比例的缩放。那么如何保证按比例缩放后，模型的空气力学性质与实物的一样呢？这并不是一个显然的问题。举个例子，设有一个船只可以在海上航行。假如将其尺寸等比例放大若干倍，而不减轻其材料的重量的话，则它可能就被其自重压垮了，更不用说在海上航行了。我们下面讨论这一问题。\n现在考虑两个不同的空气动力学系统。我们称它们是动力学相似的（dynamically similar），如果它们满足如下条件：\n 它们的几何结构是相似的。 对于两个系统，其对应点上的物理量分布与自由场的比值是相等的。比如对于两个系统上相应的某点，其比值 对于两个系统都是一样的。 受力是一样的。  我们有如下定理：\n如果两个系统的诸无量纲量相等，则它们是动力学相似的。\n举个例子，对于下图的系统，如果我们假设粘滞系数和声速都是与温度的平方根成正比，那么不难发现，如果将图中圆柱的直径变为原来的四倍，而将流速变为原来的二倍，密度变为原来的1/4，温度变为原来的四倍，则新得到的系统与原来的系统仍然是动力学相似的。这就可以应用于风洞试验中。\n风洞试验示意图如下所示。\n还有一些应用的例子，暂时略去不表。\n",
+  "wordCount" : "41",
+  "inLanguage": "zh",
+  "datePublished": "2020-07-05T04:01:08Z",
+  "dateModified": "2020-07-05T04:01:08Z",
+  "author":{
+    "@type": "Person",
+    "name": "hasaki"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B02.-%E9%87%8F%E7%BA%B2%E5%88%86%E6%9E%90%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小羽咲的笔记",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hasaki-chan.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-    <body class="dark">
-        <nav class="navbar">
-    <div class="container">
-        <div class="flex">
-            <div>
-                <a class="brand" href="/">
-                    
-                    小羽咲的笔记
-                    </a>
-            </div>
-            <div class="flex">
-                
-                <a href="/articles/">文章</a>
-                
-                <button id="dark-mode-button"></button>
-            </div>
-            </div>
-    </div>
-</nav>
-        <main>
-            
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<div class="container">
-    <article>
-        <header class="article-header">
-            <div class="thumb">
-                <div>
-                    <h1>空气力学笔记：2. 量纲分析与相似理论</h1>
-                    <div class="post-meta">
-                        <div>
-                            By hasaki on <time>July 05, 2020</time>
-                        </div>
-                        <div class="tags">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </article>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-    <div class="article-post">
-    <p>如何保证按比例缩放后，系统的动力学性质不发生改变？答案是：保证<strong>无量纲量</strong>不变。</p>
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://hasaki-chan.github.io" accesskey="h" title="小羽咲的笔记 (Alt + H)">小羽咲的笔记</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://hasaki-chan.github.io/archives" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://hasaki-chan.github.io">Home</a>&nbsp;»&nbsp;<a href="https://hasaki-chan.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      空气力学笔记：2. 量纲分析与相似理论
+    </h1>
+    <div class="post-meta">July 5, 2020&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;hasaki
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">目录</div>
+        </summary>
+        <div class="inner">
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>如何保证按比例缩放后，系统的动力学性质不发生改变？答案是：保证<strong>无量纲量</strong>不变。</p>
 <p>目录：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/152320953">Hasaki酱：小羽咲的物理笔记：目录</a>某物体在空气中的受力 <img src="https://www.zhihu.com/equation?tex=R" alt="R"> 由什么决定呢？一般说来，有如下的量：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/152320953">Hasaki酱：小羽咲的物理笔记：目录</a>某物体在空气中的受力 <img loading="lazy" src="https://www.zhihu.com/equation?tex=R" alt="R"  />
+ 由什么决定呢？一般说来，有如下的量：</p>
 <ul>
-<li>自由场中的速度 <img src="https://www.zhihu.com/equation?tex=V_%5Cinfty" alt="V_\infty"></li>
-<li>自由场中的密度 <img src="https://www.zhihu.com/equation?tex=%5Crho_%5Cinfty" alt="\rho_\infty"></li>
-<li>流体的黏度系数 <img src="https://www.zhihu.com/equation?tex=%5Cmu_%5Cinfty" alt="\mu_\infty"></li>
-<li>物体的形状 <img src="https://www.zhihu.com/equation?tex=c" alt="c"> （即是其诸特征尺寸）</li>
-<li>流体的声速 <img src="https://www.zhihu.com/equation?tex=a_%5Cinfty+" alt="a_\infty "> （与压缩系数相关）</li>
+<li>自由场中的速度 <img loading="lazy" src="https://www.zhihu.com/equation?tex=V_%5Cinfty" alt="V_\infty"  />
+</li>
+<li>自由场中的密度 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Crho_%5Cinfty" alt="\rho_\infty"  />
+</li>
+<li>流体的黏度系数 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmu_%5Cinfty" alt="\mu_\infty"  />
+</li>
+<li>物体的形状 <img loading="lazy" src="https://www.zhihu.com/equation?tex=c" alt="c"  />
+ （即是其诸特征尺寸）</li>
+<li>流体的声速 <img loading="lazy" src="https://www.zhihu.com/equation?tex=a_%5Cinfty&#43;" alt="a_\infty "  />
+ （与压缩系数相关）</li>
 </ul>
-<p>把合力 <img src="https://www.zhihu.com/equation?tex=R" alt="R">写成上述各量的函数：</p>
-<p><img src="https://www.zhihu.com/equation?tex=R%3Df%28%5Crho_%5Cinfty%2C+V_%5Cinfty%2C+c%2C%5Cmu_%5Cinfty%2C+a_%5Cinfty%29" alt="R=f(\rho_\infty, V_\infty, c,\mu_\infty, a_\infty)"></p>
+<p>把合力 <img loading="lazy" src="https://www.zhihu.com/equation?tex=R" alt="R"  />
+写成上述各量的函数：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=R%3Df%28%5Crho_%5Cinfty%2C&#43;V_%5Cinfty%2C&#43;c%2C%5Cmu_%5Cinfty%2C&#43;a_%5Cinfty%29" alt="R=f(\rho_\infty, V_\infty, c,\mu_\infty, a_\infty)"  />
+</p>
 <p>对于物理方程的一个基本要求就是方程两边量纲一致。我们知道，对于某两物理量相乘，其量纲要进行相加。因此可以把物理量的量纲看作是线性空间中的的矢量。对于K维空间中的N个矢量，总可以找到N-K个独立的线性组合，使其得到零矢量。于是任何一个可以得到零矢量的线性组合，总可以写成这N-K个独立的线性组合的线性组合。把这一结果应用到量纲分析中，就得到下述<strong>Buckingham定理</strong>：</p>
-<p>设有N个物理量 <img src="https://www.zhihu.com/equation?tex=P_N" alt="P_N"> ，有K个独立的量纲，则对于一个公式</p>
-<p><img src="https://www.zhihu.com/equation?tex=f%28P_1%2C+P_2%2C+...%2C+P_N%29%3D0" alt="f(P_1, P_2, &hellip;, P_N)=0"></p>
+<p>设有N个物理量 <img loading="lazy" src="https://www.zhihu.com/equation?tex=P_N" alt="P_N"  />
+ ，有K个独立的量纲，则对于一个公式</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=f%28P_1%2C&#43;P_2%2C&#43;...%2C&#43;P_N%29%3D0" alt="f(P_1, P_2, &amp;hellip;, P_N)=0"  />
+</p>
 <p>总可以写成如下形式：</p>
-<p><img src="https://www.zhihu.com/equation?tex=f%28%5CPi_1%2C+%5CPi_2%2C+...%2C+%5CPi_%7BN-K%7D%29%3D0" alt="f(\Pi_1, \Pi_2, &hellip;, \Pi_{N-K})=0"></p>
-<p>其中 <img src="https://www.zhihu.com/equation?tex=%5CPi_i" alt="\Pi_i"> 是诸无量纲量。</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=f%28%5CPi_1%2C&#43;%5CPi_2%2C&#43;...%2C&#43;%5CPi_%7BN-K%7D%29%3D0" alt="f(\Pi_1, \Pi_2, &amp;hellip;, \Pi_{N-K})=0"  />
+</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5CPi_i" alt="\Pi_i"  />
+ 是诸无量纲量。</p>
 <p>合力R满足的方程可以写成：</p>
-<p><img src="https://www.zhihu.com/equation?tex=g%28R%2C%5Crho_%5Cinfty%2C+V_%5Cinfty%2C+c%2C%5Cmu_%5Cinfty%2C+a_%5Cinfty%29%3D0" alt="g(R,\rho_\infty, V_\infty, c,\mu_\infty, a_\infty)=0"></p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=g%28R%2C%5Crho_%5Cinfty%2C&#43;V_%5Cinfty%2C&#43;c%2C%5Cmu_%5Cinfty%2C&#43;a_%5Cinfty%29%3D0" alt="g(R,\rho_\infty, V_\infty, c,\mu_\infty, a_\infty)=0"  />
+</p>
 <p>应用Buckingham定理可以将公式用无量纲量写成：</p>
-<p><img src="https://www.zhihu.com/equation?tex=f%28C_R%2C+Re%2C+M_%5Cinfty%29%3D0" alt="f(C_R, Re, M_\infty)=0"></p>
-<p>其中 <img src="https://www.zhihu.com/equation?tex=C_R%3D%5Cfrac+R%7B%5Cfrac12%5Crho_%5Cinfty+V_%5Cinfty%5E2c%5E2%7D" alt="C_R=\frac R{\frac12\rho_\infty V_\infty^2c^2}"> ， <img src="https://www.zhihu.com/equation?tex=Re%3D%5Cfrac%7B%5Crho_%5Cinfty+V_%5Cinfty+c%7D%7B%5Cmu_%5Cinfty%7D" alt="Re=\frac{\rho_\infty V_\infty c}{\mu_\infty}">为雷诺数， <img src="https://www.zhihu.com/equation?tex=M_%5Cinfty%3D%5Cfrac%7BV_%5Cinfty%7D%7Ba_%5Cinfty%7D" alt="M_\infty=\frac{V_\infty}{a_\infty}"> 。这是三个无量纲量。</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=f%28C_R%2C&#43;Re%2C&#43;M_%5Cinfty%29%3D0" alt="f(C_R, Re, M_\infty)=0"  />
+</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=C_R%3D%5Cfrac&#43;R%7B%5Cfrac12%5Crho_%5Cinfty&#43;V_%5Cinfty%5E2c%5E2%7D" alt="C_R=\frac R{\frac12\rho_\infty V_\infty^2c^2}"  />
+ ， <img loading="lazy" src="https://www.zhihu.com/equation?tex=Re%3D%5Cfrac%7B%5Crho_%5Cinfty&#43;V_%5Cinfty&#43;c%7D%7B%5Cmu_%5Cinfty%7D" alt="Re=\frac{\rho_\infty V_\infty c}{\mu_\infty}"  />
+为雷诺数， <img loading="lazy" src="https://www.zhihu.com/equation?tex=M_%5Cinfty%3D%5Cfrac%7BV_%5Cinfty%7D%7Ba_%5Cinfty%7D" alt="M_\infty=\frac{V_\infty}{a_\infty}"  />
+ 。这是三个无量纲量。</p>
 <p>补充一点书上没有的内容。无量纲量的作用，无论如何强调都不过分。比如对于物体在空气中受力的公式，由上述关于无量纲量的讨论可以得到：</p>
-<p><img src="https://www.zhihu.com/equation?tex=R%3D%5Crho_%5Cinfty+V_%5Cinfty%5E2c%5E2+f%28Re%2C+M_%5Cinfty%29" alt="R=\rho_\infty V_\infty^2c^2 f(Re, M_\infty)"></p>
-<p>我们发现，如果我们<strong>找全</strong>了所有对受力有影响的物理量，那么受力的公式<strong>一定</strong>可以写成 <img src="https://www.zhihu.com/equation?tex=%5Crho_%5Cinfty+V_%5Cinfty%5E2c%5E2" alt="\rho_\infty V_\infty^2c^2"> 乘以一个诸无量纲量的函数 <img src="https://www.zhihu.com/equation?tex=f%28Re%2C+M_%5Cinfty%29" alt="f(Re, M_\infty)"> ，<strong>不可能</strong>有别的形式。</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=R%3D%5Crho_%5Cinfty&#43;V_%5Cinfty%5E2c%5E2&#43;f%28Re%2C&#43;M_%5Cinfty%29" alt="R=\rho_\infty V_\infty^2c^2 f(Re, M_\infty)"  />
+</p>
+<p>我们发现，如果我们<strong>找全</strong>了所有对受力有影响的物理量，那么受力的公式<strong>一定</strong>可以写成 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Crho_%5Cinfty&#43;V_%5Cinfty%5E2c%5E2" alt="\rho_\infty V_\infty^2c^2"  />
+ 乘以一个诸无量纲量的函数 <img loading="lazy" src="https://www.zhihu.com/equation?tex=f%28Re%2C&#43;M_%5Cinfty%29" alt="f(Re, M_\infty)"  />
+ ，<strong>不可能</strong>有别的形式。</p>
 <p>在空气动力学研究中，经常要进行风洞试验。然而在做风洞试验的时候，总不能将模型做得跟实物一样大小，总是要进行比例的缩放。那么如何保证按比例缩放后，模型的空气力学性质与实物的一样呢？这并不是一个显然的问题。举个例子，设有一个船只可以在海上航行。假如将其尺寸等比例放大若干倍，而不减轻其材料的重量的话，则它可能就被其自重压垮了，更不用说在海上航行了。我们下面讨论这一问题。</p>
 <p>现在考虑两个不同的空气动力学系统。我们称它们是动力学相似的（dynamically similar），如果它们满足如下条件：</p>
 <ul>
 <li>它们的几何结构是相似的。</li>
-<li>对于两个系统，其对应点上的物理量分布与自由场的比值是相等的。比如对于两个系统上相应的某点，其比值 <img src="https://www.zhihu.com/equation?tex=V%2FV_%5Cinfty" alt="V/V_\infty"> 对于两个系统都是一样的。</li>
+<li>对于两个系统，其对应点上的物理量分布与自由场的比值是相等的。比如对于两个系统上相应的某点，其比值 <img loading="lazy" src="https://www.zhihu.com/equation?tex=V%2FV_%5Cinfty" alt="V/V_\infty"  />
+ 对于两个系统都是一样的。</li>
 <li>受力是一样的。</li>
 </ul>
 <p>我们有如下定理：</p>
 <p>如果两个系统的诸<strong>无量纲量</strong>相等，则它们是动力学相似的。</p>
 <p>举个例子，对于下图的系统，如果我们假设粘滞系数和声速都是与温度的平方根成正比，那么不难发现，如果将图中圆柱的直径变为原来的四倍，而将流速变为原来的二倍，密度变为原来的1/4，温度变为原来的四倍，则新得到的系统与原来的系统仍然是动力学相似的。这就可以应用于风洞试验中。</p>
-<p><img src="https://pic2.zhimg.com/v2-5da845977c9328ac43c5007f276c0305_b.jpg" alt="">风洞试验示意图如下所示。</p>
-<p><img src="https://pic1.zhimg.com/v2-ba69fa7eb826b67621b849dafd1d58c8_b.jpg" alt=""><img src="https://pic3.zhimg.com/v2-31ec1635f32771bfc552d97421b11372_b.jpg" alt="">还有一些应用的例子，暂时略去不表。</p>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-5da845977c9328ac43c5007f276c0305_b.jpg" alt=""  />
+风洞试验示意图如下所示。</p>
+<p><img loading="lazy" src="https://pic1.zhimg.com/v2-ba69fa7eb826b67621b849dafd1d58c8_b.jpg" alt=""  />
+<img loading="lazy" src="https://pic3.zhimg.com/v2-31ec1635f32771bfc552d97421b11372_b.jpg" alt=""  />
+还有一些应用的例子，暂时略去不表。</p>
 
-    </div>
 </div>
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="prev" href="https://hasaki-chan.github.io/post/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0%E5%93%B2%E5%AD%A6%E5%AF%BC%E8%AE%BA1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%B2%E5%AD%A6/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>哲学笔记：哲学导论(1) 什么是哲学</span>
+  </a>
+  <a class="next" href="https://hasaki-chan.github.io/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B01.%E6%9F%90%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>空气力学笔记：1.某些常用术语</span>
+  </a>
+</nav>
 
-<div class="container">
-    
-    <nav class="flex container suggested">
-        
-        <a rel="prev" href="/post/%E7%A9%BA%E6%B0%94%E5%8A%9B%E5%AD%A6%E7%AC%94%E8%AE%B01.%E6%9F%90%E4%BA%9B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/" title="Previous post (older)">
-            <span>Previous</span>
-            空气力学笔记：1.某些常用术语
-            </a>
-        
-        
-        
-        <a rel="next" href="/post/%E5%93%B2%E5%AD%A6%E7%AC%94%E8%AE%B0%E5%93%B2%E5%AD%A6%E5%AF%BC%E8%AE%BA1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%B2%E5%AD%A6/" title="Next post (newer)">
-            <span>Next</span>
-            哲学笔记：哲学导论(1) 什么是哲学
-            </a> 
-        
-    </nav>
-    
-</div>
-</main>
-
-
-        </main>
-        <footer class="footer flex">
-    <section class="container">
-        <nav class="footer-links">
-            
-            <a href="/index.xml">RSS</a>
-            
-        </nav>
-    </section>
-    
-    <script async src="/js/features.min.c5d8f3350f5a652f526b982306299353824299adb7a3bd261ecffacc47087f66.js"></script>
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://hasaki-chan.github.io">小羽咲的笔记</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
 </footer>
-    </body>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
 </html>
