@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>理论物理导论(3) 路径积分 | 小羽咲的笔记</title>
+<meta name="keywords" content="" />
+<meta name="description" content="路径积分 在经典力学中，粒子运动的路径是使得作用量泛函取极值的那条路径。但是在量子力学中，所有可能的路径对于粒子的运动都是有贡献的[1]。
+设粒子从 到 的几率振幅为 ，则每条路径 对于几率振幅的贡献正比于一个与路径经典作用量 成正比的相角 。最终总的几率振幅就是对所有可能的路径求和：
+形式地将其写成积分形式，即为：
+(1)式被称为路径积分。粒子从到 的几率 就是几率振幅模的平方：
+类似地，对于多粒子系统来说，几率振幅为所有粒子的所有可能路径之和：
+经典极限 在能量较高的时候（即 相对于式中的其它项很小的时候），相角 的取值很大，路径积分中远离极值的路径震荡会非常剧烈。在这种情况下，各个不同的路径对几率振幅的贡献将相互抵消，只剩下 的路径给出不为零的贡献。
+这就是说，在能量较高的时候，粒子的运动将只由作用量泛函取极值的路径所决定，这样就从量子力学的情况退化到了经典的情况。
+积分算符 为了对路径积分进行计算，可以采用如下方法：取一系列间隔极短的时刻 ，在每一个时刻上轨迹都处在一个特定的位置 上。对每一个 都进行积分，并令时间间隔 趋于零。这样路径在任意时刻可以取遍任意一个位置，这个对不同时刻坐标的无穷维积分就是对所有路径的求和[2]：
+路径积分的示意图如下所示。
+![](data:image/svg&#43;xml;utf8,)从上述的定义中可以看出，对于任意的 来说，几率振幅之间满足如下关系：
+阿哈罗诺夫-波姆效应 假设有一个导体，其内部有磁场，而导体外的磁场为零，如下图所示。乍看起来，导体外部没有磁场，因此在导体外电子的运动似乎并不会受到导体内磁场的影响，但实际上并非如此。
+![](data:image/svg&#43;xml;utf8,)为了看出导体内磁场对导体外电子的影响，可以在空间中选取两个点，并比较有无磁场情况下路径积分的差别。根据电磁学知识知道，在有磁场的情况下，系统的拉氏量改变为
+因此作用量的改变为
+对于磁场来说，如果两条路径之间不包含磁通量，则上述积分是不依赖于路径的选取的。因此，这一修正项在不同的路径中体现为一个相同的相位因子。但是对于导体上部的路径和导体下部的两条路径来说，这个相位因子是不同的，其差值为：
+这样一个相位差值将使得电子在导体后方发生干涉。该效应称为阿哈罗诺夫-波姆效应，它是路径积分原理的一个漂亮的体现。
+波函数 在大多数的情况下，我们只关心粒子在某点处的总几率振幅 ，它被称为粒子的波函数。粒子出现在该处的几率可以表示为波函数模的平方：
+不同时刻、不同位置的波函数之间将满足如下关系：
+在这里可以看到， 实际上就是 的传播子（格林函数）。如果 和 的差很小，则对时间作泰勒展开，并代入作用量的具体形式
+略去高阶小量之后，可以证明路径积分(1)式等价于：
+(2)式被称为薛定谔方程。特别需要注意的是，粒子出现的概率在全空间中积分应该为一，这导致了波函数的归一化条件[3]：
+定态问题 如果势中不显含时间，则可以令 ，此时 满足：
+这被称为定态薛定谔方程， 即为系统的能量。以下列举几个重要的例子。
+ 对于一维无限深势阱来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+对于一维谐振子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+其中 ， 。
+以上两个例子说明量子力学中的束缚态的能量只能取一些分立的值，而不是像经典力学中一样可以取一些连续的值。
+对于自由粒子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+可以看到在散射态中，系统的能级从分立的指标 变为了连续的指标 ，系统的能量可以取连续值，并且波函数的归一化条件也不再成立。">
+<meta name="author" content="hasaki">
+<link rel="canonical" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA3-%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.65aebb33e4f0ce3d1a39e4a35c11b91eb08b582489fca0f78f9227d90ac72a52.css" integrity="sha256-Za67M&#43;Twzj0aOeSjXBG5HrCLWCSJ/KD3j5In2QrHKlI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://hasaki-chan.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hasaki-chan.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hasaki-chan.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://hasaki-chan.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://hasaki-chan.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<meta property="og:title" content="理论物理导论(3) 路径积分" />
+<meta property="og:description" content="路径积分 在经典力学中，粒子运动的路径是使得作用量泛函取极值的那条路径。但是在量子力学中，所有可能的路径对于粒子的运动都是有贡献的[1]。
+设粒子从 到 的几率振幅为 ，则每条路径 对于几率振幅的贡献正比于一个与路径经典作用量 成正比的相角 。最终总的几率振幅就是对所有可能的路径求和：
+形式地将其写成积分形式，即为：
+(1)式被称为路径积分。粒子从到 的几率 就是几率振幅模的平方：
+类似地，对于多粒子系统来说，几率振幅为所有粒子的所有可能路径之和：
+经典极限 在能量较高的时候（即 相对于式中的其它项很小的时候），相角 的取值很大，路径积分中远离极值的路径震荡会非常剧烈。在这种情况下，各个不同的路径对几率振幅的贡献将相互抵消，只剩下 的路径给出不为零的贡献。
+这就是说，在能量较高的时候，粒子的运动将只由作用量泛函取极值的路径所决定，这样就从量子力学的情况退化到了经典的情况。
+积分算符 为了对路径积分进行计算，可以采用如下方法：取一系列间隔极短的时刻 ，在每一个时刻上轨迹都处在一个特定的位置 上。对每一个 都进行积分，并令时间间隔 趋于零。这样路径在任意时刻可以取遍任意一个位置，这个对不同时刻坐标的无穷维积分就是对所有路径的求和[2]：
+路径积分的示意图如下所示。
+![](data:image/svg&#43;xml;utf8,)从上述的定义中可以看出，对于任意的 来说，几率振幅之间满足如下关系：
+阿哈罗诺夫-波姆效应 假设有一个导体，其内部有磁场，而导体外的磁场为零，如下图所示。乍看起来，导体外部没有磁场，因此在导体外电子的运动似乎并不会受到导体内磁场的影响，但实际上并非如此。
+![](data:image/svg&#43;xml;utf8,)为了看出导体内磁场对导体外电子的影响，可以在空间中选取两个点，并比较有无磁场情况下路径积分的差别。根据电磁学知识知道，在有磁场的情况下，系统的拉氏量改变为
+因此作用量的改变为
+对于磁场来说，如果两条路径之间不包含磁通量，则上述积分是不依赖于路径的选取的。因此，这一修正项在不同的路径中体现为一个相同的相位因子。但是对于导体上部的路径和导体下部的两条路径来说，这个相位因子是不同的，其差值为：
+这样一个相位差值将使得电子在导体后方发生干涉。该效应称为阿哈罗诺夫-波姆效应，它是路径积分原理的一个漂亮的体现。
+波函数 在大多数的情况下，我们只关心粒子在某点处的总几率振幅 ，它被称为粒子的波函数。粒子出现在该处的几率可以表示为波函数模的平方：
+不同时刻、不同位置的波函数之间将满足如下关系：
+在这里可以看到， 实际上就是 的传播子（格林函数）。如果 和 的差很小，则对时间作泰勒展开，并代入作用量的具体形式
+略去高阶小量之后，可以证明路径积分(1)式等价于：
+(2)式被称为薛定谔方程。特别需要注意的是，粒子出现的概率在全空间中积分应该为一，这导致了波函数的归一化条件[3]：
+定态问题 如果势中不显含时间，则可以令 ，此时 满足：
+这被称为定态薛定谔方程， 即为系统的能量。以下列举几个重要的例子。
+ 对于一维无限深势阱来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+对于一维谐振子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+其中 ， 。
+以上两个例子说明量子力学中的束缚态的能量只能取一些分立的值，而不是像经典力学中一样可以取一些连续的值。
+对于自由粒子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+可以看到在散射态中，系统的能级从分立的指标 变为了连续的指标 ，系统的能量可以取连续值，并且波函数的归一化条件也不再成立。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA3-%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/" /><meta property="og:image" content="https://hasaki-chan.github.io/papermod-cover.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-16T00:39:45&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-16T00:39:45&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hasaki-chan.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="理论物理导论(3) 路径积分"/>
+<meta name="twitter:description" content="路径积分 在经典力学中，粒子运动的路径是使得作用量泛函取极值的那条路径。但是在量子力学中，所有可能的路径对于粒子的运动都是有贡献的[1]。
+设粒子从 到 的几率振幅为 ，则每条路径 对于几率振幅的贡献正比于一个与路径经典作用量 成正比的相角 。最终总的几率振幅就是对所有可能的路径求和：
+形式地将其写成积分形式，即为：
+(1)式被称为路径积分。粒子从到 的几率 就是几率振幅模的平方：
+类似地，对于多粒子系统来说，几率振幅为所有粒子的所有可能路径之和：
+经典极限 在能量较高的时候（即 相对于式中的其它项很小的时候），相角 的取值很大，路径积分中远离极值的路径震荡会非常剧烈。在这种情况下，各个不同的路径对几率振幅的贡献将相互抵消，只剩下 的路径给出不为零的贡献。
+这就是说，在能量较高的时候，粒子的运动将只由作用量泛函取极值的路径所决定，这样就从量子力学的情况退化到了经典的情况。
+积分算符 为了对路径积分进行计算，可以采用如下方法：取一系列间隔极短的时刻 ，在每一个时刻上轨迹都处在一个特定的位置 上。对每一个 都进行积分，并令时间间隔 趋于零。这样路径在任意时刻可以取遍任意一个位置，这个对不同时刻坐标的无穷维积分就是对所有路径的求和[2]：
+路径积分的示意图如下所示。
+![](data:image/svg&#43;xml;utf8,)从上述的定义中可以看出，对于任意的 来说，几率振幅之间满足如下关系：
+阿哈罗诺夫-波姆效应 假设有一个导体，其内部有磁场，而导体外的磁场为零，如下图所示。乍看起来，导体外部没有磁场，因此在导体外电子的运动似乎并不会受到导体内磁场的影响，但实际上并非如此。
+![](data:image/svg&#43;xml;utf8,)为了看出导体内磁场对导体外电子的影响，可以在空间中选取两个点，并比较有无磁场情况下路径积分的差别。根据电磁学知识知道，在有磁场的情况下，系统的拉氏量改变为
+因此作用量的改变为
+对于磁场来说，如果两条路径之间不包含磁通量，则上述积分是不依赖于路径的选取的。因此，这一修正项在不同的路径中体现为一个相同的相位因子。但是对于导体上部的路径和导体下部的两条路径来说，这个相位因子是不同的，其差值为：
+这样一个相位差值将使得电子在导体后方发生干涉。该效应称为阿哈罗诺夫-波姆效应，它是路径积分原理的一个漂亮的体现。
+波函数 在大多数的情况下，我们只关心粒子在某点处的总几率振幅 ，它被称为粒子的波函数。粒子出现在该处的几率可以表示为波函数模的平方：
+不同时刻、不同位置的波函数之间将满足如下关系：
+在这里可以看到， 实际上就是 的传播子（格林函数）。如果 和 的差很小，则对时间作泰勒展开，并代入作用量的具体形式
+略去高阶小量之后，可以证明路径积分(1)式等价于：
+(2)式被称为薛定谔方程。特别需要注意的是，粒子出现的概率在全空间中积分应该为一，这导致了波函数的归一化条件[3]：
+定态问题 如果势中不显含时间，则可以令 ，此时 满足：
+这被称为定态薛定谔方程， 即为系统的能量。以下列举几个重要的例子。
+ 对于一维无限深势阱来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+对于一维谐振子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+其中 ， 。
+以上两个例子说明量子力学中的束缚态的能量只能取一些分立的值，而不是像经典力学中一样可以取一些连续的值。
+对于自由粒子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为
+可以看到在散射态中，系统的能级从分立的指标 变为了连续的指标 ，系统的能量可以取连续值，并且波函数的归一化条件也不再成立。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://hasaki-chan.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "理论物理导论(3) 路径积分",
+      "item": "https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA3-%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "理论物理导论(3) 路径积分",
+  "name": "理论物理导论(3) 路径积分",
+  "description": "路径积分 在经典力学中，粒子运动的路径是使得作用量泛函取极值的那条路径。但是在量子力学中，所有可能的路径对于粒子的运动都是有贡献的[1]。\n设粒子从 到 的几率振幅为 ，则每条路径 对于几率振幅的贡献正比于一个与路径经典作用量 成正比的相角 。最终总的几率振幅就是对所有可能的路径求和：\n形式地将其写成积分形式，即为：\n(1)式被称为路径积分。粒子从到 的几率 就是几率振幅模的平方：\n类似地，对于多粒子系统来说，几率振幅为所有粒子的所有可能路径之和：\n经典极限 在能量较高的时候（即 相对于式中的其它项很小的时候），相角 的取值很大，路径积分中远离极值的路径震荡会非常剧烈。在这种情况下，各个不同的路径对几率振幅的贡献将相互抵消，只剩下 的路径给出不为零的贡献。\n这就是说，在能量较高的时候，粒子的运动将只由作用量泛函取极值的路径所决定，这样就从量子力学的情况退化到了经典的情况。\n积分算符 为了对路径积分进行计算，可以采用如下方法：取一系列间隔极短的时刻 ，在每一个时刻上轨迹都处在一个特定的位置 上。对每一个 都进行积分，并令时间间隔 趋于零。这样路径在任意时刻可以取遍任意一个位置，这个对不同时刻坐标的无穷维积分就是对所有路径的求和[2]：\n路径积分的示意图如下所示。\n![](data:image/svg+xml;utf8,)从上述的定义中可以看出，对于任意的 来说，几率振幅之间满足如下关系：\n阿哈罗诺夫-波姆效应 假设有一个导体，其内部有磁场，而导体外的磁场为零，如下图所示。乍看起来，导体外部没有磁场，因此在导体外电子的运动似乎并不会受到导体内磁场的影响，但实际上并非如此。\n![](data:image/svg+xml;utf8,)为了看出导体内磁场对导体外电子的影响，可以在空间中选取两个点，并比较有无磁场情况下路径积分的差别。根据电磁学知识知道，在有磁场的情况下，系统的拉氏量改变为\n因此作用量的改变为\n对于磁场来说，如果两条路径之间不包含磁通量，则上述积分是不依赖于路径的选取的。因此，这一修正项在不同的路径中体现为一个相同的相位因子。但是对于导体上部的路径和导体下部的两条路径来说，这个相位因子是不同的，其差值为：\n这样一个相位差值将使得电子在导体后方发生干涉。该效应称为阿哈罗诺夫-波姆效应，它是路径积分原理的一个漂亮的体现。\n波函数 在大多数的情况下，我们只关心粒子在某点处的总几率振幅 ，它被称为粒子的波函数。粒子出现在该处的几率可以表示为波函数模的平方：\n不同时刻、不同位置的波函数之间将满足如下关系：\n在这里可以看到， 实际上就是 的传播子（格林函数）。如果 和 的差很小，则对时间作泰勒展开，并代入作用量的具体形式\n略去高阶小量之后，可以证明路径积分(1)式等价于：\n(2)式被称为薛定谔方程。特别需要注意的是，粒子出现的概率在全空间中积分应该为一，这导致了波函数的归一化条件[3]：\n定态问题 如果势中不显含时间，则可以令 ，此时 满足：\n这被称为定态薛定谔方程， 即为系统的能量。以下列举几个重要的例子。\n 对于一维无限深势阱来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为\n对于一维谐振子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为\n其中 ， 。\n以上两个例子说明量子力学中的束缚态的能量只能取一些分立的值，而不是像经典力学中一样可以取一些连续的值。\n对于自由粒子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为\n可以看到在散射态中，系统的能级从分立的指标 变为了连续的指标 ，系统的能量可以取连续值，并且波函数的归一化条件也不再成立。",
+  "keywords": [
+    
+  ],
+  "articleBody": "路径积分 在经典力学中，粒子运动的路径是使得作用量泛函取极值的那条路径。但是在量子力学中，所有可能的路径对于粒子的运动都是有贡献的[1]。\n设粒子从 到 的几率振幅为 ，则每条路径 对于几率振幅的贡献正比于一个与路径经典作用量 成正比的相角 。最终总的几率振幅就是对所有可能的路径求和：\n形式地将其写成积分形式，即为：\n(1)式被称为路径积分。粒子从到 的几率 就是几率振幅模的平方：\n类似地，对于多粒子系统来说，几率振幅为所有粒子的所有可能路径之和：\n经典极限 在能量较高的时候（即 相对于式中的其它项很小的时候），相角 的取值很大，路径积分中远离极值的路径震荡会非常剧烈。在这种情况下，各个不同的路径对几率振幅的贡献将相互抵消，只剩下 的路径给出不为零的贡献。\n这就是说，在能量较高的时候，粒子的运动将只由作用量泛函取极值的路径所决定，这样就从量子力学的情况退化到了经典的情况。\n积分算符 为了对路径积分进行计算，可以采用如下方法：取一系列间隔极短的时刻 ，在每一个时刻上轨迹都处在一个特定的位置 上。对每一个 都进行积分，并令时间间隔 趋于零。这样路径在任意时刻可以取遍任意一个位置，这个对不同时刻坐标的无穷维积分就是对所有路径的求和[2]：\n路径积分的示意图如下所示。\n![](data:image/svg+xml;utf8,)从上述的定义中可以看出，对于任意的 来说，几率振幅之间满足如下关系：\n阿哈罗诺夫-波姆效应 假设有一个导体，其内部有磁场，而导体外的磁场为零，如下图所示。乍看起来，导体外部没有磁场，因此在导体外电子的运动似乎并不会受到导体内磁场的影响，但实际上并非如此。\n![](data:image/svg+xml;utf8,)为了看出导体内磁场对导体外电子的影响，可以在空间中选取两个点，并比较有无磁场情况下路径积分的差别。根据电磁学知识知道，在有磁场的情况下，系统的拉氏量改变为\n因此作用量的改变为\n对于磁场来说，如果两条路径之间不包含磁通量，则上述积分是不依赖于路径的选取的。因此，这一修正项在不同的路径中体现为一个相同的相位因子。但是对于导体上部的路径和导体下部的两条路径来说，这个相位因子是不同的，其差值为：\n这样一个相位差值将使得电子在导体后方发生干涉。该效应称为阿哈罗诺夫-波姆效应，它是路径积分原理的一个漂亮的体现。\n波函数 在大多数的情况下，我们只关心粒子在某点处的总几率振幅 ，它被称为粒子的波函数。粒子出现在该处的几率可以表示为波函数模的平方：\n不同时刻、不同位置的波函数之间将满足如下关系：\n在这里可以看到， 实际上就是 的传播子（格林函数）。如果 和 的差很小，则对时间作泰勒展开，并代入作用量的具体形式\n略去高阶小量之后，可以证明路径积分(1)式等价于：\n(2)式被称为薛定谔方程。特别需要注意的是，粒子出现的概率在全空间中积分应该为一，这导致了波函数的归一化条件[3]：\n定态问题 如果势中不显含时间，则可以令 ，此时 满足：\n这被称为定态薛定谔方程， 即为系统的能量。以下列举几个重要的例子。\n 对于一维无限深势阱来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为\n对于一维谐振子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为\n其中 ， 。\n以上两个例子说明量子力学中的束缚态的能量只能取一些分立的值，而不是像经典力学中一样可以取一些连续的值。\n对于自由粒子来说，系统的势能为  可以解出系统的能量为 ，系统的波函数为\n可以看到在散射态中，系统的能级从分立的指标 变为了连续的指标 ，系统的能量可以取连续值，并且波函数的归一化条件也不再成立。\n态空间 注意到定态薛定谔方程实际上是一个本征值方程，可以将波函数看作一个无限维态空间[4]中的矢量（记作 ），而 看作作用在态空间上的算符[5]（记作 ），于是上述方程可以写成：\n对于一个任意的态来说，可以将它写成一系列基矢的和：\n事实上波函数也可以被看作是一系列坐标基矢的线性组合：\n在量子力学中，观测量实际上就是一个作用在态空间上的算符。如果波函数是观测量的本征矢，则观测量在该态上的取值就是本征值。在量子力学中，动量算符与位置算符没有共同的本征矢，因此一个态不可能同时拥有确定的位置与动量。这被称为不确定性原理。\n自旋 电子的自旋[6]可以被看作是一个2维态空间中的矢量[7]。在 表象下，三个自旋算符分别为：\n方向自旋本征态为：\n方向自旋本征态为：\n下面来考虑斯特恩-盖拉赫实验。假设有一个仪器可以分出不同自旋的粒子。现在我们让一束电子首先通过一个 方向的仪器，然后让其中 束流通过一个 方向的仪器，然后让其中 束流通过一个 方向的仪器，实验过程如下图所示。\n![](data:image/svg+xml;utf8,)实验发现，虽然在第一个仪器处， 分量的束流已经完全被除去了，但是在通过了一个 方向的仪器之后，分量的束流又重新产生了，可以在第三个仪器处观察到非零的 分量的束流[8]。这显示了量子力学中的粒子与经典力学完全不同的特点。\n",
+  "wordCount" : "91",
+  "inLanguage": "zh",
+  "datePublished": "2021-06-16T00:39:45Z",
+  "dateModified": "2021-06-16T00:39:45Z",
+  "author":{
+    "@type": "Person",
+    "name": "hasaki"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA3-%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小羽咲的笔记",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hasaki-chan.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://hasaki-chan.github.io" accesskey="h" title="小羽咲的笔记 (Alt + H)">小羽咲的笔记</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://hasaki-chan.github.io/archives" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://hasaki-chan.github.io">Home</a>&nbsp;»&nbsp;<a href="https://hasaki-chan.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      理论物理导论(3) 路径积分
+    </h1>
+    <div class="post-meta">June 16, 2021&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;hasaki
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">目录</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e8%b7%af%e5%be%84%e7%a7%af%e5%88%86" aria-label="路径积分">路径积分</a></li>
+                <li>
+                    <a href="#%e7%bb%8f%e5%85%b8%e6%9e%81%e9%99%90" aria-label="经典极限">经典极限</a></li>
+                <li>
+                    <a href="#%e7%a7%af%e5%88%86%e7%ae%97%e7%ac%a6" aria-label="积分算符">积分算符</a></li>
+                <li>
+                    <a href="#%e9%98%bf%e5%93%88%e7%bd%97%e8%af%ba%e5%a4%ab-%e6%b3%a2%e5%a7%86%e6%95%88%e5%ba%94" aria-label="阿哈罗诺夫-波姆效应">阿哈罗诺夫-波姆效应</a></li>
+                <li>
+                    <a href="#%e6%b3%a2%e5%87%bd%e6%95%b0" aria-label="波函数">波函数</a></li>
+                <li>
+                    <a href="#%e5%ae%9a%e6%80%81%e9%97%ae%e9%a2%98" aria-label="定态问题">定态问题</a></li>
+                <li>
+                    <a href="#%e6%80%81%e7%a9%ba%e9%97%b4" aria-label="态空间">态空间</a></li>
+                <li>
+                    <a href="#%e8%87%aa%e6%97%8b" aria-label="自旋">自旋</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="路径积分">路径积分<a hidden class="anchor" aria-hidden="true" href="#路径积分">#</a></h2>
+<p>在经典力学中，粒子运动的路径是使得作用量泛函取极值的那条路径。但是在量子力学中，所有可能的路径对于粒子的运动都是有贡献的[1]。</p>
+<p>设粒子从 <img loading="lazy" src="https://www.zhihu.com/equation?tex=a" alt="a"  />
+ 到 <img loading="lazy" src="https://www.zhihu.com/equation?tex=b" alt="b"  />
+ 的几率振幅为 <img loading="lazy" src="https://www.zhihu.com/equation?tex=K%28x_b%2Ct_b%3Bx_a%2Ct_a%29" alt="K(x_b,t_b;x_a,t_a)"  />
+ ，则每条路径 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x%28t%29" alt="x(t)"  />
+ 对于几率振幅的贡献正比于一个与路径经典作用量 <img loading="lazy" src="https://www.zhihu.com/equation?tex=S%5Bx%28t%29%5D" alt="S[x(t)]"  />
+ 成正比的相角 <img loading="lazy" src="https://www.zhihu.com/equation?tex=e%5E%7B%5Cfrac&#43;i%5Chbar&#43;S%5Bx%28t%29%5D%7D" alt="e^{\frac i\hbar S[x(t)]}"  />
+。最终总的几率振幅就是对所有可能的路径求和：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=K%28x_b%2Ct_b%3Bx_a%2Ct_a%29%5Cpropto%5Csum_%7B%E4%BB%8Ea%E5%88%B0b%E7%9A%84%E6%89%80%E6%9C%89x%28t%29%7D&#43;e%5E%7B%5Cfrac&#43;i%5Chbar&#43;S%5Bx%28t%29%5D%7D" alt="K(x_b,t_b;x_a,t_a)\propto\sum_{从a到b的所有x(t)} e^{\frac i\hbar S[x(t)]}"  />
+</p>
+<p>形式地将其写成积分形式，即为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=K%28x_b%2Ct_b%3Bx_a%2Ct_a%29%3D%5Cint_%7Bx%28t_a%29%3Dx_a%7D%5E%7Bx%28t_b%29%3Dx_b%7D&#43;%5Cmathscr%7BD%7D%5Bx%28t%29%5D&#43;e%5E%7B%5Cfrac&#43;i%5Chbar&#43;S%5Bx%28t%29%5D%7D&#43;~~~%281%29" alt="K(x_b,t_b;x_a,t_a)=\int_{x(t_a)=x_a}^{x(t_b)=x_b} \mathscr{D}[x(t)] e^{\frac i\hbar S[x(t)]} ~~~(1)"  />
+</p>
+<p>(1)式被称为路径积分。粒子从<img loading="lazy" src="https://www.zhihu.com/equation?tex=a" alt="a"  />
+ 到 <img loading="lazy" src="https://www.zhihu.com/equation?tex=b" alt="b"  />
+ 的几率 <img loading="lazy" src="https://www.zhihu.com/equation?tex=P%28x_b%2Ct_b%2Cx_a%2Ct_a%29" alt="P(x_b,t_b,x_a,t_a)"  />
+ 就是几率振幅模的平方：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=P%28x_b%2Ct_b%3Bx_a%2Ct_a%29%3D%7CK%28x_b%2Ct_b%3Bx_a%2Ct_a%29%7C%5E2" alt="P(x_b,t_b;x_a,t_a)=|K(x_b,t_b;x_a,t_a)|^2"  />
+</p>
+<p>类似地，对于多粒子系统来说，几率振幅为所有粒子的所有可能路径之和：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=K%28b%3Ba%29%3D%5Cint_a%5Eb&#43;%5Cmathscr%7BD%7D%5Bx_i%28t%29%5D&#43;e%5E%7B%5Cfrac&#43;i%5Chbar&#43;S%5Bx_i%28t%29%5D%7D" alt="K(b;a)=\int_a^b \mathscr{D}[x_i(t)] e^{\frac i\hbar S[x_i(t)]}"  />
+</p>
+<h2 id="经典极限">经典极限<a hidden class="anchor" aria-hidden="true" href="#经典极限">#</a></h2>
+<p>在能量较高的时候（即 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Chbar" alt="\hbar"  />
+ 相对于式中的其它项很小的时候），相角 <img loading="lazy" src="https://www.zhihu.com/equation?tex=e%5E%7B%5Cfrac&#43;i%5Chbar&#43;S%5Bx%28t%29%5D%7D" alt="e^{\frac i\hbar S[x(t)]}"  />
+的取值很大，路径积分中远离极值的路径震荡会非常剧烈。在这种情况下，各个不同的路径对几率振幅的贡献将相互抵消，只剩下 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cdelta&#43;S%3D0" alt="\delta S=0"  />
+ 的路径给出不为零的贡献。</p>
+<p>这就是说，在能量较高的时候，粒子的运动将只由作用量泛函取极值的路径所决定，这样就从量子力学的情况退化到了经典的情况。</p>
+<h2 id="积分算符">积分算符<a hidden class="anchor" aria-hidden="true" href="#积分算符">#</a></h2>
+<p>为了对路径积分进行计算，可以采用如下方法：取一系列间隔极短的时刻 <img loading="lazy" src="https://www.zhihu.com/equation?tex=t_i" alt="t_i"  />
+ ，在每一个时刻上轨迹都处在一个特定的位置 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i" alt="x_i"  />
+ 上。对每一个 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i" alt="x_i"  />
+ 都进行积分，并令时间间隔 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5CDelta&#43;t" alt="\Delta t"  />
+ 趋于零。这样路径在任意时刻可以取遍任意一个位置，这个对不同时刻坐标的无穷维积分就是对所有路径的求和[2]：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cint&#43;%5Cmathscr%7BD%7D%5Bx%28t%29%5D%3D%5Clim_%7B%5CDelta&#43;t%5Cto&#43;0%7D%28%5Cfrac%7Bm%7D%7B2%5Cpi&#43;i%5Chbar%5CDelta&#43;t%7D%29%5E%7B%5Cfrac%7BN-1%7D%7B2%7D%7D%5Cint%5Cprod_%7Bj%3D2%7D%5E%7BN-1%7Ddx_j" alt="\int \mathscr{D}[x(t)]=\lim_{\Delta t\to 0}(\frac{m}{2\pi i\hbar\Delta t})^{\frac{N-1}{2}}\int\prod_{j=2}^{N-1}dx_j"  />
+</p>
+<p>路径积分的示意图如下所示。</p>
+<p><img loading="lazy" src="https://pic1.zhimg.com/v2-ea9a0f82eb0817463faddc20fc798a2c_b.jpg" alt=""  />
+![](data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='557' height='500'></svg>)从上述的定义中可以看出，对于任意的 <img loading="lazy" src="https://www.zhihu.com/equation?tex=a%2Cb%2Cc" alt="a,b,c"  />
+ 来说，几率振幅之间满足如下关系：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=K%28x_c%2Ct_c%3Bx_a%2Ct_a%29%3D%5Cint&#43;dx_bK%28x_c%2Ct_c%3Bx_b%2Ct_b%29K%28x_b%2Ct_b%3Bx_a%2Ct_a%29" alt="K(x_c,t_c;x_a,t_a)=\int dx_bK(x_c,t_c;x_b,t_b)K(x_b,t_b;x_a,t_a)"  />
+</p>
+<h2 id="阿哈罗诺夫-波姆效应">阿哈罗诺夫-波姆效应<a hidden class="anchor" aria-hidden="true" href="#阿哈罗诺夫-波姆效应">#</a></h2>
+<p>假设有一个导体，其内部有磁场，而导体外的磁场为零，如下图所示。乍看起来，导体外部没有磁场，因此在导体外电子的运动似乎并不会受到导体内磁场的影响，但实际上并非如此。</p>
+<p><img loading="lazy" src="https://pic3.zhimg.com/v2-4002ce61dbed57b53a818f2cc83a88d2_b.jpg" alt=""  />
+![](data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='907' height='383'></svg>)为了看出导体内磁场对导体外电子的影响，可以在空间中选取两个点，并比较有无磁场情况下路径积分的差别。根据电磁学知识知道，在有磁场的情况下，系统的拉氏量改变为</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%27%3D%5Cfrac&#43;ec&#43;%5Cdot&#43;x%5Ccdot&#43;A" alt="L&#39;=\frac ec \dot x\cdot A"  />
+</p>
+<p>因此作用量的改变为</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=S%27%3D%5Cfrac&#43;ec%5Cint&#43;dt&#43;%5Cdot&#43;x%5Ccdot&#43;A%3D%5Cfrac&#43;ec%5Cint&#43;ds%5Ccdot&#43;A" alt="S&#39;=\frac ec\int dt \dot x\cdot A=\frac ec\int ds\cdot A"  />
+</p>
+<p>对于磁场来说，如果两条路径之间不包含磁通量，则上述积分是不依赖于路径的选取的。因此，这一修正项在不同的路径中体现为一个相同的相位因子。但是对于导体上部的路径和导体下部的两条路径来说，这个相位因子是不同的，其差值为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bie%7D%7B%5Chbar&#43;c%7D%5Cint_%7Bup%7D&#43;ds%5Ccdot&#43;A-%5Cfrac%7Bie%7D%7B%5Chbar&#43;c%7D%5Cint_%7Bdown%7D&#43;ds%5Ccdot&#43;A%3D%5Cfrac%7Bie%7D%7B%5Chbar&#43;c%7D%5Coint&#43;ds%5Ccdot&#43;A%3D%5Cfrac%7Bie%7D%7B%5Chbar&#43;c%7D%5CPhi_A" alt="\frac{ie}{\hbar c}\int_{up} ds\cdot A-\frac{ie}{\hbar c}\int_{down} ds\cdot A=\frac{ie}{\hbar c}\oint ds\cdot A=\frac{ie}{\hbar c}\Phi_A"  />
+</p>
+<p>这样一个相位差值将使得电子在导体后方发生干涉。该效应称为阿哈罗诺夫-波姆效应，它是路径积分原理的一个漂亮的体现。</p>
+<h2 id="波函数">波函数<a hidden class="anchor" aria-hidden="true" href="#波函数">#</a></h2>
+<p>在大多数的情况下，我们只关心粒子在某点处的总几率振幅 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cpsi%28x%2Ct%29" alt="\psi(x,t)"  />
+ ，它被称为粒子的波函数。粒子出现在该处的几率可以表示为波函数模的平方：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=P%28x%2Ct%29%3D%7C%5Cpsi%28x%2Ct%29%7C%5E2" alt="P(x,t)=|\psi(x,t)|^2"  />
+</p>
+<p>不同时刻、不同位置的波函数之间将满足如下关系：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cpsi%28x_2%2Ct_2%29%3D%5Cint&#43;dx_1K%28x_2%2Ct_2%3Bx_1%2Ct_1%29%5Cpsi%28x_1%2Ct_1%29" alt="\psi(x_2,t_2)=\int dx_1K(x_2,t_2;x_1,t_1)\psi(x_1,t_1)"  />
+</p>
+<p>在这里可以看到， <img loading="lazy" src="https://www.zhihu.com/equation?tex=K%28x_2%2Ct_2%3Bx_1%2Ct_1%29" alt="K(x_2,t_2;x_1,t_1)"  />
+ 实际上就是 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cpsi%28x%2Ct%29" alt="\psi(x,t)"  />
+ 的传播子（格林函数）。如果 <img loading="lazy" src="https://www.zhihu.com/equation?tex=t_1" alt="t_1"  />
+ 和 <img loading="lazy" src="https://www.zhihu.com/equation?tex=t_2" alt="t_2"  />
+ 的差很小，则对时间作泰勒展开，并代入作用量的具体形式</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=S%3D%5Cint&#43;dt%5Cleft%28%5Cfrac12m%5Cdot&#43;x%5E2-V%5Cright%29" alt="S=\int dt\left(\frac12m\dot x^2-V\right)"  />
+</p>
+<p>略去高阶小量之后，可以证明路径积分(1)式等价于：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=i%5Chbar%5Cfrac%7B%5Cpartial%5Cpsi%7D%7B%5Cpartial&#43;t%7D%3D%5Cleft%28-%5Cfrac%7B%5Chbar%5E2%7D%7B2m%7D%5Cnabla%5E2%2BV%5Cright%29%5Cpsi~~~%282%29" alt="i\hbar\frac{\partial\psi}{\partial t}=\left(-\frac{\hbar^2}{2m}\nabla^2&#43;V\right)\psi~~~(2)"  />
+</p>
+<p>(2)式被称为薛定谔方程。特别需要注意的是，粒子出现的概率在全空间中积分应该为一，这导致了波函数的归一化条件[3]：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cint&#43;d%5E3x%5Cpsi%5E%2A%28x%2Ct%29%5Cpsi%28x%2Ct%29%3D1" alt="\int d^3x\psi^*(x,t)\psi(x,t)=1"  />
+</p>
+<h2 id="定态问题">定态问题<a hidden class="anchor" aria-hidden="true" href="#定态问题">#</a></h2>
+<p>如果势中不显含时间，则可以令 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cpsi%28x%2Ct%29%3D%5Cvarphi%28x%29e%5E%7B-iEt%2F%5Chbar%7D" alt="\psi(x,t)=\varphi(x)e^{-iEt/\hbar}"  />
+ ，此时 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cvarphi%28x%29" alt="\varphi(x)"  />
+ 满足：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cleft%28-%5Cfrac%7B%5Chbar%5E2%7D%7B2m%7D%5Cnabla%5E2%2BV%5Cright%29%5Cvarphi%3DE%5Cvarphi" alt="\left(-\frac{\hbar^2}{2m}\nabla^2&#43;V\right)\varphi=E\varphi"  />
+</p>
+<p>这被称为定态薛定谔方程， <img loading="lazy" src="https://www.zhihu.com/equation?tex=E" alt="E"  />
+ 即为系统的能量。以下列举几个重要的例子。</p>
+<ol>
+<li>对于一维无限深势阱来说，系统的势能为</li>
+</ol>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=V%28x%29%3D%5Cbegin%7Bcases%7D&#43;0%2C~~~0%5Cleq&#43;x%5Cleq&#43;a&#43;%5C%5C&#43;%5Cinfty%2C~~~else&#43;%5Cend%7Bcases%7D" alt="V(x)=\begin{cases} 0,~~~0\leq x\leq a \ \infty,~~~else \end{cases}"  />
+</p>
+<p>可以解出系统的能量为 <img loading="lazy" src="https://www.zhihu.com/equation?tex=E_n%3D%5Cfrac%7Bn%5E2%5Cpi%5E2%5Chbar%5E2%7D%7B2ma%5E2%7D" alt="E_n=\frac{n^2\pi^2\hbar^2}{2ma^2}"  />
+ ，系统的波函数为</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cvarphi_n%28x%29%3D%5Csqrt%7B%5Cfrac2a%7D%5Csin%5Cleft%28%5Cfrac%7Bn%5Cpi%7D%7Ba%7Dx%5Cright%29" alt="\varphi_n(x)=\sqrt{\frac2a}\sin\left(\frac{n\pi}{a}x\right)"  />
+</p>
+<ol start="2">
+<li>对于一维谐振子来说，系统的势能为</li>
+</ol>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=V%3D%5Cfrac%7B1%7D%7B2%7Dm%5Comega%5E2x%5E2" alt="V=\frac{1}{2}m\omega^2x^2"  />
+</p>
+<p>可以解出系统的能量为 <img loading="lazy" src="https://www.zhihu.com/equation?tex=E_n%3D%5Cleft%28n%2B%5Cfrac12%5Cright%29%5Chbar%5Comega" alt="E_n=\left(n&#43;\frac12\right)\hbar\omega"  />
+ ，系统的波函数为</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cvarphi_n%28x%29%3D%5Cleft%28%5Cfrac%7Bm%5Comega%7D%7B%5Cpi%5Chbar%7D%5Cright%29%5E%5Cfrac14%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5En%7Dn%21%7DH_n%28%5Cxi%29e%5E%7B-%5Cxi%5E2%2F2%7D" alt="\varphi_n(x)=\left(\frac{m\omega}{\pi\hbar}\right)^\frac14\frac{1}{\sqrt{2^n}n!}H_n(\xi)e^{-\xi^2/2}"  />
+</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cxi%3D%5Csqrt%7B%5Cfrac%7Bm%5Comega%7D%7B%5Chbar%7D%7Dx" alt="\xi=\sqrt{\frac{m\omega}{\hbar}}x"  />
+ ， <img loading="lazy" src="https://www.zhihu.com/equation?tex=H_n%28%5Cxi%29%3D%28-1%29%5Ene%5E%7B%5Cxi%5E2%7D%5Cleft%28%5Cfrac%7Bd%7D%7Bd%5Cxi%7D%5Cright%29%5Ene%5E%7B-%5Cxi%5E2%7D" alt="H_n(\xi)=(-1)^ne^{\xi^2}\left(\frac{d}{d\xi}\right)^ne^{-\xi^2}"  />
+ 。</p>
+<p>以上两个例子说明量子力学中的束缚态的能量只能取一些分立的值，而不是像经典力学中一样可以取一些连续的值。</p>
+<ol start="3">
+<li>对于自由粒子来说，系统的势能为</li>
+</ol>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=V%3D0" alt="V=0"  />
+</p>
+<p>可以解出系统的能量为 <img loading="lazy" src="https://www.zhihu.com/equation?tex=E_k%3D%5Cfrac%7B%5Chbar&#43;k%5E2%7D%7B2m%7D" alt="E_k=\frac{\hbar k^2}{2m}"  />
+ ，系统的波函数为</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cvarphi_k%5Csim&#43;e%5E%7B%5Cpm&#43;ikx%7D" alt="\varphi_k\sim e^{\pm ikx}"  />
+</p>
+<p>可以看到在散射态中，系统的能级从分立的指标 <img loading="lazy" src="https://www.zhihu.com/equation?tex=n" alt="n"  />
+ 变为了连续的指标 <img loading="lazy" src="https://www.zhihu.com/equation?tex=k" alt="k"  />
+ ，系统的能量可以取连续值，并且波函数的归一化条件也不再成立。</p>
+<h2 id="态空间">态空间<a hidden class="anchor" aria-hidden="true" href="#态空间">#</a></h2>
+<p>注意到定态薛定谔方程实际上是一个本征值方程，可以将波函数看作一个无限维态空间[4]中的矢量（记作 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%7C%5Cvarphi%5Crangle" alt="|\varphi\rangle"  />
+ ），而 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cleft%28-%5Cfrac%7B%5Chbar%5E2%7D%7B2m%7D%5Cnabla%5E2%2BV%5Cright%29" alt="\left(-\frac{\hbar^2}{2m}\nabla^2&#43;V\right)"  />
+ 看作作用在态空间上的算符[5]（记作 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Chat&#43;H" alt="\hat H"  />
+ ），于是上述方程可以写成：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Chat&#43;H%7C%5Cvarphi_n%5Crangle%3DE_n%7C%5Cvarphi_n%5Crangle" alt="\hat H|\varphi_n\rangle=E_n|\varphi_n\rangle"  />
+</p>
+<p>对于一个任意的态来说，可以将它写成一系列基矢的和：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%7C%5Cvarphi%5Crangle%3D%5Csum_n&#43;c_n%7C%5Cvarphi_n%5Crangle" alt="|\varphi\rangle=\sum_n c_n|\varphi_n\rangle"  />
+</p>
+<p>事实上波函数也可以被看作是一系列坐标基矢的线性组合：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%7C%5Cvarphi%5Crangle%3D%5Cint&#43;dx%5Cvarphi%28x%29%7Cx%5Crangle" alt="|\varphi\rangle=\int dx\varphi(x)|x\rangle"  />
+</p>
+<p>在量子力学中，观测量实际上就是一个作用在态空间上的算符。如果波函数是观测量的本征矢，则观测量在该态上的取值就是本征值。在量子力学中，动量算符与位置算符没有共同的本征矢，因此一个态不可能同时拥有确定的位置与动量。这被称为不确定性原理。</p>
+<h2 id="自旋">自旋<a hidden class="anchor" aria-hidden="true" href="#自旋">#</a></h2>
+<p>电子的自旋[6]可以被看作是一个2维态空间中的矢量[7]。在 <img loading="lazy" src="https://www.zhihu.com/equation?tex=S_z" alt="S_z"  />
+ 表象下，三个自旋算符分别为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=S_z%3D%5Cfrac%7B%5Chbar%7D%7B2%7D%5Cbegin%7Bpmatrix%7D&#43;1%260%5C%5C&#43;0%261&#43;%5Cend%7Bpmatrix%7D%2C&#43;S_x%3D%5Cfrac%7B%5Chbar%7D%7B2%7D%5Cbegin%7Bpmatrix%7D&#43;0%261%5C%5C&#43;1%260&#43;%5Cend%7Bpmatrix%7D%2C&#43;S_y%3D%5Cfrac%7B%5Chbar%7D%7B2%7D%5Cbegin%7Bpmatrix%7D&#43;0%26-i%5C%5C&#43;i%260&#43;%5Cend%7Bpmatrix%7D&#43;" alt="S_z=\frac{\hbar}{2}\begin{pmatrix} 1&amp;amp;0\ 0&amp;amp;1 \end{pmatrix}, S_x=\frac{\hbar}{2}\begin{pmatrix} 0&amp;amp;1\ 1&amp;amp;0 \end{pmatrix}, S_y=\frac{\hbar}{2}\begin{pmatrix} 0&amp;amp;-i\ i&amp;amp;0 \end{pmatrix} "  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=z" alt="z"  />
+ 方向自旋本征态为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cchi_%7Bz%2B%7D%3D%5Cbegin%7Bpmatrix%7D&#43;1%5C%5C&#43;0&#43;%5Cend%7Bpmatrix%7D%2C&#43;%5Cchi_%7Bz-%7D%3D%5Cbegin%7Bpmatrix%7D&#43;0%5C%5C&#43;1&#43;%5Cend%7Bpmatrix%7D" alt="\chi_{z&#43;}=\begin{pmatrix} 1\ 0 \end{pmatrix}, \chi_{z-}=\begin{pmatrix} 0\ 1 \end{pmatrix}"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=x" alt="x"  />
+ 方向自旋本征态为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cchi_%7Bx%2B%7D%3D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%7D%7D%5Cbegin%7Bpmatrix%7D&#43;1%5C%5C&#43;1&#43;%5Cend%7Bpmatrix%7D%2C&#43;%5Cchi_%7Bz-%7D%3D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%7D%7D%5Cbegin%7Bpmatrix%7D&#43;1%5C%5C&#43;-1&#43;%5Cend%7Bpmatrix%7D" alt="\chi_{x&#43;}=\frac{1}{\sqrt{2}}\begin{pmatrix} 1\ 1 \end{pmatrix}, \chi_{z-}=\frac{1}{\sqrt{2}}\begin{pmatrix} 1\ -1 \end{pmatrix}"  />
+</p>
+<p>下面来考虑斯特恩-盖拉赫实验。假设有一个仪器可以分出不同自旋的粒子。现在我们让一束电子首先通过一个 <img loading="lazy" src="https://www.zhihu.com/equation?tex=z" alt="z"  />
+ 方向的仪器，然后让其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=z%2B" alt="z&#43;"  />
+ 束流通过一个 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x" alt="x"  />
+ 方向的仪器，然后让其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x%2B" alt="x&#43;"  />
+ 束流通过一个 <img loading="lazy" src="https://www.zhihu.com/equation?tex=z" alt="z"  />
+ 方向的仪器，实验过程如下图所示。</p>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-d7b134ef2c8483382bd8efab563e72b5_b.jpg" alt=""  />
+![](data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1263' height='339'></svg>)实验发现，虽然在第一个仪器处， <img loading="lazy" src="https://www.zhihu.com/equation?tex=z-" alt="z-"  />
+ 分量的束流已经完全被除去了，但是在通过了一个 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x" alt="x"  />
+ 方向的仪器之后，<img loading="lazy" src="https://www.zhihu.com/equation?tex=z-" alt="z-"  />
+ 分量的束流又重新产生了，可以在第三个仪器处观察到非零的 <img loading="lazy" src="https://www.zhihu.com/equation?tex=z-" alt="z-"  />
+ 分量的束流[8]。这显示了量子力学中的粒子与经典力学完全不同的特点。</p>
+
+</div>
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="next" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA2-%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>理论物理导论(2) 最小作用量原理</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://hasaki-chan.github.io">小羽咲的笔记</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>理论物理导论(1) 牛顿力学 | 小羽咲的笔记</title>
+<meta name="keywords" content="" />
+<meta name="description" content="牛顿第二定律 一个质点的运动遵循什么规律呢？牛顿写下了以他的名字命名的方程：
+其中 是该质点受到的力， 是该质点的质量，而 是该质点的加速度。这就是牛顿力学的全部规律。
+质点运动学 当我们说牛顿运动定律是“牛顿力学的全部规律”时，实际上指的是：通过牛顿运动定律，我们可以获得经典力学系统的一切信息，而不再需要其他的规律作为补充[1]。那么，“经典力学系统的一切信息”指的究竟是什么呢？
+注意到质点处于三维空间中，因此它在某一时刻的位置可以用一个三维矢量 来刻画。现在我们要将质点的位置看作时间的函数：
+这称为质点的运动学方程，它刻画了质点随时间的运动轨迹。质点的速度定义为位置对时间的的一阶导数，而质点的加速度定义为速度对时间的一阶导数：
+因此，得到了运动学方程，实际上就得到了我们所感兴趣的一切信息。
+动力学方程 因此，牛顿运动定律是“牛顿力学的全部规律”，指的实际上是：通过牛顿运动定律，我们可以唯一地确定一个质点的运动学方程。
+但是这个说法是不准确的，因为仅仅给定运动学方程还不能够完全确定下来质点的运动学方程。还需要补充质点在某一时刻的初始速度与位置。我们一般地将粒子所受的力写成粒子位置、速度与时间的函数。因此，完整的表述应该是，对于给定的动力学系统，存在唯一的一个 满足：
+以上结果可以容易地推广到多质点的情况，即对于给定的动力学系统，存在唯一的一组 满足：
+一些例子  对于不受力的一维自由粒子，其动力学方程为：  易知其解为：
+这代表不受力的自由粒子静止或作匀速直线运动，这是牛顿第一定律[2]。
+对于一维谐振子来说，它所受的力与质点的位置成正比。可以写出其动力学方程：  易知其解为：
+其中 为振动的频率。这表明一维谐振子在平衡位置附近作简谐运动。实际上对于任何质点来说，只要它距离平衡位置足够近，总可以被看作是一个简谐振子。
+对于引力作用下的质点来说，它所受的力与距离呈平方反比关系。只考虑二维情况，可以写出其运动方程：  可以看出
+是方程的一组解。这代表质点可以在引力场作用下作圆周运动。实际上质点在经典引力场中的最一般运动是圆锥曲线，我们将在下一节中给出这一结果。
+精确解的困难 然而，只有极少数牛顿力学系统是可以精确求解的。大部分的力学系统都无法精确求解，或者即使可以求解也极为复杂。比如对于下面这个简单的方程来说
+其解就只能表示为复杂的积分形式：
+上面这个方程被称为艾里方程，其解称为艾里函数[3]。这仍然是一个有解析解的例子，而对于更复杂的情况来说，几乎完全无法求出其精确解。
+微扰展开 因此对于不能求解的系统来说，我们只能退而求其次，寻找其动力学方程的近似解。考虑如下的单摆系统：
+这个方程的精确解是难以得到的[4]。为了求这个方程的近似解，可以对其第二项作泰勒展开，并只保留到三次项：
+在这个近似下，方程的第二项可以被分成两部分。第一部分是线性项，它的精确解就是谐振子。而第二部分是三次项，在 很小的时候，它相比于线性项是一个很小的修正。这启发我们把方程的解同样写成谐振子解的一个修正：
+其中 是一个修正项，它与前一项相比是很小的。将上述表达式带入(1)式，并舍弃掉一次以上的 项，可以得到：
+这个方程是可以精确求解的。在泰勒展开中保留更多的项，并重复上述步骤，可以依次得到二阶修正、三阶修正等等。以上是最常用的近似解法，它被称作“微扰展开”。如果系统相较于精确可解的系统只有一个微小的偏差，则通常可以利用微扰展开进行求解。
+数值近似 但是对于偏差较大的情况，就不能利用微扰展开进行求解。以方程
+为例。为了求解这个微分方程，可以用差分来代替微分：
+于是方程化为：
+加上初始条件之后，方程可以转化成如下的递推公式：
+逐步计算这个递推公式，就可以得到方程的近似解。如果 取得足够小，则这个递推公式可以足够接近方程的精确解。这被称作方程的“数值近似”，其基本思想是将无限（微分）变成有限（差分）。在这里介绍的数值近似方法被称为“有限差分法”。注意在数值计算的过程中，方程中不能够含有其他的变量（比如之前的频率 ）。
+混沌效应 牛顿方程是一个确定的方程，这指的是：给定初始条件，系统将按照确定的轨迹一直不变地演化下去。也就是说，系统之后的状态实际上全部包含在初始条件之中。因此拉普拉斯曾说：“如果能够获知驱动这个自然运动的所有的力和所有物体的位置，那么宇宙之中从最宏大的天体到最渺小的原子都将包含在一个运动方程之中，而未来将如过去一般呈现在眼前。”
+然而，情况并不像想象中的那么简单。考虑如下的力学系统[5]：
+这个力学系统对初始条件非常敏感，即使初始条件发生了极小的偏差，随着时间推移运动轨迹的偏差也会越来越大，直至完全不同。这被称为“混沌效应”，下面给出了混沌效应的示意图[6]。
+![](data:image/svg&#43;xml;utf8,)初值相同指的是初值具有极小的偏差因此，虽然给定初始条件之后，系统的运动就完全确定下来了，但是无论如何精确，对于两次不同的运动来说，初始条件之间也会有微小的差别。这种微小的差别会在随后的运动过程中被逐渐放大，因此对于看起来初始条件“相同”的两个运动来说，其后的运动也会完全不同。这说明混沌系统在原则上是无法预测的。
+混沌效应广泛存在于非线性系统之中，我们的整个世界就是一个巨大的混沌系统。因此，原则上对我们的世界进行预测是不可能的。（精确）可解是一回事，可以进行（数值）预测是一回事，而运动系统的确定性又是另外一回事。牛顿系统是是确定的系统，其随机性只隐含在方程的内部，以对初值的极端敏感型表现出来。目前一般认为量子力学系统是随机的系统，尽管量子力学的随机性非常微小，但却可以通过混沌效应的放大，被宏观地表现出来。">
+<meta name="author" content="hasaki">
+<link rel="canonical" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA1-%E7%89%9B%E9%A1%BF%E5%8A%9B%E5%AD%A6/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.65aebb33e4f0ce3d1a39e4a35c11b91eb08b582489fca0f78f9227d90ac72a52.css" integrity="sha256-Za67M&#43;Twzj0aOeSjXBG5HrCLWCSJ/KD3j5In2QrHKlI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://hasaki-chan.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hasaki-chan.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hasaki-chan.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://hasaki-chan.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://hasaki-chan.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<meta property="og:title" content="理论物理导论(1) 牛顿力学" />
+<meta property="og:description" content="牛顿第二定律 一个质点的运动遵循什么规律呢？牛顿写下了以他的名字命名的方程：
+其中 是该质点受到的力， 是该质点的质量，而 是该质点的加速度。这就是牛顿力学的全部规律。
+质点运动学 当我们说牛顿运动定律是“牛顿力学的全部规律”时，实际上指的是：通过牛顿运动定律，我们可以获得经典力学系统的一切信息，而不再需要其他的规律作为补充[1]。那么，“经典力学系统的一切信息”指的究竟是什么呢？
+注意到质点处于三维空间中，因此它在某一时刻的位置可以用一个三维矢量 来刻画。现在我们要将质点的位置看作时间的函数：
+这称为质点的运动学方程，它刻画了质点随时间的运动轨迹。质点的速度定义为位置对时间的的一阶导数，而质点的加速度定义为速度对时间的一阶导数：
+因此，得到了运动学方程，实际上就得到了我们所感兴趣的一切信息。
+动力学方程 因此，牛顿运动定律是“牛顿力学的全部规律”，指的实际上是：通过牛顿运动定律，我们可以唯一地确定一个质点的运动学方程。
+但是这个说法是不准确的，因为仅仅给定运动学方程还不能够完全确定下来质点的运动学方程。还需要补充质点在某一时刻的初始速度与位置。我们一般地将粒子所受的力写成粒子位置、速度与时间的函数。因此，完整的表述应该是，对于给定的动力学系统，存在唯一的一个 满足：
+以上结果可以容易地推广到多质点的情况，即对于给定的动力学系统，存在唯一的一组 满足：
+一些例子  对于不受力的一维自由粒子，其动力学方程为：  易知其解为：
+这代表不受力的自由粒子静止或作匀速直线运动，这是牛顿第一定律[2]。
+对于一维谐振子来说，它所受的力与质点的位置成正比。可以写出其动力学方程：  易知其解为：
+其中 为振动的频率。这表明一维谐振子在平衡位置附近作简谐运动。实际上对于任何质点来说，只要它距离平衡位置足够近，总可以被看作是一个简谐振子。
+对于引力作用下的质点来说，它所受的力与距离呈平方反比关系。只考虑二维情况，可以写出其运动方程：  可以看出
+是方程的一组解。这代表质点可以在引力场作用下作圆周运动。实际上质点在经典引力场中的最一般运动是圆锥曲线，我们将在下一节中给出这一结果。
+精确解的困难 然而，只有极少数牛顿力学系统是可以精确求解的。大部分的力学系统都无法精确求解，或者即使可以求解也极为复杂。比如对于下面这个简单的方程来说
+其解就只能表示为复杂的积分形式：
+上面这个方程被称为艾里方程，其解称为艾里函数[3]。这仍然是一个有解析解的例子，而对于更复杂的情况来说，几乎完全无法求出其精确解。
+微扰展开 因此对于不能求解的系统来说，我们只能退而求其次，寻找其动力学方程的近似解。考虑如下的单摆系统：
+这个方程的精确解是难以得到的[4]。为了求这个方程的近似解，可以对其第二项作泰勒展开，并只保留到三次项：
+在这个近似下，方程的第二项可以被分成两部分。第一部分是线性项，它的精确解就是谐振子。而第二部分是三次项，在 很小的时候，它相比于线性项是一个很小的修正。这启发我们把方程的解同样写成谐振子解的一个修正：
+其中 是一个修正项，它与前一项相比是很小的。将上述表达式带入(1)式，并舍弃掉一次以上的 项，可以得到：
+这个方程是可以精确求解的。在泰勒展开中保留更多的项，并重复上述步骤，可以依次得到二阶修正、三阶修正等等。以上是最常用的近似解法，它被称作“微扰展开”。如果系统相较于精确可解的系统只有一个微小的偏差，则通常可以利用微扰展开进行求解。
+数值近似 但是对于偏差较大的情况，就不能利用微扰展开进行求解。以方程
+为例。为了求解这个微分方程，可以用差分来代替微分：
+于是方程化为：
+加上初始条件之后，方程可以转化成如下的递推公式：
+逐步计算这个递推公式，就可以得到方程的近似解。如果 取得足够小，则这个递推公式可以足够接近方程的精确解。这被称作方程的“数值近似”，其基本思想是将无限（微分）变成有限（差分）。在这里介绍的数值近似方法被称为“有限差分法”。注意在数值计算的过程中，方程中不能够含有其他的变量（比如之前的频率 ）。
+混沌效应 牛顿方程是一个确定的方程，这指的是：给定初始条件，系统将按照确定的轨迹一直不变地演化下去。也就是说，系统之后的状态实际上全部包含在初始条件之中。因此拉普拉斯曾说：“如果能够获知驱动这个自然运动的所有的力和所有物体的位置，那么宇宙之中从最宏大的天体到最渺小的原子都将包含在一个运动方程之中，而未来将如过去一般呈现在眼前。”
+然而，情况并不像想象中的那么简单。考虑如下的力学系统[5]：
+这个力学系统对初始条件非常敏感，即使初始条件发生了极小的偏差，随着时间推移运动轨迹的偏差也会越来越大，直至完全不同。这被称为“混沌效应”，下面给出了混沌效应的示意图[6]。
+![](data:image/svg&#43;xml;utf8,)初值相同指的是初值具有极小的偏差因此，虽然给定初始条件之后，系统的运动就完全确定下来了，但是无论如何精确，对于两次不同的运动来说，初始条件之间也会有微小的差别。这种微小的差别会在随后的运动过程中被逐渐放大，因此对于看起来初始条件“相同”的两个运动来说，其后的运动也会完全不同。这说明混沌系统在原则上是无法预测的。
+混沌效应广泛存在于非线性系统之中，我们的整个世界就是一个巨大的混沌系统。因此，原则上对我们的世界进行预测是不可能的。（精确）可解是一回事，可以进行（数值）预测是一回事，而运动系统的确定性又是另外一回事。牛顿系统是是确定的系统，其随机性只隐含在方程的内部，以对初值的极端敏感型表现出来。目前一般认为量子力学系统是随机的系统，尽管量子力学的随机性非常微小，但却可以通过混沌效应的放大，被宏观地表现出来。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA1-%E7%89%9B%E9%A1%BF%E5%8A%9B%E5%AD%A6/" /><meta property="og:image" content="https://hasaki-chan.github.io/papermod-cover.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-03T06:32:11&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-03T06:32:11&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hasaki-chan.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="理论物理导论(1) 牛顿力学"/>
+<meta name="twitter:description" content="牛顿第二定律 一个质点的运动遵循什么规律呢？牛顿写下了以他的名字命名的方程：
+其中 是该质点受到的力， 是该质点的质量，而 是该质点的加速度。这就是牛顿力学的全部规律。
+质点运动学 当我们说牛顿运动定律是“牛顿力学的全部规律”时，实际上指的是：通过牛顿运动定律，我们可以获得经典力学系统的一切信息，而不再需要其他的规律作为补充[1]。那么，“经典力学系统的一切信息”指的究竟是什么呢？
+注意到质点处于三维空间中，因此它在某一时刻的位置可以用一个三维矢量 来刻画。现在我们要将质点的位置看作时间的函数：
+这称为质点的运动学方程，它刻画了质点随时间的运动轨迹。质点的速度定义为位置对时间的的一阶导数，而质点的加速度定义为速度对时间的一阶导数：
+因此，得到了运动学方程，实际上就得到了我们所感兴趣的一切信息。
+动力学方程 因此，牛顿运动定律是“牛顿力学的全部规律”，指的实际上是：通过牛顿运动定律，我们可以唯一地确定一个质点的运动学方程。
+但是这个说法是不准确的，因为仅仅给定运动学方程还不能够完全确定下来质点的运动学方程。还需要补充质点在某一时刻的初始速度与位置。我们一般地将粒子所受的力写成粒子位置、速度与时间的函数。因此，完整的表述应该是，对于给定的动力学系统，存在唯一的一个 满足：
+以上结果可以容易地推广到多质点的情况，即对于给定的动力学系统，存在唯一的一组 满足：
+一些例子  对于不受力的一维自由粒子，其动力学方程为：  易知其解为：
+这代表不受力的自由粒子静止或作匀速直线运动，这是牛顿第一定律[2]。
+对于一维谐振子来说，它所受的力与质点的位置成正比。可以写出其动力学方程：  易知其解为：
+其中 为振动的频率。这表明一维谐振子在平衡位置附近作简谐运动。实际上对于任何质点来说，只要它距离平衡位置足够近，总可以被看作是一个简谐振子。
+对于引力作用下的质点来说，它所受的力与距离呈平方反比关系。只考虑二维情况，可以写出其运动方程：  可以看出
+是方程的一组解。这代表质点可以在引力场作用下作圆周运动。实际上质点在经典引力场中的最一般运动是圆锥曲线，我们将在下一节中给出这一结果。
+精确解的困难 然而，只有极少数牛顿力学系统是可以精确求解的。大部分的力学系统都无法精确求解，或者即使可以求解也极为复杂。比如对于下面这个简单的方程来说
+其解就只能表示为复杂的积分形式：
+上面这个方程被称为艾里方程，其解称为艾里函数[3]。这仍然是一个有解析解的例子，而对于更复杂的情况来说，几乎完全无法求出其精确解。
+微扰展开 因此对于不能求解的系统来说，我们只能退而求其次，寻找其动力学方程的近似解。考虑如下的单摆系统：
+这个方程的精确解是难以得到的[4]。为了求这个方程的近似解，可以对其第二项作泰勒展开，并只保留到三次项：
+在这个近似下，方程的第二项可以被分成两部分。第一部分是线性项，它的精确解就是谐振子。而第二部分是三次项，在 很小的时候，它相比于线性项是一个很小的修正。这启发我们把方程的解同样写成谐振子解的一个修正：
+其中 是一个修正项，它与前一项相比是很小的。将上述表达式带入(1)式，并舍弃掉一次以上的 项，可以得到：
+这个方程是可以精确求解的。在泰勒展开中保留更多的项，并重复上述步骤，可以依次得到二阶修正、三阶修正等等。以上是最常用的近似解法，它被称作“微扰展开”。如果系统相较于精确可解的系统只有一个微小的偏差，则通常可以利用微扰展开进行求解。
+数值近似 但是对于偏差较大的情况，就不能利用微扰展开进行求解。以方程
+为例。为了求解这个微分方程，可以用差分来代替微分：
+于是方程化为：
+加上初始条件之后，方程可以转化成如下的递推公式：
+逐步计算这个递推公式，就可以得到方程的近似解。如果 取得足够小，则这个递推公式可以足够接近方程的精确解。这被称作方程的“数值近似”，其基本思想是将无限（微分）变成有限（差分）。在这里介绍的数值近似方法被称为“有限差分法”。注意在数值计算的过程中，方程中不能够含有其他的变量（比如之前的频率 ）。
+混沌效应 牛顿方程是一个确定的方程，这指的是：给定初始条件，系统将按照确定的轨迹一直不变地演化下去。也就是说，系统之后的状态实际上全部包含在初始条件之中。因此拉普拉斯曾说：“如果能够获知驱动这个自然运动的所有的力和所有物体的位置，那么宇宙之中从最宏大的天体到最渺小的原子都将包含在一个运动方程之中，而未来将如过去一般呈现在眼前。”
+然而，情况并不像想象中的那么简单。考虑如下的力学系统[5]：
+这个力学系统对初始条件非常敏感，即使初始条件发生了极小的偏差，随着时间推移运动轨迹的偏差也会越来越大，直至完全不同。这被称为“混沌效应”，下面给出了混沌效应的示意图[6]。
+![](data:image/svg&#43;xml;utf8,)初值相同指的是初值具有极小的偏差因此，虽然给定初始条件之后，系统的运动就完全确定下来了，但是无论如何精确，对于两次不同的运动来说，初始条件之间也会有微小的差别。这种微小的差别会在随后的运动过程中被逐渐放大，因此对于看起来初始条件“相同”的两个运动来说，其后的运动也会完全不同。这说明混沌系统在原则上是无法预测的。
+混沌效应广泛存在于非线性系统之中，我们的整个世界就是一个巨大的混沌系统。因此，原则上对我们的世界进行预测是不可能的。（精确）可解是一回事，可以进行（数值）预测是一回事，而运动系统的确定性又是另外一回事。牛顿系统是是确定的系统，其随机性只隐含在方程的内部，以对初值的极端敏感型表现出来。目前一般认为量子力学系统是随机的系统，尽管量子力学的随机性非常微小，但却可以通过混沌效应的放大，被宏观地表现出来。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://hasaki-chan.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "理论物理导论(1) 牛顿力学",
+      "item": "https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA1-%E7%89%9B%E9%A1%BF%E5%8A%9B%E5%AD%A6/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "理论物理导论(1) 牛顿力学",
+  "name": "理论物理导论(1) 牛顿力学",
+  "description": "牛顿第二定律 一个质点的运动遵循什么规律呢？牛顿写下了以他的名字命名的方程：\n其中 是该质点受到的力， 是该质点的质量，而 是该质点的加速度。这就是牛顿力学的全部规律。\n质点运动学 当我们说牛顿运动定律是“牛顿力学的全部规律”时，实际上指的是：通过牛顿运动定律，我们可以获得经典力学系统的一切信息，而不再需要其他的规律作为补充[1]。那么，“经典力学系统的一切信息”指的究竟是什么呢？\n注意到质点处于三维空间中，因此它在某一时刻的位置可以用一个三维矢量 来刻画。现在我们要将质点的位置看作时间的函数：\n这称为质点的运动学方程，它刻画了质点随时间的运动轨迹。质点的速度定义为位置对时间的的一阶导数，而质点的加速度定义为速度对时间的一阶导数：\n因此，得到了运动学方程，实际上就得到了我们所感兴趣的一切信息。\n动力学方程 因此，牛顿运动定律是“牛顿力学的全部规律”，指的实际上是：通过牛顿运动定律，我们可以唯一地确定一个质点的运动学方程。\n但是这个说法是不准确的，因为仅仅给定运动学方程还不能够完全确定下来质点的运动学方程。还需要补充质点在某一时刻的初始速度与位置。我们一般地将粒子所受的力写成粒子位置、速度与时间的函数。因此，完整的表述应该是，对于给定的动力学系统，存在唯一的一个 满足：\n以上结果可以容易地推广到多质点的情况，即对于给定的动力学系统，存在唯一的一组 满足：\n一些例子  对于不受力的一维自由粒子，其动力学方程为：  易知其解为：\n这代表不受力的自由粒子静止或作匀速直线运动，这是牛顿第一定律[2]。\n对于一维谐振子来说，它所受的力与质点的位置成正比。可以写出其动力学方程：  易知其解为：\n其中 为振动的频率。这表明一维谐振子在平衡位置附近作简谐运动。实际上对于任何质点来说，只要它距离平衡位置足够近，总可以被看作是一个简谐振子。\n对于引力作用下的质点来说，它所受的力与距离呈平方反比关系。只考虑二维情况，可以写出其运动方程：  可以看出\n是方程的一组解。这代表质点可以在引力场作用下作圆周运动。实际上质点在经典引力场中的最一般运动是圆锥曲线，我们将在下一节中给出这一结果。\n精确解的困难 然而，只有极少数牛顿力学系统是可以精确求解的。大部分的力学系统都无法精确求解，或者即使可以求解也极为复杂。比如对于下面这个简单的方程来说\n其解就只能表示为复杂的积分形式：\n上面这个方程被称为艾里方程，其解称为艾里函数[3]。这仍然是一个有解析解的例子，而对于更复杂的情况来说，几乎完全无法求出其精确解。\n微扰展开 因此对于不能求解的系统来说，我们只能退而求其次，寻找其动力学方程的近似解。考虑如下的单摆系统：\n这个方程的精确解是难以得到的[4]。为了求这个方程的近似解，可以对其第二项作泰勒展开，并只保留到三次项：\n在这个近似下，方程的第二项可以被分成两部分。第一部分是线性项，它的精确解就是谐振子。而第二部分是三次项，在 很小的时候，它相比于线性项是一个很小的修正。这启发我们把方程的解同样写成谐振子解的一个修正：\n其中 是一个修正项，它与前一项相比是很小的。将上述表达式带入(1)式，并舍弃掉一次以上的 项，可以得到：\n这个方程是可以精确求解的。在泰勒展开中保留更多的项，并重复上述步骤，可以依次得到二阶修正、三阶修正等等。以上是最常用的近似解法，它被称作“微扰展开”。如果系统相较于精确可解的系统只有一个微小的偏差，则通常可以利用微扰展开进行求解。\n数值近似 但是对于偏差较大的情况，就不能利用微扰展开进行求解。以方程\n为例。为了求解这个微分方程，可以用差分来代替微分：\n于是方程化为：\n加上初始条件之后，方程可以转化成如下的递推公式：\n逐步计算这个递推公式，就可以得到方程的近似解。如果 取得足够小，则这个递推公式可以足够接近方程的精确解。这被称作方程的“数值近似”，其基本思想是将无限（微分）变成有限（差分）。在这里介绍的数值近似方法被称为“有限差分法”。注意在数值计算的过程中，方程中不能够含有其他的变量（比如之前的频率 ）。\n混沌效应 牛顿方程是一个确定的方程，这指的是：给定初始条件，系统将按照确定的轨迹一直不变地演化下去。也就是说，系统之后的状态实际上全部包含在初始条件之中。因此拉普拉斯曾说：“如果能够获知驱动这个自然运动的所有的力和所有物体的位置，那么宇宙之中从最宏大的天体到最渺小的原子都将包含在一个运动方程之中，而未来将如过去一般呈现在眼前。”\n然而，情况并不像想象中的那么简单。考虑如下的力学系统[5]：\n这个力学系统对初始条件非常敏感，即使初始条件发生了极小的偏差，随着时间推移运动轨迹的偏差也会越来越大，直至完全不同。这被称为“混沌效应”，下面给出了混沌效应的示意图[6]。\n![](data:image/svg+xml;utf8,)初值相同指的是初值具有极小的偏差因此，虽然给定初始条件之后，系统的运动就完全确定下来了，但是无论如何精确，对于两次不同的运动来说，初始条件之间也会有微小的差别。这种微小的差别会在随后的运动过程中被逐渐放大，因此对于看起来初始条件“相同”的两个运动来说，其后的运动也会完全不同。这说明混沌系统在原则上是无法预测的。\n混沌效应广泛存在于非线性系统之中，我们的整个世界就是一个巨大的混沌系统。因此，原则上对我们的世界进行预测是不可能的。（精确）可解是一回事，可以进行（数值）预测是一回事，而运动系统的确定性又是另外一回事。牛顿系统是是确定的系统，其随机性只隐含在方程的内部，以对初值的极端敏感型表现出来。目前一般认为量子力学系统是随机的系统，尽管量子力学的随机性非常微小，但却可以通过混沌效应的放大，被宏观地表现出来。",
+  "keywords": [
+    
+  ],
+  "articleBody": "牛顿第二定律 一个质点的运动遵循什么规律呢？牛顿写下了以他的名字命名的方程：\n其中 是该质点受到的力， 是该质点的质量，而 是该质点的加速度。这就是牛顿力学的全部规律。\n质点运动学 当我们说牛顿运动定律是“牛顿力学的全部规律”时，实际上指的是：通过牛顿运动定律，我们可以获得经典力学系统的一切信息，而不再需要其他的规律作为补充[1]。那么，“经典力学系统的一切信息”指的究竟是什么呢？\n注意到质点处于三维空间中，因此它在某一时刻的位置可以用一个三维矢量 来刻画。现在我们要将质点的位置看作时间的函数：\n这称为质点的运动学方程，它刻画了质点随时间的运动轨迹。质点的速度定义为位置对时间的的一阶导数，而质点的加速度定义为速度对时间的一阶导数：\n因此，得到了运动学方程，实际上就得到了我们所感兴趣的一切信息。\n动力学方程 因此，牛顿运动定律是“牛顿力学的全部规律”，指的实际上是：通过牛顿运动定律，我们可以唯一地确定一个质点的运动学方程。\n但是这个说法是不准确的，因为仅仅给定运动学方程还不能够完全确定下来质点的运动学方程。还需要补充质点在某一时刻的初始速度与位置。我们一般地将粒子所受的力写成粒子位置、速度与时间的函数。因此，完整的表述应该是，对于给定的动力学系统，存在唯一的一个 满足：\n以上结果可以容易地推广到多质点的情况，即对于给定的动力学系统，存在唯一的一组 满足：\n{i0} \\ \\frac{d\\mathrm{x_i}(t_0)}{dt}=\\mathrm{v}{i0} \\end{cases}\" / 一些例子  对于不受力的一维自由粒子，其动力学方程为：  易知其解为：\n这代表不受力的自由粒子静止或作匀速直线运动，这是牛顿第一定律[2]。\n对于一维谐振子来说，它所受的力与质点的位置成正比。可以写出其动力学方程：  易知其解为：\n其中 为振动的频率。这表明一维谐振子在平衡位置附近作简谐运动。实际上对于任何质点来说，只要它距离平衡位置足够近，总可以被看作是一个简谐振子。\n对于引力作用下的质点来说，它所受的力与距离呈平方反比关系。只考虑二维情况，可以写出其运动方程：  可以看出\n是方程的一组解。这代表质点可以在引力场作用下作圆周运动。实际上质点在经典引力场中的最一般运动是圆锥曲线，我们将在下一节中给出这一结果。\n精确解的困难 然而，只有极少数牛顿力学系统是可以精确求解的。大部分的力学系统都无法精确求解，或者即使可以求解也极为复杂。比如对于下面这个简单的方程来说\n其解就只能表示为复杂的积分形式：\n上面这个方程被称为艾里方程，其解称为艾里函数[3]。这仍然是一个有解析解的例子，而对于更复杂的情况来说，几乎完全无法求出其精确解。\n微扰展开 因此对于不能求解的系统来说，我们只能退而求其次，寻找其动力学方程的近似解。考虑如下的单摆系统：\n这个方程的精确解是难以得到的[4]。为了求这个方程的近似解，可以对其第二项作泰勒展开，并只保留到三次项：\n在这个近似下，方程的第二项可以被分成两部分。第一部分是线性项，它的精确解就是谐振子。而第二部分是三次项，在 很小的时候，它相比于线性项是一个很小的修正。这启发我们把方程的解同样写成谐振子解的一个修正：\n其中 是一个修正项，它与前一项相比是很小的。将上述表达式带入(1)式，并舍弃掉一次以上的 项，可以得到：\n这个方程是可以精确求解的。在泰勒展开中保留更多的项，并重复上述步骤，可以依次得到二阶修正、三阶修正等等。以上是最常用的近似解法，它被称作“微扰展开”。如果系统相较于精确可解的系统只有一个微小的偏差，则通常可以利用微扰展开进行求解。\n数值近似 但是对于偏差较大的情况，就不能利用微扰展开进行求解。以方程\n为例。为了求解这个微分方程，可以用差分来代替微分：\n于是方程化为：\n加上初始条件之后，方程可以转化成如下的递推公式：\n逐步计算这个递推公式，就可以得到方程的近似解。如果 取得足够小，则这个递推公式可以足够接近方程的精确解。这被称作方程的“数值近似”，其基本思想是将无限（微分）变成有限（差分）。在这里介绍的数值近似方法被称为“有限差分法”。注意在数值计算的过程中，方程中不能够含有其他的变量（比如之前的频率 ）。\n混沌效应 牛顿方程是一个确定的方程，这指的是：给定初始条件，系统将按照确定的轨迹一直不变地演化下去。也就是说，系统之后的状态实际上全部包含在初始条件之中。因此拉普拉斯曾说：“如果能够获知驱动这个自然运动的所有的力和所有物体的位置，那么宇宙之中从最宏大的天体到最渺小的原子都将包含在一个运动方程之中，而未来将如过去一般呈现在眼前。”\n然而，情况并不像想象中的那么简单。考虑如下的力学系统[5]：\n这个力学系统对初始条件非常敏感，即使初始条件发生了极小的偏差，随着时间推移运动轨迹的偏差也会越来越大，直至完全不同。这被称为“混沌效应”，下面给出了混沌效应的示意图[6]。\n![](data:image/svg+xml;utf8,)初值相同指的是初值具有极小的偏差因此，虽然给定初始条件之后，系统的运动就完全确定下来了，但是无论如何精确，对于两次不同的运动来说，初始条件之间也会有微小的差别。这种微小的差别会在随后的运动过程中被逐渐放大，因此对于看起来初始条件“相同”的两个运动来说，其后的运动也会完全不同。这说明混沌系统在原则上是无法预测的。\n混沌效应广泛存在于非线性系统之中，我们的整个世界就是一个巨大的混沌系统。因此，原则上对我们的世界进行预测是不可能的。（精确）可解是一回事，可以进行（数值）预测是一回事，而运动系统的确定性又是另外一回事。牛顿系统是是确定的系统，其随机性只隐含在方程的内部，以对初值的极端敏感型表现出来。目前一般认为量子力学系统是随机的系统，尽管量子力学的随机性非常微小，但却可以通过混沌效应的放大，被宏观地表现出来。\n",
+  "wordCount" : "56",
+  "inLanguage": "zh",
+  "datePublished": "2021-06-03T06:32:11Z",
+  "dateModified": "2021-06-03T06:32:11Z",
+  "author":{
+    "@type": "Person",
+    "name": "hasaki"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA1-%E7%89%9B%E9%A1%BF%E5%8A%9B%E5%AD%A6/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小羽咲的笔记",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hasaki-chan.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://hasaki-chan.github.io" accesskey="h" title="小羽咲的笔记 (Alt + H)">小羽咲的笔记</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://hasaki-chan.github.io/archives" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://hasaki-chan.github.io">Home</a>&nbsp;»&nbsp;<a href="https://hasaki-chan.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      理论物理导论(1) 牛顿力学
+    </h1>
+    <div class="post-meta">June 3, 2021&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;hasaki
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">目录</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%89%9b%e9%a1%bf%e7%ac%ac%e4%ba%8c%e5%ae%9a%e5%be%8b" aria-label="牛顿第二定律">牛顿第二定律</a></li>
+                <li>
+                    <a href="#%e8%b4%a8%e7%82%b9%e8%bf%90%e5%8a%a8%e5%ad%a6" aria-label="质点运动学">质点运动学</a></li>
+                <li>
+                    <a href="#%e5%8a%a8%e5%8a%9b%e5%ad%a6%e6%96%b9%e7%a8%8b" aria-label="动力学方程">动力学方程</a></li>
+                <li>
+                    <a href="#%e4%b8%80%e4%ba%9b%e4%be%8b%e5%ad%90" aria-label="一些例子">一些例子</a></li>
+                <li>
+                    <a href="#%e7%b2%be%e7%a1%ae%e8%a7%a3%e7%9a%84%e5%9b%b0%e9%9a%be" aria-label="精确解的困难">精确解的困难</a></li>
+                <li>
+                    <a href="#%e5%be%ae%e6%89%b0%e5%b1%95%e5%bc%80" aria-label="微扰展开">微扰展开</a></li>
+                <li>
+                    <a href="#%e6%95%b0%e5%80%bc%e8%bf%91%e4%bc%bc" aria-label="数值近似">数值近似</a></li>
+                <li>
+                    <a href="#%e6%b7%b7%e6%b2%8c%e6%95%88%e5%ba%94" aria-label="混沌效应">混沌效应</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="牛顿第二定律">牛顿第二定律<a hidden class="anchor" aria-hidden="true" href="#牛顿第二定律">#</a></h2>
+<p>一个质点的运动遵循什么规律呢？牛顿写下了以他的名字命名的方程：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=F%3Dma" alt="F=ma"  />
+</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=F" alt="F"  />
+ 是该质点受到的力， <img loading="lazy" src="https://www.zhihu.com/equation?tex=m" alt="m"  />
+ 是该质点的质量，而 <img loading="lazy" src="https://www.zhihu.com/equation?tex=a" alt="a"  />
+ 是该质点的加速度。这就是牛顿力学的全部规律。</p>
+<h2 id="质点运动学">质点运动学<a hidden class="anchor" aria-hidden="true" href="#质点运动学">#</a></h2>
+<p>当我们说牛顿运动定律是“牛顿力学的全部规律”时，实际上指的是：通过牛顿运动定律，我们可以获得经典力学系统的一切信息，而不再需要其他的规律作为补充[1]。那么，“经典力学系统的一切信息”指的究竟是什么呢？</p>
+<p>注意到质点处于三维空间中，因此它在某一时刻的位置可以用一个三维矢量 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bx%7D%3D%28x%2Cy%2Cz%29" alt="\mathrm{x}=(x,y,z)"  />
+ 来刻画。现在我们要将质点的位置看作时间的函数：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bx%7D%3D%5Cmathrm%7Bx%7D%28t%29" alt="\mathrm{x}=\mathrm{x}(t)"  />
+</p>
+<p>这称为质点的运动学方程，它刻画了质点随时间的运动轨迹。质点的速度定义为位置对时间的的一阶导数，而质点的加速度定义为速度对时间的一阶导数：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bv%7D%28t%29%3D%5Cfrac%7Bd%5Cmathrm%7Bx%7D%28t%29%7D%7Bdt%7D" alt="\mathrm{v}(t)=\frac{d\mathrm{x}(t)}{dt}"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7Ba%7D%28t%29%3D%5Cfrac%7Bd%5Cmathrm%7Bv%7D%28t%29%7D%7Bdt%7D%3D%5Cfrac%7Bd%5E2%5Cmathrm%7Bx%7D%28t%29%7D%7Bdt%5E2%7D" alt="\mathrm{a}(t)=\frac{d\mathrm{v}(t)}{dt}=\frac{d^2\mathrm{x}(t)}{dt^2}"  />
+</p>
+<p>因此，得到了运动学方程，实际上就得到了我们所感兴趣的一切信息。</p>
+<h2 id="动力学方程">动力学方程<a hidden class="anchor" aria-hidden="true" href="#动力学方程">#</a></h2>
+<p>因此，牛顿运动定律是“牛顿力学的全部规律”，指的实际上是：通过牛顿运动定律，我们可以唯一地确定一个质点的运动学方程。</p>
+<p>但是这个说法是不准确的，因为仅仅给定运动学方程还不能够完全确定下来质点的运动学方程。还需要补充质点在某一时刻的初始速度与位置。我们一般地将粒子所受的力写成粒子位置、速度与时间的函数。因此，完整的表述应该是，对于给定的动力学系统，存在唯一的一个 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bx%7D%28t%29" alt="\mathrm{x}(t)"  />
+ 满足：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D&#43;m%5Cfrac%7Bd%5E2%5Cmathrm%7Bx%7D%28t%29%7D%7Bdt%5E2%7D%3DF%28%5Cmathrm%7Bx%7D%2C%5Cdot%7B%5Cmathrm%7Bx%7D%7D%2Ct%29&#43;%5C%5C&#43;%5Cmathrm%7Bx%7D%28t_0%29%3D%5Cmathrm%7Bx%7D_0&#43;%5C%5C&#43;%5Cfrac%7Bd%5Cmathrm%7Bx%7D%28t_0%29%7D%7Bdt%7D%3D%5Cmathrm%7Bv%7D_0&#43;%5Cend%7Bcases%7D" alt="\begin{cases} m\frac{d^2\mathrm{x}(t)}{dt^2}=F(\mathrm{x},\dot{\mathrm{x}},t) \ \mathrm{x}(t_0)=\mathrm{x}_0 \ \frac{d\mathrm{x}(t_0)}{dt}=\mathrm{v}_0 \end{cases}"  />
+</p>
+<p>以上结果可以容易地推广到多质点的情况，即对于给定的动力学系统，存在唯一的一组 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bx_i%7D%28t%29" alt="\mathrm{x_i}(t)"  />
+ 满足：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D&#43;m_i%5Cfrac%7Bd%5E2%5Cmathrm%7Bx_i%7D%28t%29%7D%7Bdt%5E2%7D%3DF_i%28%5Cmathrm%7Bx_j%7D%2C%5Cdot%7B%5Cmathrm%7Bx_j%7D%7D%2Ct%29&#43;%5C%5C&#43;%5Cmathrm%7Bx_i%7D%28t_0%29%3D%5Cmathrm%7Bx%7D_%7Bi0%7D&#43;%5C%5C&#43;%5Cfrac%7Bd%5Cmathrm%7Bx_i%7D%28t_0%29%7D%7Bdt%7D%3D%5Cmathrm%7Bv%7D_%7Bi0%7D&#43;%5Cend%7Bcases%7D" alt="\begin{cases} m_i\frac{d^2\mathrm{x_i}(t)}{dt^2}=F_i(\mathrm{x_j},\dot{\mathrm{x_j}},t) \ \mathrm{x_i}(t_0)=\mathrm{x}&lt;em&gt;{i0} \ \frac{d\mathrm{x_i}(t_0)}{dt}=\mathrm{v}&lt;/em&gt;{i0} \end{cases}"  />
+</p>
+<h2 id="一些例子">一些例子<a hidden class="anchor" aria-hidden="true" href="#一些例子">#</a></h2>
+<ol>
+<li>对于不受力的一维自由粒子，其动力学方程为：</li>
+</ol>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=m%5Cfrac%7Bd%5E2x%28t%29%7D%7Bdt%5E2%7D%3D0" alt="m\frac{d^2x(t)}{dt^2}=0"  />
+</p>
+<p>易知其解为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=x%28t%29%3Dx_0%2Bv_0t" alt="x(t)=x_0&#43;v_0t"  />
+</p>
+<p>这代表不受力的自由粒子静止或作匀速直线运动，这是牛顿第一定律[2]。</p>
+<ol start="2">
+<li>对于一维谐振子来说，它所受的力与质点的位置成正比。可以写出其动力学方程：</li>
+</ol>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=m%5Cfrac%7Bd%5E2x%28t%29%7D%7Bdt%5E2%7D%3D-kx" alt="m\frac{d^2x(t)}{dt^2}=-kx"  />
+</p>
+<p>易知其解为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=x%28t%29%3Dx_0%5Ccos%5Comega&#43;t%2B%5Cfrac%7Bv_0%7D%7B%5Comega%7D%5Csin%5Comega&#43;t" alt="x(t)=x_0\cos\omega t&#43;\frac{v_0}{\omega}\sin\omega t"  />
+</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Comega%3D%5Csqrt%7B%5Cfrac%7Bk%7D%7Bm%7D%7D" alt="\omega=\sqrt{\frac{k}{m}}"  />
+ 为振动的频率。这表明一维谐振子在平衡位置附近作简谐运动。实际上对于任何质点来说，只要它距离平衡位置足够近，总可以被看作是一个简谐振子。</p>
+<ol start="3">
+<li>对于引力作用下的质点来说，它所受的力与距离呈平方反比关系。只考虑二维情况，可以写出其运动方程：</li>
+</ol>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D&#43;m%5Cfrac%7Bd%5E2x%7D%7Bdt%5E2%7D%3D-%5Cfrac%7Bkx%7D%7B%28x%5E2%2By%5E2%29%5E%7B3%2F2%7D%7D%5C%5C&#43;m%5Cfrac%7Bd%5E2y%7D%7Bdt%5E2%7D%3D-%5Cfrac%7Bky%7D%7B%28x%5E2%2By%5E2%29%5E%7B3%2F2%7D%7D&#43;%5Cend%7Bcases%7D" alt="\begin{cases} m\frac{d^2x}{dt^2}=-\frac{kx}{(x^2&#43;y^2)^{3/2}}\ m\frac{d^2y}{dt^2}=-\frac{ky}{(x^2&#43;y^2)^{3/2}} \end{cases}"  />
+</p>
+<p>可以看出</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D&#43;x%28t%29%3DA%5Ccos%28%5Comega&#43;t%2B%5Cvarphi%29&#43;%5C%5C&#43;y%28t%29%3DA%5Csin%28%5Comega&#43;t%2B%5Cvarphi%29&#43;%5Cend%7Bcases%7D" alt="\begin{cases} x(t)=A\cos(\omega t&#43;\varphi) \ y(t)=A\sin(\omega t&#43;\varphi) \end{cases}"  />
+</p>
+<p>是方程的一组解。这代表质点可以在引力场作用下作圆周运动。实际上质点在经典引力场中的最一般运动是圆锥曲线，我们将在下一节中给出这一结果。</p>
+<h2 id="精确解的困难">精确解的困难<a hidden class="anchor" aria-hidden="true" href="#精确解的困难">#</a></h2>
+<p>然而，只有极少数牛顿力学系统是可以精确求解的。大部分的力学系统都无法精确求解，或者即使可以求解也极为复杂。比如对于下面这个简单的方程来说</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5E2x%7D%7Bdt%5E2%7D%3Dtx" alt="\frac{d^2x}{dt^2}=tx"  />
+</p>
+<p>其解就只能表示为复杂的积分形式：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=Ai%28t%29%3D%5Cfrac%7B1%7D%7B%5Cpi%7D%5Cint_0%5E%5Cinfty%5Ccos%5Cleft%28%5Cfrac%7Bs%5E3%7D%7B3%7D%2Bst%5Cright%29ds" alt="Ai(t)=\frac{1}{\pi}\int_0^\infty\cos\left(\frac{s^3}{3}&#43;st\right)ds"  />
+</p>
+<p>上面这个方程被称为艾里方程，其解称为艾里函数[3]。这仍然是一个有解析解的例子，而对于更复杂的情况来说，几乎完全无法求出其精确解。</p>
+<h2 id="微扰展开">微扰展开<a hidden class="anchor" aria-hidden="true" href="#微扰展开">#</a></h2>
+<p>因此对于不能求解的系统来说，我们只能退而求其次，寻找其动力学方程的近似解。考虑如下的单摆系统：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5E2%5Ctheta%7D%7Bdt%5E2%7D%2B%5Comega%5E2%5Csin&#43;%5Ctheta%3D0" alt="\frac{d^2\theta}{dt^2}&#43;\omega^2\sin \theta=0"  />
+</p>
+<p>这个方程的精确解是难以得到的[4]。为了求这个方程的近似解，可以对其第二项作泰勒展开，并只保留到三次项：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5E2%5Ctheta%7D%7Bdt%5E2%7D%2B%5Comega%5E2%5Cleft%28%5Ctheta-%5Cfrac%7B1%7D%7B6%7D%5Ctheta%5E3%5Cright%29%3D0&#43;~~~%281%29" alt="\frac{d^2\theta}{dt^2}&#43;\omega^2\left(\theta-\frac{1}{6}\theta^3\right)=0 ~~~(1)"  />
+</p>
+<p>在这个近似下，方程的第二项可以被分成两部分。第一部分是线性项，它的精确解就是谐振子。而第二部分是三次项，在 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctheta" alt="\theta"  />
+ 很小的时候，它相比于线性项是一个很小的修正。这启发我们把方程的解同样写成谐振子解的一个修正：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctheta%3D%5Csin%5Comega&#43;t%2B%5Ctheta_1" alt="\theta=\sin\omega t&#43;\theta_1"  />
+</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctheta_1" alt="\theta_1"  />
+ 是一个修正项，它与前一项相比是很小的。将上述表达式带入(1)式，并舍弃掉一次以上的 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctheta_1" alt="\theta_1"  />
+ 项，可以得到：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5E2%5Ctheta_1%7D%7Bdt%5E2%7D%2B%5Comega%5E2%5Ctheta_1%3D%5Cfrac%7B1%7D%7B6%7D%5Comega%5E2%5Csin%5E3%5Comega&#43;t" alt="\frac{d^2\theta_1}{dt^2}&#43;\omega^2\theta_1=\frac{1}{6}\omega^2\sin^3\omega t"  />
+</p>
+<p>这个方程是可以精确求解的。在泰勒展开中保留更多的项，并重复上述步骤，可以依次得到二阶修正、三阶修正等等。以上是最常用的近似解法，它被称作“微扰展开”。如果系统相较于精确可解的系统只有一个微小的偏差，则通常可以利用微扰展开进行求解。</p>
+<h2 id="数值近似">数值近似<a hidden class="anchor" aria-hidden="true" href="#数值近似">#</a></h2>
+<p>但是对于偏差较大的情况，就不能利用微扰展开进行求解。以方程</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5E2%5Ctheta%7D%7Bdt%5E2%7D%2B%5Csin&#43;%5Ctheta%3D0" alt="\frac{d^2\theta}{dt^2}&#43;\sin \theta=0"  />
+</p>
+<p>为例。为了求解这个微分方程，可以用差分来代替微分：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5Ctheta%7D%7Bdt%7D%3D%5Cfrac%7B%5Ctheta_%7Bn%2B1%7D-%5Ctheta_%7Bn%7D%7D%7B%5CDelta&#43;t%7D" alt="\frac{d\theta}{dt}=\frac{\theta_{n&#43;1}-\theta_{n}}{\Delta t}"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5E2%5Ctheta%7D%7Bdt%5E2%7D%3D%5Cfrac%7B%5Ctheta_%7Bn%2B2%7D-2%5Ctheta_%7Bn%2B1%7D%2B%5Ctheta_%7Bn%7D%7D%7B%5CDelta&#43;t%5E2%7D" alt="\frac{d^2\theta}{dt^2}=\frac{\theta_{n&#43;2}-2\theta_{n&#43;1}&#43;\theta_{n}}{\Delta t^2}"  />
+</p>
+<p>于是方程化为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Ctheta_%7Bn%2B2%7D-2%5Ctheta_%7Bn%2B1%7D%2B%5Ctheta_%7Bn%7D%7D%7B%5CDelta&#43;t%5E2%7D%3D-%5Csin%5Ctheta_n" alt="\frac{\theta_{n&#43;2}-2\theta_{n&#43;1}&#43;\theta_{n}}{\Delta t^2}=-\sin\theta_n"  />
+</p>
+<p>加上初始条件之后，方程可以转化成如下的递推公式：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cbegin%7Bcases%7D&#43;%5Ctheta_%7Bn%2B2%7D%3D2%5Ctheta_%7Bn%2B1%7D-%5Ctheta_%7Bn%7D-%5CDelta&#43;t%5E2%5Csin%5Ctheta_n&#43;%5C%5C&#43;%5Ctheta_1-%5Ctheta_0%3D%5CDelta&#43;t&#43;v_0&#43;%5C%5C&#43;%5Ctheta_0%3Dx_0&#43;%5Cend%7Bcases%7D" alt="\begin{cases} \theta_{n&#43;2}=2\theta_{n&#43;1}-\theta_{n}-\Delta t^2\sin\theta_n \ \theta_1-\theta_0=\Delta t v_0 \ \theta_0=x_0 \end{cases}"  />
+</p>
+<p>逐步计算这个递推公式，就可以得到方程的近似解。如果 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5CDelta&#43;t" alt="\Delta t"  />
+ 取得足够小，则这个递推公式可以足够接近方程的精确解。这被称作方程的“数值近似”，其基本思想是将无限（微分）变成有限（差分）。在这里介绍的数值近似方法被称为“有限差分法”。注意在数值计算的过程中，方程中不能够含有其他的变量（比如之前的频率 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Comega_0" alt="\omega_0"  />
+ ）。</p>
+<h2 id="混沌效应">混沌效应<a hidden class="anchor" aria-hidden="true" href="#混沌效应">#</a></h2>
+<p>牛顿方程是一个确定的方程，这指的是：给定初始条件，系统将按照确定的轨迹一直不变地演化下去。也就是说，系统之后的状态实际上全部包含在初始条件之中。因此拉普拉斯曾说：“如果能够获知驱动这个自然运动的所有的力和所有物体的位置，那么宇宙之中从最宏大的天体到最渺小的原子都将包含在一个运动方程之中，而未来将如过去一般呈现在眼前。”</p>
+<p>然而，情况并不像想象中的那么简单。考虑如下的力学系统[5]：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%5E2x%7D%7Bdt%5E2%7D%2B%5Cdelta%5Cfrac%7Bdx%7D%7Bdt%7D-x%2Bx%5E3%3D%5Cgamma%5Ccos%5Comega&#43;t" alt="\frac{d^2x}{dt^2}&#43;\delta\frac{dx}{dt}-x&#43;x^3=\gamma\cos\omega t"  />
+</p>
+<p>这个力学系统对初始条件非常敏感，即使初始条件发生了极小的偏差，随着时间推移运动轨迹的偏差也会越来越大，直至完全不同。这被称为“混沌效应”，下面给出了混沌效应的示意图[6]。</p>
+<p><img loading="lazy" src="https://pic4.zhimg.com/v2-ffb670a84ea3e3b14bf44ef4ad253257_b.jpg" alt=""  />
+![](data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='466' height='265'></svg>)初值相同指的是初值具有极小的偏差因此，虽然给定初始条件之后，系统的运动就完全确定下来了，但是无论如何精确，对于两次不同的运动来说，初始条件之间也会有微小的差别。这种微小的差别会在随后的运动过程中被逐渐放大，因此对于看起来初始条件“相同”的两个运动来说，其后的运动也会完全不同。这说明混沌系统在原则上是无法预测的。</p>
+<p>混沌效应广泛存在于非线性系统之中，我们的整个世界就是一个巨大的混沌系统。因此，原则上对我们的世界进行预测是不可能的。（精确）可解是一回事，可以进行（数值）预测是一回事，而运动系统的确定性又是另外一回事。牛顿系统是是确定的系统，其随机性只隐含在方程的内部，以对初值的极端敏感型表现出来。目前一般认为量子力学系统是随机的系统，尽管量子力学的随机性非常微小，但却可以通过混沌效应的放大，被宏观地表现出来。</p>
+
+</div>
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="prev" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA2-%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>理论物理导论(2) 最小作用量原理</span>
+  </a>
+  <a class="next" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA%E5%BA%8F%E8%A8%80%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>理论物理导论：序言&amp;系列目录</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://hasaki-chan.github.io">小羽咲的笔记</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

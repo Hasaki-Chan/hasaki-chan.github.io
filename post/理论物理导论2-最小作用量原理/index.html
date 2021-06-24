@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>理论物理导论(2) 最小作用量原理 | 小羽咲的笔记</title>
+<meta name="keywords" content="" />
+<meta name="description" content="势能 在某些情况下，质点所受的力可以写成一个函数对坐标导数的形式：
+这里的 被称为势函数。此时牛顿力学方程可以写成：
+最小作用量原理 首先将粒子的坐标 全部记为 ，然后引入爱因斯坦记号
+即对重复两次的相同指标求和。定义系统的拉格朗日量为：
+对于一个已知运动路径的粒子来说，其每一时刻都有一个速度和位置，因此每一时刻都对应一个拉格朗日量。将这个粒子的拉格朗日量对时间积分，称为作用量 ，它是粒子运动路径 的泛函：
+下文中将要证明：使得作用量取极值的条件
+与牛顿第二定律(1)式等价。换句话说，粒子实际运动的路径，就是使得作用量泛函取极值的那条路径。(2)式称为最小作用量原理。
+拉格朗日方程 取一条与泛函极值的路径偏差极小的路径，并对其作展开。略去高阶小量后可以证明[1]，作用量取极值的条件(2)等价于方程：
+这被称为系统的拉格朗日方程。将拉格朗日量的具体形式代入，容易证明它与牛顿第二定律(1)等价。
+拉格朗日量中的 不必是直角坐标。比如在极坐标下，拉格朗日量的形式为：
+将其代入到拉格朗日方程中可以得到：
+上述两个方程是极坐标下的牛顿第二定律。
+以下列举几个常见系统的拉格朗日量。电磁场中粒子的拉格朗日量为：
+式中 为电势，而 为磁矢势。引力场中粒子的拉格朗日量为：
+谐振子的拉格朗日量为：
+有心力场 在有心力场中，势函数只是距离 的函数 。在这种情况下，可以将极坐标下的牛顿第二定律中的角度 消去：
+上述方程的解为：
+代入具体的势能就可以积出最终的结果。特别地，对于引力场来说，其势能为 。可以证明其轨道方程为：
+其中 为三个参数[2]，它们由初始条件确定。不难看出这就是椭圆在极坐标系下的方程，因此这代表引力场中粒子最一般的运动为圆锥曲线。
+约束与广义坐标 有时系统并非可以在全空间中自由运动，而是要受到某些限制，这些限制称为“约束”。比如对于单摆来说，其摆锤只能在距离摆心一定的位置上运动。这时可以将 取为其他的变量，如果这些变量是自由的，则可以继续应用拉格朗日方程进行求解。
+以单摆为例，可以将摆线与铅锤线的夹角 取为广义坐标。此时单摆的拉格朗日量为：
+其拉格朗日方程为：
+这是在前一节中使用的单摆方程。但是，约束本质上也是原子中的电子与原子核之间的电磁相互作用的结果。在基本物理学中，几乎所有的力都可以用势能来描述，而约束实际上是不存在的。在本系列中，基本不考虑系统含有约束的情况。
+哈密顿方程 定义广义坐标 的正则动量 为：
+系统的哈密顿量定义为诸广义坐标与正则动量的函数：
+可以证明，系统的拉格朗日方程等价如下方程组：
+这被称为系统的哈密顿方程。系统的哈密顿量的数值就是系统的能量：
+费马原理 用哈密顿量代替拉格朗日量，可以把最小作用量原理写成：
+如果系统的能量守恒，则哈密顿量积分对时间的变分为零，于是
+如果进一步要求粒子不受外力，则系统的动能也不会发生变化，第一个积分中的被积函数也成为了一个常数：
+于是最小作用量原理表示为：在所有可能的路径中，系统将沿运动时间为最短的路径运动。在光学之中，这一原理表示为：光线沿运动时间为最短的路线传播。
+上述结论被称为费马原理。从费马原理中可以导出光的折射定律与反射定律，如下图所示。
+![](data:image/svg&#43;xml;utf8,)## 经典场
+想象一个分布在空间的物质（比如弹性体或者流体），可以将空间中的每个点附近的物质元都看作一个质点。统一将三个空间坐标和一个时间坐标用希腊字母的下标 来表示。因此一般地，每个点处的物理量可以用一个场 来描述，而场对坐标的导数记作 [3]。
+因此，系统在每个点处的拉氏量密度可以写成诸场 和其导数 的函数：
+系统总的拉格朗日量为拉氏量密度对空间的积分，而系统的作用量为拉格朗日量对时间的积分，即拉氏量密度对全时空的积分[4]：
+经典场所满足的条件就是场作用量取极值：
+可以证明，场的拉格朗日方程为[1]：
+以弹性场为例，其拉氏量密度可以用位移矢量场 为">
+<meta name="author" content="hasaki">
+<link rel="canonical" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA2-%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.65aebb33e4f0ce3d1a39e4a35c11b91eb08b582489fca0f78f9227d90ac72a52.css" integrity="sha256-Za67M&#43;Twzj0aOeSjXBG5HrCLWCSJ/KD3j5In2QrHKlI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://hasaki-chan.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hasaki-chan.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hasaki-chan.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://hasaki-chan.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://hasaki-chan.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<meta property="og:title" content="理论物理导论(2) 最小作用量原理" />
+<meta property="og:description" content="势能 在某些情况下，质点所受的力可以写成一个函数对坐标导数的形式：
+这里的 被称为势函数。此时牛顿力学方程可以写成：
+最小作用量原理 首先将粒子的坐标 全部记为 ，然后引入爱因斯坦记号
+即对重复两次的相同指标求和。定义系统的拉格朗日量为：
+对于一个已知运动路径的粒子来说，其每一时刻都有一个速度和位置，因此每一时刻都对应一个拉格朗日量。将这个粒子的拉格朗日量对时间积分，称为作用量 ，它是粒子运动路径 的泛函：
+下文中将要证明：使得作用量取极值的条件
+与牛顿第二定律(1)式等价。换句话说，粒子实际运动的路径，就是使得作用量泛函取极值的那条路径。(2)式称为最小作用量原理。
+拉格朗日方程 取一条与泛函极值的路径偏差极小的路径，并对其作展开。略去高阶小量后可以证明[1]，作用量取极值的条件(2)等价于方程：
+这被称为系统的拉格朗日方程。将拉格朗日量的具体形式代入，容易证明它与牛顿第二定律(1)等价。
+拉格朗日量中的 不必是直角坐标。比如在极坐标下，拉格朗日量的形式为：
+将其代入到拉格朗日方程中可以得到：
+上述两个方程是极坐标下的牛顿第二定律。
+以下列举几个常见系统的拉格朗日量。电磁场中粒子的拉格朗日量为：
+式中 为电势，而 为磁矢势。引力场中粒子的拉格朗日量为：
+谐振子的拉格朗日量为：
+有心力场 在有心力场中，势函数只是距离 的函数 。在这种情况下，可以将极坐标下的牛顿第二定律中的角度 消去：
+上述方程的解为：
+代入具体的势能就可以积出最终的结果。特别地，对于引力场来说，其势能为 。可以证明其轨道方程为：
+其中 为三个参数[2]，它们由初始条件确定。不难看出这就是椭圆在极坐标系下的方程，因此这代表引力场中粒子最一般的运动为圆锥曲线。
+约束与广义坐标 有时系统并非可以在全空间中自由运动，而是要受到某些限制，这些限制称为“约束”。比如对于单摆来说，其摆锤只能在距离摆心一定的位置上运动。这时可以将 取为其他的变量，如果这些变量是自由的，则可以继续应用拉格朗日方程进行求解。
+以单摆为例，可以将摆线与铅锤线的夹角 取为广义坐标。此时单摆的拉格朗日量为：
+其拉格朗日方程为：
+这是在前一节中使用的单摆方程。但是，约束本质上也是原子中的电子与原子核之间的电磁相互作用的结果。在基本物理学中，几乎所有的力都可以用势能来描述，而约束实际上是不存在的。在本系列中，基本不考虑系统含有约束的情况。
+哈密顿方程 定义广义坐标 的正则动量 为：
+系统的哈密顿量定义为诸广义坐标与正则动量的函数：
+可以证明，系统的拉格朗日方程等价如下方程组：
+这被称为系统的哈密顿方程。系统的哈密顿量的数值就是系统的能量：
+费马原理 用哈密顿量代替拉格朗日量，可以把最小作用量原理写成：
+如果系统的能量守恒，则哈密顿量积分对时间的变分为零，于是
+如果进一步要求粒子不受外力，则系统的动能也不会发生变化，第一个积分中的被积函数也成为了一个常数：
+于是最小作用量原理表示为：在所有可能的路径中，系统将沿运动时间为最短的路径运动。在光学之中，这一原理表示为：光线沿运动时间为最短的路线传播。
+上述结论被称为费马原理。从费马原理中可以导出光的折射定律与反射定律，如下图所示。
+![](data:image/svg&#43;xml;utf8,)## 经典场
+想象一个分布在空间的物质（比如弹性体或者流体），可以将空间中的每个点附近的物质元都看作一个质点。统一将三个空间坐标和一个时间坐标用希腊字母的下标 来表示。因此一般地，每个点处的物理量可以用一个场 来描述，而场对坐标的导数记作 [3]。
+因此，系统在每个点处的拉氏量密度可以写成诸场 和其导数 的函数：
+系统总的拉格朗日量为拉氏量密度对空间的积分，而系统的作用量为拉格朗日量对时间的积分，即拉氏量密度对全时空的积分[4]：
+经典场所满足的条件就是场作用量取极值：
+可以证明，场的拉格朗日方程为[1]：
+以弹性场为例，其拉氏量密度可以用位移矢量场 为" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA2-%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/" /><meta property="og:image" content="https://hasaki-chan.github.io/papermod-cover.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-05T05:54:01&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-05T05:54:01&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hasaki-chan.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="理论物理导论(2) 最小作用量原理"/>
+<meta name="twitter:description" content="势能 在某些情况下，质点所受的力可以写成一个函数对坐标导数的形式：
+这里的 被称为势函数。此时牛顿力学方程可以写成：
+最小作用量原理 首先将粒子的坐标 全部记为 ，然后引入爱因斯坦记号
+即对重复两次的相同指标求和。定义系统的拉格朗日量为：
+对于一个已知运动路径的粒子来说，其每一时刻都有一个速度和位置，因此每一时刻都对应一个拉格朗日量。将这个粒子的拉格朗日量对时间积分，称为作用量 ，它是粒子运动路径 的泛函：
+下文中将要证明：使得作用量取极值的条件
+与牛顿第二定律(1)式等价。换句话说，粒子实际运动的路径，就是使得作用量泛函取极值的那条路径。(2)式称为最小作用量原理。
+拉格朗日方程 取一条与泛函极值的路径偏差极小的路径，并对其作展开。略去高阶小量后可以证明[1]，作用量取极值的条件(2)等价于方程：
+这被称为系统的拉格朗日方程。将拉格朗日量的具体形式代入，容易证明它与牛顿第二定律(1)等价。
+拉格朗日量中的 不必是直角坐标。比如在极坐标下，拉格朗日量的形式为：
+将其代入到拉格朗日方程中可以得到：
+上述两个方程是极坐标下的牛顿第二定律。
+以下列举几个常见系统的拉格朗日量。电磁场中粒子的拉格朗日量为：
+式中 为电势，而 为磁矢势。引力场中粒子的拉格朗日量为：
+谐振子的拉格朗日量为：
+有心力场 在有心力场中，势函数只是距离 的函数 。在这种情况下，可以将极坐标下的牛顿第二定律中的角度 消去：
+上述方程的解为：
+代入具体的势能就可以积出最终的结果。特别地，对于引力场来说，其势能为 。可以证明其轨道方程为：
+其中 为三个参数[2]，它们由初始条件确定。不难看出这就是椭圆在极坐标系下的方程，因此这代表引力场中粒子最一般的运动为圆锥曲线。
+约束与广义坐标 有时系统并非可以在全空间中自由运动，而是要受到某些限制，这些限制称为“约束”。比如对于单摆来说，其摆锤只能在距离摆心一定的位置上运动。这时可以将 取为其他的变量，如果这些变量是自由的，则可以继续应用拉格朗日方程进行求解。
+以单摆为例，可以将摆线与铅锤线的夹角 取为广义坐标。此时单摆的拉格朗日量为：
+其拉格朗日方程为：
+这是在前一节中使用的单摆方程。但是，约束本质上也是原子中的电子与原子核之间的电磁相互作用的结果。在基本物理学中，几乎所有的力都可以用势能来描述，而约束实际上是不存在的。在本系列中，基本不考虑系统含有约束的情况。
+哈密顿方程 定义广义坐标 的正则动量 为：
+系统的哈密顿量定义为诸广义坐标与正则动量的函数：
+可以证明，系统的拉格朗日方程等价如下方程组：
+这被称为系统的哈密顿方程。系统的哈密顿量的数值就是系统的能量：
+费马原理 用哈密顿量代替拉格朗日量，可以把最小作用量原理写成：
+如果系统的能量守恒，则哈密顿量积分对时间的变分为零，于是
+如果进一步要求粒子不受外力，则系统的动能也不会发生变化，第一个积分中的被积函数也成为了一个常数：
+于是最小作用量原理表示为：在所有可能的路径中，系统将沿运动时间为最短的路径运动。在光学之中，这一原理表示为：光线沿运动时间为最短的路线传播。
+上述结论被称为费马原理。从费马原理中可以导出光的折射定律与反射定律，如下图所示。
+![](data:image/svg&#43;xml;utf8,)## 经典场
+想象一个分布在空间的物质（比如弹性体或者流体），可以将空间中的每个点附近的物质元都看作一个质点。统一将三个空间坐标和一个时间坐标用希腊字母的下标 来表示。因此一般地，每个点处的物理量可以用一个场 来描述，而场对坐标的导数记作 [3]。
+因此，系统在每个点处的拉氏量密度可以写成诸场 和其导数 的函数：
+系统总的拉格朗日量为拉氏量密度对空间的积分，而系统的作用量为拉格朗日量对时间的积分，即拉氏量密度对全时空的积分[4]：
+经典场所满足的条件就是场作用量取极值：
+可以证明，场的拉格朗日方程为[1]：
+以弹性场为例，其拉氏量密度可以用位移矢量场 为"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://hasaki-chan.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "理论物理导论(2) 最小作用量原理",
+      "item": "https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA2-%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "理论物理导论(2) 最小作用量原理",
+  "name": "理论物理导论(2) 最小作用量原理",
+  "description": "势能 在某些情况下，质点所受的力可以写成一个函数对坐标导数的形式：\n这里的 被称为势函数。此时牛顿力学方程可以写成：\n最小作用量原理 首先将粒子的坐标 全部记为 ，然后引入爱因斯坦记号\n即对重复两次的相同指标求和。定义系统的拉格朗日量为：\n对于一个已知运动路径的粒子来说，其每一时刻都有一个速度和位置，因此每一时刻都对应一个拉格朗日量。将这个粒子的拉格朗日量对时间积分，称为作用量 ，它是粒子运动路径 的泛函：\n下文中将要证明：使得作用量取极值的条件\n与牛顿第二定律(1)式等价。换句话说，粒子实际运动的路径，就是使得作用量泛函取极值的那条路径。(2)式称为最小作用量原理。\n拉格朗日方程 取一条与泛函极值的路径偏差极小的路径，并对其作展开。略去高阶小量后可以证明[1]，作用量取极值的条件(2)等价于方程：\n这被称为系统的拉格朗日方程。将拉格朗日量的具体形式代入，容易证明它与牛顿第二定律(1)等价。\n拉格朗日量中的 不必是直角坐标。比如在极坐标下，拉格朗日量的形式为：\n将其代入到拉格朗日方程中可以得到：\n上述两个方程是极坐标下的牛顿第二定律。\n以下列举几个常见系统的拉格朗日量。电磁场中粒子的拉格朗日量为：\n式中 为电势，而 为磁矢势。引力场中粒子的拉格朗日量为：\n谐振子的拉格朗日量为：\n有心力场 在有心力场中，势函数只是距离 的函数 。在这种情况下，可以将极坐标下的牛顿第二定律中的角度 消去：\n上述方程的解为：\n代入具体的势能就可以积出最终的结果。特别地，对于引力场来说，其势能为 。可以证明其轨道方程为：\n其中 为三个参数[2]，它们由初始条件确定。不难看出这就是椭圆在极坐标系下的方程，因此这代表引力场中粒子最一般的运动为圆锥曲线。\n约束与广义坐标 有时系统并非可以在全空间中自由运动，而是要受到某些限制，这些限制称为“约束”。比如对于单摆来说，其摆锤只能在距离摆心一定的位置上运动。这时可以将 取为其他的变量，如果这些变量是自由的，则可以继续应用拉格朗日方程进行求解。\n以单摆为例，可以将摆线与铅锤线的夹角 取为广义坐标。此时单摆的拉格朗日量为：\n其拉格朗日方程为：\n这是在前一节中使用的单摆方程。但是，约束本质上也是原子中的电子与原子核之间的电磁相互作用的结果。在基本物理学中，几乎所有的力都可以用势能来描述，而约束实际上是不存在的。在本系列中，基本不考虑系统含有约束的情况。\n哈密顿方程 定义广义坐标 的正则动量 为：\n系统的哈密顿量定义为诸广义坐标与正则动量的函数：\n可以证明，系统的拉格朗日方程等价如下方程组：\n这被称为系统的哈密顿方程。系统的哈密顿量的数值就是系统的能量：\n费马原理 用哈密顿量代替拉格朗日量，可以把最小作用量原理写成：\n如果系统的能量守恒，则哈密顿量积分对时间的变分为零，于是\n如果进一步要求粒子不受外力，则系统的动能也不会发生变化，第一个积分中的被积函数也成为了一个常数：\n于是最小作用量原理表示为：在所有可能的路径中，系统将沿运动时间为最短的路径运动。在光学之中，这一原理表示为：光线沿运动时间为最短的路线传播。\n上述结论被称为费马原理。从费马原理中可以导出光的折射定律与反射定律，如下图所示。\n![](data:image/svg+xml;utf8,)## 经典场\n想象一个分布在空间的物质（比如弹性体或者流体），可以将空间中的每个点附近的物质元都看作一个质点。统一将三个空间坐标和一个时间坐标用希腊字母的下标 来表示。因此一般地，每个点处的物理量可以用一个场 来描述，而场对坐标的导数记作 [3]。\n因此，系统在每个点处的拉氏量密度可以写成诸场 和其导数 的函数：\n系统总的拉格朗日量为拉氏量密度对空间的积分，而系统的作用量为拉格朗日量对时间的积分，即拉氏量密度对全时空的积分[4]：\n经典场所满足的条件就是场作用量取极值：\n可以证明，场的拉格朗日方程为[1]：\n以弹性场为例，其拉氏量密度可以用位移矢量场 为",
+  "keywords": [
+    
+  ],
+  "articleBody": "势能 在某些情况下，质点所受的力可以写成一个函数对坐标导数的形式：\n这里的 被称为势函数。此时牛顿力学方程可以写成：\n最小作用量原理 首先将粒子的坐标 全部记为 ，然后引入爱因斯坦记号\n即对重复两次的相同指标求和。定义系统的拉格朗日量为：\n对于一个已知运动路径的粒子来说，其每一时刻都有一个速度和位置，因此每一时刻都对应一个拉格朗日量。将这个粒子的拉格朗日量对时间积分，称为作用量 ，它是粒子运动路径 的泛函：\n下文中将要证明：使得作用量取极值的条件\n与牛顿第二定律(1)式等价。换句话说，粒子实际运动的路径，就是使得作用量泛函取极值的那条路径。(2)式称为最小作用量原理。\n拉格朗日方程 取一条与泛函极值的路径偏差极小的路径，并对其作展开。略去高阶小量后可以证明[1]，作用量取极值的条件(2)等价于方程：\n这被称为系统的拉格朗日方程。将拉格朗日量的具体形式代入，容易证明它与牛顿第二定律(1)等价。\n拉格朗日量中的 不必是直角坐标。比如在极坐标下，拉格朗日量的形式为：\n将其代入到拉格朗日方程中可以得到：\n上述两个方程是极坐标下的牛顿第二定律。\n以下列举几个常见系统的拉格朗日量。电磁场中粒子的拉格朗日量为：\n式中 为电势，而 为磁矢势。引力场中粒子的拉格朗日量为：\n谐振子的拉格朗日量为：\n有心力场 在有心力场中，势函数只是距离 的函数 。在这种情况下，可以将极坐标下的牛顿第二定律中的角度 消去：\n上述方程的解为：\n代入具体的势能就可以积出最终的结果。特别地，对于引力场来说，其势能为 。可以证明其轨道方程为：\n其中 为三个参数[2]，它们由初始条件确定。不难看出这就是椭圆在极坐标系下的方程，因此这代表引力场中粒子最一般的运动为圆锥曲线。\n约束与广义坐标 有时系统并非可以在全空间中自由运动，而是要受到某些限制，这些限制称为“约束”。比如对于单摆来说，其摆锤只能在距离摆心一定的位置上运动。这时可以将 取为其他的变量，如果这些变量是自由的，则可以继续应用拉格朗日方程进行求解。\n以单摆为例，可以将摆线与铅锤线的夹角 取为广义坐标。此时单摆的拉格朗日量为：\n其拉格朗日方程为：\n这是在前一节中使用的单摆方程。但是，约束本质上也是原子中的电子与原子核之间的电磁相互作用的结果。在基本物理学中，几乎所有的力都可以用势能来描述，而约束实际上是不存在的。在本系列中，基本不考虑系统含有约束的情况。\n哈密顿方程 定义广义坐标 的正则动量 为：\n系统的哈密顿量定义为诸广义坐标与正则动量的函数：\n可以证明，系统的拉格朗日方程等价如下方程组：\n这被称为系统的哈密顿方程。系统的哈密顿量的数值就是系统的能量：\n费马原理 用哈密顿量代替拉格朗日量，可以把最小作用量原理写成：\n如果系统的能量守恒，则哈密顿量积分对时间的变分为零，于是\n如果进一步要求粒子不受外力，则系统的动能也不会发生变化，第一个积分中的被积函数也成为了一个常数：\n于是最小作用量原理表示为：在所有可能的路径中，系统将沿运动时间为最短的路径运动。在光学之中，这一原理表示为：光线沿运动时间为最短的路线传播。\n上述结论被称为费马原理。从费马原理中可以导出光的折射定律与反射定律，如下图所示。\n![](data:image/svg+xml;utf8,)## 经典场\n想象一个分布在空间的物质（比如弹性体或者流体），可以将空间中的每个点附近的物质元都看作一个质点。统一将三个空间坐标和一个时间坐标用希腊字母的下标 来表示。因此一般地，每个点处的物理量可以用一个场 来描述，而场对坐标的导数记作 [3]。\n因此，系统在每个点处的拉氏量密度可以写成诸场 和其导数 的函数：\n系统总的拉格朗日量为拉氏量密度对空间的积分，而系统的作用量为拉格朗日量对时间的积分，即拉氏量密度对全时空的积分[4]：\n经典场所满足的条件就是场作用量取极值：\n可以证明，场的拉格朗日方程为[1]：\n以弹性场为例，其拉氏量密度可以用位移矢量场 为\n其运动方程为：\n弹性体的微振动和声波在空气中的传播都满足这个方程。\n有限元法 在特定边界条件下的场方程求解是困难的，实际在计算的时候通常将整个空间分成许多可以求解的小正方体或者小的三棱锥，然后让每个体积元内的场作用量取极值，用这种方法来求场的近似解。这种数值计算方法被称为“有限元法”。\n",
+  "wordCount" : "74",
+  "inLanguage": "zh",
+  "datePublished": "2021-06-05T05:54:01Z",
+  "dateModified": "2021-06-05T05:54:01Z",
+  "author":{
+    "@type": "Person",
+    "name": "hasaki"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA2-%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小羽咲的笔记",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hasaki-chan.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://hasaki-chan.github.io" accesskey="h" title="小羽咲的笔记 (Alt + H)">小羽咲的笔记</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://hasaki-chan.github.io/archives" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hasaki-chan.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://hasaki-chan.github.io">Home</a>&nbsp;»&nbsp;<a href="https://hasaki-chan.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      理论物理导论(2) 最小作用量原理
+    </h1>
+    <div class="post-meta">June 5, 2021&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;hasaki
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">目录</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%8a%bf%e8%83%bd" aria-label="势能">势能</a></li>
+                <li>
+                    <a href="#%e6%9c%80%e5%b0%8f%e4%bd%9c%e7%94%a8%e9%87%8f%e5%8e%9f%e7%90%86" aria-label="最小作用量原理">最小作用量原理</a></li>
+                <li>
+                    <a href="#%e6%8b%89%e6%a0%bc%e6%9c%97%e6%97%a5%e6%96%b9%e7%a8%8b" aria-label="拉格朗日方程">拉格朗日方程</a></li>
+                <li>
+                    <a href="#%e6%9c%89%e5%bf%83%e5%8a%9b%e5%9c%ba" aria-label="有心力场">有心力场</a></li>
+                <li>
+                    <a href="#%e7%ba%a6%e6%9d%9f%e4%b8%8e%e5%b9%bf%e4%b9%89%e5%9d%90%e6%a0%87" aria-label="约束与广义坐标">约束与广义坐标</a></li>
+                <li>
+                    <a href="#%e5%93%88%e5%af%86%e9%a1%bf%e6%96%b9%e7%a8%8b" aria-label="哈密顿方程">哈密顿方程</a></li>
+                <li>
+                    <a href="#%e8%b4%b9%e9%a9%ac%e5%8e%9f%e7%90%86" aria-label="费马原理">费马原理</a></li>
+                <li>
+                    <a href="#%e6%9c%89%e9%99%90%e5%85%83%e6%b3%95" aria-label="有限元法">有限元法</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="势能">势能<a hidden class="anchor" aria-hidden="true" href="#势能">#</a></h2>
+<p>在某些情况下，质点所受的力可以写成一个函数对坐标导数的形式：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7BF%7D%28%5Cmathrm%7Bx%7D%29%3D-%5Cfrac%7B%5Cpartial&#43;V%28%5Cmathrm%7Bx%7D%29%7D%7B%5Cpartial&#43;%5Cmathrm%7Bx%7D%7D&#43;" alt="\mathrm{F}(\mathrm{x})=-\frac{\partial V(\mathrm{x})}{\partial \mathrm{x}} "  />
+</p>
+<p>这里的 <img loading="lazy" src="https://www.zhihu.com/equation?tex=V%28%5Cmathrm%7Bx%7D%29" alt="V(\mathrm{x})"  />
+ 被称为势函数。此时牛顿力学方程可以写成：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=m%5Cfrac%7Bd%5E2%5Cmathrm%7Bx%7D%7D%7Bdt%5E2%7D%3D-%5Cfrac%7B%5Cpartial&#43;V%28%5Cmathrm%7Bx%7D%29%7D%7B%5Cpartial&#43;%5Cmathrm%7Bx%7D%7D&#43;~~~%281%29" alt="m\frac{d^2\mathrm{x}}{dt^2}=-\frac{\partial V(\mathrm{x})}{\partial \mathrm{x}} ~~~(1)"  />
+</p>
+<h2 id="最小作用量原理">最小作用量原理<a hidden class="anchor" aria-hidden="true" href="#最小作用量原理">#</a></h2>
+<p>首先将粒子的坐标 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x%2Cy%2Cz" alt="x,y,z"  />
+ 全部记为 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i" alt="x_i"  />
+ ，然后引入爱因斯坦记号</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i&#43;x_i%3D%5Csum_i&#43;x_ix_i" alt="x_i x_i=\sum_i x_ix_i"  />
+</p>
+<p>即对重复两次的相同指标求和。定义系统的拉格朗日量为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%3D%5Cfrac%7B1%7D%7B2%7Dm%5Cdot&#43;x_i&#43;%5Cdot&#43;x_i-V%28x_i%29" alt="L=\frac{1}{2}m\dot x_i \dot x_i-V(x_i)"  />
+</p>
+<p>对于一个已知运动路径的粒子来说，其每一时刻都有一个速度和位置，因此每一时刻都对应一个拉格朗日量。将这个粒子的拉格朗日量对时间积分，称为作用量 <img loading="lazy" src="https://www.zhihu.com/equation?tex=S" alt="S"  />
+ ，它是粒子运动路径 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i%28t%29" alt="x_i(t)"  />
+ 的泛函：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=S%5Bx_i%28t%29%5D%3D%5Cint_%7Bt_1%7D%5E%7Bt_2%7DL%28%5Cdot&#43;x_i%2Cx_i%2Ct%29dt" alt="S[x_i(t)]=\int_{t_1}^{t_2}L(\dot x_i,x_i,t)dt"  />
+</p>
+<p>下文中将要证明：使得作用量取极值的条件</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cdelta&#43;S%3D0~~~%282%29" alt="\delta S=0~~~(2)"  />
+</p>
+<p>与牛顿第二定律(1)式等价。换句话说，粒子实际运动的路径，就是使得作用量泛函取极值的那条路径。(2)式称为最小作用量原理。</p>
+<h2 id="拉格朗日方程">拉格朗日方程<a hidden class="anchor" aria-hidden="true" href="#拉格朗日方程">#</a></h2>
+<p>取一条与泛函极值的路径偏差极小的路径，并对其作展开。略去高阶小量后可以证明[1]，作用量取极值的条件(2)等价于方程：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7Bd%7D%7Bdt%7D%5Cleft%28%5Cfrac%7B%5Cpartial&#43;L%7D%7B%5Cpartial%5Cdot&#43;x_i%7D%5Cright%29-%5Cfrac%7B%5Cpartial&#43;L%7D%7B%5Cpartial&#43;x_i%7D%3D0" alt="\frac{d}{dt}\left(\frac{\partial L}{\partial\dot x_i}\right)-\frac{\partial L}{\partial x_i}=0"  />
+</p>
+<p>这被称为系统的拉格朗日方程。将拉格朗日量的具体形式代入，容易证明它与牛顿第二定律(1)等价。</p>
+<p>拉格朗日量中的 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i" alt="x_i"  />
+ 不必是直角坐标。比如在极坐标下，拉格朗日量的形式为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%3D%5Cfrac12&#43;m%28%5Cdot&#43;r%5E2%2Br%5E2%5Cdot%5Ctheta%5E2%29-V%28r%2C%5Ctheta%29" alt="L=\frac12 m(\dot r^2&#43;r^2\dot\theta^2)-V(r,\theta)"  />
+</p>
+<p>将其代入到拉格朗日方程中可以得到：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=m%28%5Cddot&#43;r-r%5Cdot%5Ctheta%5E2%29%3D-%5Cfrac%7B%5Cpartial&#43;V%7D%7B%5Cpartial&#43;r%7D" alt="m(\ddot r-r\dot\theta^2)=-\frac{\partial V}{\partial r}"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=m%5Cfrac1r%5Cleft%5B%5Cfrac%7Bd%7D%7Bdt%7D%28r%5E2%5Cdot%5Ctheta%29%5Cright%5D%3D-%5Cfrac%7B%5Cpartial&#43;V%7D%7B%5Cpartial%5Ctheta%7D" alt="m\frac1r\left[\frac{d}{dt}(r^2\dot\theta)\right]=-\frac{\partial V}{\partial\theta}"  />
+</p>
+<p>上述两个方程是极坐标下的牛顿第二定律。</p>
+<p>以下列举几个常见系统的拉格朗日量。电磁场中粒子的拉格朗日量为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%3DT-q%5Cphi%2B%5Cfrac%7Bq%7D%7Bc%7D%5Cmathrm&#43;A%5Ccdot%5Cmathrm&#43;v" alt="L=T-q\phi&#43;\frac{q}{c}\mathrm A\cdot\mathrm v"  />
+</p>
+<p>式中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cphi" alt="\phi"  />
+ 为电势，而 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathrm%7BA%7D" alt="\mathrm{A}"  />
+ 为磁矢势。引力场中粒子的拉格朗日量为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%3DT%2B%5Cfrac%7BGMm%7D%7Br%7D" alt="L=T&#43;\frac{GMm}{r}"  />
+</p>
+<p>谐振子的拉格朗日量为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%3DT-%5Cfrac%7B1%7D%7B2%7Dkr%5E2" alt="L=T-\frac{1}{2}kr^2"  />
+</p>
+<h2 id="有心力场">有心力场<a hidden class="anchor" aria-hidden="true" href="#有心力场">#</a></h2>
+<p>在有心力场中，势函数只是距离 <img loading="lazy" src="https://www.zhihu.com/equation?tex=r" alt="r"  />
+ 的函数 <img loading="lazy" src="https://www.zhihu.com/equation?tex=V%28r%29" alt="V(r)"  />
+ 。在这种情况下，可以将极坐标下的牛顿第二定律中的角度 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctheta" alt="\theta"  />
+ 消去：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=m%5Cddot&#43;r-%5Cfrac%7Bl%7D%7Bmr%5E3%7D%3D-%5Cfrac%7B%5Cpartial&#43;V%7D%7B%5Cpartial&#43;r%7D" alt="m\ddot r-\frac{l}{mr^3}=-\frac{\partial V}{\partial r}"  />
+</p>
+<p>上述方程的解为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=t%3D%5Cint_%7Br_0%7D%5Er&#43;%5Cfrac%7Bdr%7D%7B%5Csqrt%7B%5Cfrac2m%5Cleft%28E-V%28r%29-%5Cfrac%7Bl%5E2%7D%7B2mr%5E2%7D%5Cright%29%7D%7D" alt="t=\int_{r_0}^r \frac{dr}{\sqrt{\frac2m\left(E-V(r)-\frac{l^2}{2mr^2}\right)}}"  />
+</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctheta%3Dl%5Cint_0%5Et%5Cfrac%7Bdt%7D%7Bmr%5E2%28t%29%7D%2B%5Ctheta_0" alt="\theta=l\int_0^t\frac{dt}{mr^2(t)}&#43;\theta_0"  />
+</p>
+<p>代入具体的势能就可以积出最终的结果。特别地，对于引力场来说，其势能为 <img loading="lazy" src="https://www.zhihu.com/equation?tex=V%3D-%5Cfrac&#43;kr&#43;" alt="V=-\frac kr "  />
+ 。可以证明其轨道方程为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac&#43;1r%3D%5Cfrac%7Bmk%7D%7Bl%5E2%7D%5Cleft%281%2Be%5Ccos%28%5Ctheta-%5Ctheta%27%29%5Cright%29" alt="\frac 1r=\frac{mk}{l^2}\left(1&#43;e\cos(\theta-\theta&#39;)\right)"  />
+</p>
+<p>其中 <img loading="lazy" src="https://www.zhihu.com/equation?tex=l%E3%80%81e%E3%80%81%5Ctheta%27" alt="l、e、\theta&#39;"  />
+ 为三个参数[2]，它们由初始条件确定。不难看出这就是椭圆在极坐标系下的方程，因此这代表引力场中粒子最一般的运动为圆锥曲线。</p>
+<h2 id="约束与广义坐标">约束与广义坐标<a hidden class="anchor" aria-hidden="true" href="#约束与广义坐标">#</a></h2>
+<p>有时系统并非可以在全空间中自由运动，而是要受到某些限制，这些限制称为“约束”。比如对于单摆来说，其摆锤只能在距离摆心一定的位置上运动。这时可以将 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i" alt="x_i"  />
+ 取为其他的变量，如果这些变量是自由的，则可以继续应用拉格朗日方程进行求解。</p>
+<p>以单摆为例，可以将摆线与铅锤线的夹角 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ctheta" alt="\theta"  />
+ 取为广义坐标。此时单摆的拉格朗日量为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=L%3D%5Cfrac12ml%5E2%5Cdot%5Ctheta%5E2-mgl%281-%5Ccos%5Ctheta%29" alt="L=\frac12ml^2\dot\theta^2-mgl(1-\cos\theta)"  />
+</p>
+<p>其拉格朗日方程为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=ml%5E2%5Cfrac%7Bd%5E2%5Ctheta%7D%7Bdt%5E2%7D%3D-mgl%5Csin%5Ctheta" alt="ml^2\frac{d^2\theta}{dt^2}=-mgl\sin\theta"  />
+</p>
+<p>这是在前一节中使用的单摆方程。但是，约束本质上也是原子中的电子与原子核之间的电磁相互作用的结果。在基本物理学中，几乎所有的力都可以用势能来描述，而约束实际上是不存在的。在本系列中，基本不考虑系统含有约束的情况。</p>
+<h2 id="哈密顿方程">哈密顿方程<a hidden class="anchor" aria-hidden="true" href="#哈密顿方程">#</a></h2>
+<p>定义广义坐标 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_i" alt="x_i"  />
+ 的正则动量 <img loading="lazy" src="https://www.zhihu.com/equation?tex=p_i" alt="p_i"  />
+ 为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=p_i%3D%5Cfrac%7B%5Cpartial&#43;L%28%5Cdot&#43;x_i%2Cx_i%2Ct%29%7D%7B%5Cpartial%5Cdot&#43;x_i%7D" alt="p_i=\frac{\partial L(\dot x_i,x_i,t)}{\partial\dot x_i}"  />
+</p>
+<p>系统的哈密顿量定义为诸广义坐标与正则动量的函数：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=H%28x_i%2Cp_i%29%3Dp_i%5Cdot&#43;x_i-L%28%5Cdot&#43;x_i%2Cx_i%29" alt="H(x_i,p_i)=p_i\dot x_i-L(\dot x_i,x_i)"  />
+</p>
+<p>可以证明，系统的拉格朗日方程等价如下方程组：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cdot&#43;x_i%3D%5Cfrac%7B%5Cpartial&#43;H%7D%7B%5Cpartial&#43;p_i%7D%2C&#43;~%5Cdot&#43;p_i%3D-%5Cfrac%7B%5Cpartial&#43;H%7D%7B%5Cpartial&#43;x_i%7D" alt="\dot x_i=\frac{\partial H}{\partial p_i}, ~\dot p_i=-\frac{\partial H}{\partial x_i}"  />
+</p>
+<p>这被称为系统的哈密顿方程。系统的哈密顿量的数值就是系统的能量：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=H%3DT%2BV" alt="H=T&#43;V"  />
+</p>
+<h2 id="费马原理">费马原理<a hidden class="anchor" aria-hidden="true" href="#费马原理">#</a></h2>
+<p>用哈密顿量代替拉格朗日量，可以把最小作用量原理写成：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cdelta&#43;S%3D%5Cdelta%5Cint_%7Bt_1%7D%5E%7Bt_2%7Dp_i%5Cdot&#43;x_idt-%5Cdelta%5Cint_%7Bt_1%7D%5E%7Bt_2%7DHdt%3D0" alt="\delta S=\delta\int_{t_1}^{t_2}p_i\dot x_idt-\delta\int_{t_1}^{t_2}Hdt=0"  />
+</p>
+<p>如果系统的能量守恒，则哈密顿量积分对时间的变分为零，于是</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cdelta&#43;S%3D%5Cdelta%5Cint_%7Bt_1%7D%5E%7Bt_2%7Dp_i%5Cdot&#43;x_idt%3D0" alt="\delta S=\delta\int_{t_1}^{t_2}p_i\dot x_idt=0"  />
+</p>
+<p>如果进一步要求粒子不受外力，则系统的动能也不会发生变化，第一个积分中的被积函数也成为了一个常数：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cdelta&#43;S%3D%5Cdelta%5Cint_%7Bt_1%7D%5E%7Bt_2%7DTdt%3D%5Cdelta&#43;T%28t_1-t_2%29%3DT%5Cdelta&#43;%28t_1-t_2%29%3D0" alt="\delta S=\delta\int_{t_1}^{t_2}Tdt=\delta T(t_1-t_2)=T\delta (t_1-t_2)=0"  />
+</p>
+<p>于是最小作用量原理表示为：在所有可能的路径中，系统将沿运动时间为最短的路径运动。在光学之中，这一原理表示为：光线沿运动时间为最短的路线传播。</p>
+<p>上述结论被称为费马原理。从费马原理中可以导出光的折射定律与反射定律，如下图所示。</p>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-538aba076ba1e2dd9e5cfe682bb4e30d_b.jpg" alt=""  />
+![](data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='522' height='420'></svg>)## 经典场</p>
+<p>想象一个分布在空间的物质（比如弹性体或者流体），可以将空间中的每个点附近的物质元都看作一个质点。统一将三个空间坐标和一个时间坐标用希腊字母的下标 <img loading="lazy" src="https://www.zhihu.com/equation?tex=x_%5Cmu" alt="x_\mu"  />
+ 来表示。因此一般地，每个点处的物理量可以用一个场 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ceta%3D%5Ceta%28x_%5Cmu%29" alt="\eta=\eta(x_\mu)"  />
+ 来描述，而场对坐标的导数记作 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial&#43;%5Ceta%7D%7B%5Cpartial&#43;x_%5Cmu%7D%3D%5Cpartial_%5Cmu%5Ceta" alt="\frac{\partial \eta}{\partial x_\mu}=\partial_\mu\eta"  />
+ [3]。</p>
+<p>因此，系统在每个点处的拉氏量密度可以写成诸场 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ceta_%5Crho" alt="\eta_\rho"  />
+ 和其导数 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cpartial_%5Cmu%5Ceta_%5Crho" alt="\partial_\mu\eta_\rho"  />
+ 的函数：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathcal%7BL%7D%3D%5Cmathcal%7BL%7D%28%5Ceta_%5Crho%2C%5Cpartial_%5Cmu%5Ceta_%5Crho%29" alt="\mathcal{L}=\mathcal{L}(\eta_\rho,\partial_\mu\eta_\rho)"  />
+</p>
+<p>系统总的拉格朗日量为拉氏量密度对空间的积分，而系统的作用量为拉格朗日量对时间的积分，即拉氏量密度对全时空的积分[4]：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=S%3D%5Cint&#43;dtL%3D%5Cint&#43;d%5E4x%5Cmathcal%7BL%7D%28%5Ceta_%5Crho%2C%5Cpartial_%5Cmu%5Ceta_%5Crho%29" alt="S=\int dtL=\int d^4x\mathcal{L}(\eta_\rho,\partial_\mu\eta_\rho)"  />
+</p>
+<p>经典场所满足的条件就是场作用量取极值：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cdelta&#43;S%3D%5Cdelta%5Cint&#43;d%5E4x%5Cmathcal%7BL%7D%28%5Ceta_%5Crho%2C%5Cpartial_%5Cmu%5Ceta_%5Crho%29%3D0" alt="\delta S=\delta\int d^4x\mathcal{L}(\eta_\rho,\partial_\mu\eta_\rho)=0"  />
+</p>
+<p>可以证明，场的拉格朗日方程为[1]：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cpartial_%5Cmu%5Cleft%28%5Cfrac%7B%5Cpartial%5Cmathcal%7BL%7D%7D%7B%5Cpartial%28%5Cpartial_%5Cmu%5Ceta_%5Crho%29%7D%5Cright%29-%5Cfrac%7B%5Cpartial%5Cmathcal%7BL%7D%7D%7B%5Cpartial%5Ceta_%5Crho%7D%3D0" alt="\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial(\partial_\mu\eta_\rho)}\right)-\frac{\partial\mathcal{L}}{\partial\eta_\rho}=0"  />
+</p>
+<p>以弹性场为例，其拉氏量密度可以用位移矢量场 <img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Ceta_i" alt="\eta_i"  />
+ 为</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Cmathcal%7BL%7D%3D%5Cfrac12%5B%5Crho_0%5Cdot&#43;%5Ceta_i%5Cdot%5Ceta_i-Y%28%5Cnabla%5Ccdot%5Ceta%29%5E2%5D" alt="\mathcal{L}=\frac12[\rho_0\dot \eta_i\dot\eta_i-Y(\nabla\cdot\eta)^2]"  />
+</p>
+<p>其运动方程为：</p>
+<p><img loading="lazy" src="https://www.zhihu.com/equation?tex=%5Crho_0%5Cfrac%7B%5Cpartial%5E2%5Ceta_i%7D%7B%5Cpartial&#43;t%5E2%7D-Y%5Cnabla%5E2%5Ceta_i%3D0" alt="\rho_0\frac{\partial^2\eta_i}{\partial t^2}-Y\nabla^2\eta_i=0"  />
+</p>
+<p>弹性体的微振动和声波在空气中的传播都满足这个方程。</p>
+<h2 id="有限元法">有限元法<a hidden class="anchor" aria-hidden="true" href="#有限元法">#</a></h2>
+<p>在特定边界条件下的场方程求解是困难的，实际在计算的时候通常将整个空间分成许多可以求解的小正方体或者小的三棱锥，然后让每个体积元内的场作用量取极值，用这种方法来求场的近似解。这种数值计算方法被称为“有限元法”。</p>
+
+</div>
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="prev" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA3-%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>理论物理导论(3) 路径积分</span>
+  </a>
+  <a class="next" href="https://hasaki-chan.github.io/post/%E7%90%86%E8%AE%BA%E7%89%A9%E7%90%86%E5%AF%BC%E8%AE%BA1-%E7%89%9B%E9%A1%BF%E5%8A%9B%E5%AD%A6/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>理论物理导论(1) 牛顿力学</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://hasaki-chan.github.io">小羽咲的笔记</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
